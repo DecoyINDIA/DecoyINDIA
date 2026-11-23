@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 200" width="440" height="200" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="vaaniBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0714" />
+      <stop offset="60%" stop-color="#140a24" />
+      <stop offset="100%" stop-color="#06040b" />
+    </linearGradient>
+
+    <linearGradient id="vaaniBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7F00FF" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#E100FF" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#25D366" stop-opacity="0.4" />
+    </linearGradient>
+
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E100FF" />
+      <stop offset="50%" stop-color="#7F00FF" />
+      <stop offset="100%" stop-color="#00F2FE" />
+    </linearGradient>
+
+    <pattern id="vaaniGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#22123d" stroke-width="0.5" stroke-opacity="0.6" />
+    </pattern>
+
+    <filter id="vaaniGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .mono { font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+    @keyframes barWave1 { 0%, 100% { height: 12px; y: -6px; } 50% { height: 42px; y: -21px; } }
+    @keyframes barWave2 { 0%, 100% { height: 26px; y: -13px; } 50% { height: 58px; y: -29px; } }
+    @keyframes barWave3 { 0%, 100% { height: 40px; y: -20px; } 50% { height: 18px; y: -9px; } }
+    @keyframes barWave4 { 0%, 100% { height: 52px; y: -26px; } 50% { height: 32px; y: -16px; } }
+    @keyframes barWave5 { 0%, 100% { height: 30px; y: -15px; } 50% { height: 64px; y: -32px; } }
+
+    @keyframes dispatchPulse {
+      0% { r: 10; opacity: 0.9; }
+      100% { r: 48; opacity: 0; }
+    }
+    
+    .bw-1 { animation: barWave1 1.4s ease-in-out infinite; }
+    .bw-2 { animation: barWave2 1.6s ease-in-out infinite 0.2s; }
+    .bw-3 { animation: barWave3 1.3s ease-in-out infinite 0.4s; }
+    .bw-4 { animation: barWave4 1.7s ease-in-out infinite 0.1s; }
+    .bw-5 { animation: barWave5 1.5s ease-in-out infinite 0.3s; }
+    .dispatch-ring { animation: dispatchPulse 2.5s cubic-bezier(0.2, 0.8, 0.4, 1) infinite; }
+  </style>
+
+  <!-- Background Canvas -->
+  <rect width="440" height="200" rx="12" fill="url(#vaaniBg)" />
+  <rect width="440" height="200" rx="12" fill="url(#vaaniGrid)" />
+  <rect width="440" height="200" rx="12" fill="none" stroke="url(#vaaniBorder)" stroke-width="1.2" />
+
+  <!-- Corner Brackets -->
+  <path d="M 12 25 L 12 12 L 25 12" fill="none" stroke="#E100FF" stroke-width="1.5" />
+  <path d="M 428 25 L 428 12 L 415 12" fill="none" stroke="#25D366" stroke-width="1.5" />
+  <path d="M 12 175 L 12 188 L 25 188" fill="none" stroke="#7F00FF" stroke-width="1.5" />
+  <path d="M 428 175 L 428 188 L 415 188" fill="none" stroke="#E100FF" stroke-width="1.5" />
+
+  <!-- Ambient Light Orbs -->
+  <circle cx="340" cy="78" r="60" fill="#7F00FF" opacity="0.12" filter="url(#vaaniGlow)" />
+
+  <!-- Left Header & Info -->
+  <g transform="translate(24, 28)">
+    <!-- Category Pill -->
+    <rect width="148" height="20" rx="4" fill="#200d36" stroke="#7F00FF" stroke-width="0.8" />
+    <text x="74" y="14" fill="#E100FF" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1" class="mono">VOICE // AGENTIC AI</text>
+
+    <!-- Title -->
+    <text x="0" y="48" fill="#ffffff" font-size="22" font-weight="800" letter-spacing="0.5" class="sans">Vaani</text>
+    <text x="70" y="47" fill="#64748b" font-size="11" font-weight="600" class="mono">वाणी // v1.2</text>
+
+    <!-- Description -->
+    <text x="0" y="70" fill="#94a3b8" font-size="11.5" font-weight="400" class="sans">Conversational voice AI &amp; WhatsApp dispatch</text>
+
+    <!-- Telemetry Box -->
+    <g transform="translate(0, 92)">
+      <rect width="210" height="48" rx="6" fill="#0d091a" stroke="#2a1647" stroke-width="1" />
+      
+      <text x="10" y="16" fill="#64748b" font-size="8.5" font-weight="600" letter-spacing="0.8" class="mono">PIPELINE LATENCY</text>
+      <!-- Telemetry row -->
+      <text x="10" y="36" fill="#25D366" font-size="13" font-weight="700" class="mono">140ms</text>
+      <text x="68" y="35" fill="#a855f7" font-size="9.5" font-weight="600" class="mono">| 12 INDIC LANGS</text>
+      <text x="10" y="45" fill="#64748b" font-size="8" font-weight="500" class="mono">OPUS 24kHz // DUAL-DUPLEX</text>
+    </g>
+  </g>
+
+  <!-- Right Visual: Voice Waveforms & Telephony Hub -->
+  <g transform="translate(340, 78)">
+    <!-- Pulsing Dispatch Ring -->
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#25D366" stroke-width="1.2" class="dispatch-ring" />
+    <circle cx="0" cy="0" r="42" fill="none" stroke="#7F00FF" stroke-width="0.8" stroke-dasharray="4 4" />
+
+    <!-- Waveform Frequency Bars (Mirrored vertically around y=0) -->
+    <g transform="translate(-48, 0)">
+      <rect x="0" y="-10" width="4" height="20" rx="2" fill="url(#waveGrad)" class="bw-1" />
+      <rect x="8" y="-15" width="4" height="30" rx="2" fill="url(#waveGrad)" class="bw-2" />
+      <rect x="16" y="-22" width="4" height="44" rx="2" fill="url(#waveGrad)" class="bw-3" />
+      <rect x="24" y="-30" width="4" height="60" rx="2" fill="url(#waveGrad)" class="bw-4" />
+      <rect x="32" y="-20" width="4" height="40" rx="2" fill="url(#waveGrad)" class="bw-5" />
+      
+      <!-- Central Hub Orb -->
+      <circle cx="48" cy="0" r="14" fill="#130826" stroke="#E100FF" stroke-width="1.5" filter="url(#vaaniGlow)" />
+      <!-- WhatsApp / Microphone icon glyph -->
+      <path d="M 45 -4 L 51 -4 C 53 -4 53 -1 51 -1 L 45 -1 Z M 48 -1 L 48 4 M 45 4 L 51 4" stroke="#25D366" stroke-width="1.4" stroke-linecap="round" />
+
+      <rect x="60" y="-20" width="4" height="40" rx="2" fill="url(#waveGrad)" class="bw-5" />
+      <rect x="68" y="-30" width="4" height="60" rx="2" fill="url(#waveGrad)" class="bw-4" />
+      <rect x="76" y="-22" width="4" height="44" rx="2" fill="url(#waveGrad)" class="bw-3" />
+      <rect x="84" y="-15" width="4" height="30" rx="2" fill="url(#waveGrad)" class="bw-2" />
+      <rect x="92" y="-10" width="4" height="20" rx="2" fill="url(#waveGrad)" class="bw-1" />
+    </g>
+
+    <!-- Indic Dialect Badges -->
+    <g transform="translate(-56, 48)">
+      <rect width="32" height="14" rx="3" fill="#170c2e" stroke="#7F00FF" stroke-width="0.7" />
+      <text x="16" y="10" fill="#c084fc" font-size="8" font-weight="700" text-anchor="middle" class="mono">हिन्दी</text>
+    </g>
+    <g transform="translate(-16, 48)">
+      <rect width="32" height="14" rx="3" fill="#170c2e" stroke="#25D366" stroke-width="0.7" />
+      <text x="16" y="10" fill="#25D366" font-size="8" font-weight="700" text-anchor="middle" class="mono">தமிழ்</text>
+    </g>
+    <g transform="translate(24, 48)">
+      <rect width="32" height="14" rx="3" fill="#170c2e" stroke="#E100FF" stroke-width="0.7" />
+      <text x="16" y="10" fill="#E100FF" font-size="8" font-weight="700" text-anchor="middle" class="mono">ENG</text>
+    </g>
+  </g>
+
+  <!-- Bottom Tag Bar -->
+  <g transform="translate(24, 172)">
+    <circle cx="4" cy="5" r="3" fill="#25D366" />
+    <text x="14" y="8" fill="#64748b" font-size="9" font-weight="600" class="mono">DISPATCH: WHATSAPP CLOUD API</text>
+    <text x="210" y="8" fill="#64748b" font-size="9" font-weight="600" class="mono">STREAMING WEBSOCKET</text>
+  </g>
+</svg>

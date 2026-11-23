@@ -1,0 +1,239 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="900" height="320" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060911" />
+      <stop offset="40%" stop-color="#0a0f1d" />
+      <stop offset="100%" stop-color="#04060a" />
+    </linearGradient>
+
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.6" />
+      <stop offset="30%" stop-color="#7F00FF" stop-opacity="0.3" />
+      <stop offset="70%" stop-color="#00F5A0" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#00F2FE" stop-opacity="0.5" />
+    </linearGradient>
+
+    <linearGradient id="cyanViolet" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="50%" stop-color="#4FACFE" />
+      <stop offset="100%" stop-color="#9d4edd" />
+    </linearGradient>
+
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="50%" stop-color="#7F00FF" />
+      <stop offset="100%" stop-color="#00F5A0" />
+    </linearGradient>
+
+    <linearGradient id="glowGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#7F00FF" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="laserGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0" />
+      <stop offset="50%" stop-color="#00F2FE" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#00F2FE" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Pattern -->
+    <pattern id="gridPattern" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1b253b" stroke-width="0.75" stroke-opacity="0.35" />
+      <circle cx="0" cy="0" r="1" fill="#4FACFE" fill-opacity="0.3" />
+    </pattern>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .mono-text {
+      font-family: 'SF Mono', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    }
+    .display-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', 'Inter', Roboto, sans-serif;
+    }
+    @keyframes scan {
+      0% { transform: translateY(0); opacity: 0; }
+      15% { opacity: 1; }
+      85% { opacity: 1; }
+      100% { transform: translateY(320px); opacity: 0; }
+    }
+    @keyframes pulseLed {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.9); }
+    }
+    @keyframes particleFloat1 {
+      0% { transform: translate(0, 0); opacity: 0.3; }
+      50% { transform: translate(15px, -20px); opacity: 0.8; }
+      100% { transform: translate(0, 0); opacity: 0.3; }
+    }
+    @keyframes particleFloat2 {
+      0% { transform: translate(0, 0); opacity: 0.2; }
+      50% { transform: translate(-20px, 15px); opacity: 0.7; }
+      100% { transform: translate(0, 0); opacity: 0.2; }
+    }
+    @keyframes radarWave {
+      0% { r: 35; opacity: 0.8; }
+      100% { r: 120; opacity: 0; }
+    }
+    @keyframes streamFlow {
+      0% { stroke-dashoffset: 200; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .scanner-line {
+      animation: scan 5s ease-in-out infinite;
+    }
+    .pulse-dot {
+      animation: pulseLed 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      transform-origin: center;
+    }
+    .p-float-1 { animation: particleFloat1 6s ease-in-out infinite; }
+    .p-float-2 { animation: particleFloat2 8s ease-in-out infinite; }
+    .radar-pulse { animation: radarWave 3s ease-out infinite; transform-origin: 730px 160px; }
+  </style>
+
+  <!-- Canvas Background -->
+  <rect width="900" height="320" rx="16" fill="url(#bgGrad)" />
+  <rect width="900" height="320" rx="16" fill="url(#gridPattern)" />
+  <rect width="900" height="320" rx="16" fill="none" stroke="url(#borderGrad)" stroke-width="1.5" />
+
+  <!-- Corner Brackets -->
+  <path d="M 16 35 L 16 16 L 35 16" fill="none" stroke="#00F2FE" stroke-width="2" stroke-linecap="round" />
+  <path d="M 884 35 L 884 16 L 865 16" fill="none" stroke="#00F2FE" stroke-width="2" stroke-linecap="round" />
+  <path d="M 16 285 L 16 304 L 35 304" fill="none" stroke="#7F00FF" stroke-width="2" stroke-linecap="round" />
+  <path d="M 884 285 L 884 304 L 865 304" fill="none" stroke="#00F5A0" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Ambient Light Orbs -->
+  <circle cx="120" cy="80" r="160" fill="#00F2FE" opacity="0.06" filter="url(#glow)" />
+  <circle cx="730" cy="160" r="140" fill="#7F00FF" opacity="0.08" filter="url(#glow)" />
+  <circle cx="450" cy="280" r="100" fill="#00F5A0" opacity="0.04" filter="url(#glow)" />
+
+  <!-- Laser Scanning Line -->
+  <g class="scanner-line">
+    <line x1="16" y1="0" x2="884" y2="0" stroke="url(#laserGrad)" stroke-width="2" filter="url(#softGlow)" />
+  </g>
+
+  <!-- Left Content Group -->
+  <g transform="translate(54, 52)">
+    <!-- Status Pill -->
+    <g transform="translate(0, 0)">
+      <rect width="186" height="26" rx="13" fill="#0c172a" stroke="#1e3a5f" stroke-width="1" />
+      <circle cx="16" cy="13" r="4.5" fill="#00F5A0" class="pulse-dot" filter="url(#softGlow)" />
+      <text x="30" y="17" fill="#00F5A0" font-size="10.5" font-weight="700" letter-spacing="1.2" class="mono-text">SYSTEMS OPERATIONAL</text>
+    </g>
+
+    <!-- Sub-tag -->
+    <text x="202" y="18" fill="#64748b" font-size="10.5" font-weight="600" letter-spacing="2" class="mono-text">// SOVEREIGN ARCHITECTURE</text>
+
+    <!-- Main Title: DECOY -->
+    <g transform="translate(0, 72)">
+      <text x="0" y="0" fill="url(#cyanViolet)" font-size="48" font-weight="900" letter-spacing="3" class="display-text" filter="url(#softGlow)">DECOY</text>
+      <!-- Accent badge -->
+      <g transform="translate(180, -38)">
+        <rect width="64" height="20" rx="4" fill="#1e1438" stroke="#7F00FF" stroke-width="1" />
+        <text x="32" y="14" fill="#c084fc" font-size="9.5" font-weight="700" text-anchor="middle" letter-spacing="1.5" class="mono-text">IN // 2026</text>
+      </g>
+    </g>
+
+    <!-- Manifesto Headline -->
+    <text x="0" y="105" fill="#ffffff" font-size="15" font-weight="700" letter-spacing="1.2" class="display-text">ARCHITECTING NEXT-GEN SYSTEMS &amp; AGENTIC AI</text>
+
+    <!-- Subtitle description -->
+    <text x="0" y="132" fill="#94a3b8" font-size="12.5" font-weight="400" letter-spacing="0.3" class="display-text">High-throughput concurrency, autonomous voice pipelines &amp; sovereign data ledgers.</text>
+
+    <!-- Telemetry Readout Grid -->
+    <g transform="translate(0, 168)">
+      <!-- Box 1: Core Latency -->
+      <g transform="translate(0, 0)">
+        <rect width="112" height="42" rx="6" fill="#0a101f" stroke="#1e293b" stroke-width="1" />
+        <text x="12" y="16" fill="#64748b" font-size="9" font-weight="600" letter-spacing="1" class="mono-text">CORE LATENCY</text>
+        <text x="12" y="33" fill="#00F2FE" font-size="13" font-weight="700" class="mono-text">&lt; 0.18 ms</text>
+      </g>
+
+      <!-- Box 2: Concurrency -->
+      <g transform="translate(122, 0)">
+        <rect width="112" height="42" rx="6" fill="#0a101f" stroke="#1e293b" stroke-width="1" />
+        <text x="12" y="16" fill="#64748b" font-size="9" font-weight="600" letter-spacing="1" class="mono-text">IO MODEL</text>
+        <text x="12" y="33" fill="#00F5A0" font-size="13" font-weight="700" class="mono-text">NON-BLOCK</text>
+      </g>
+
+      <!-- Box 3: Agent Protocol -->
+      <g transform="translate(244, 0)">
+        <rect width="128" height="42" rx="6" fill="#0a101f" stroke="#1e293b" stroke-width="1" />
+        <text x="12" y="16" fill="#64748b" font-size="9" font-weight="600" letter-spacing="1" class="mono-text">AI RUNTIME</text>
+        <text x="12" y="33" fill="#c084fc" font-size="13" font-weight="700" class="mono-text">MULTI-AGENTIC</text>
+      </g>
+
+      <!-- Box 4: Cluster Status -->
+      <g transform="translate(382, 0)">
+        <rect width="108" height="42" rx="6" fill="#0a101f" stroke="#1e293b" stroke-width="1" />
+        <text x="12" y="16" fill="#64748b" font-size="9" font-weight="600" letter-spacing="1" class="mono-text">NODES</text>
+        <text x="12" y="33" fill="#FFB020" font-size="13" font-weight="700" class="mono-text">6 DEPLOYED</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Right Visual: Futuristic Radar & Cyber Monogram -->
+  <g transform="translate(730, 160)">
+    <!-- Radar Rings -->
+    <circle cx="0" cy="0" r="110" fill="none" stroke="#1e293b" stroke-width="1" stroke-dasharray="4 6" />
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#1e3a5f" stroke-width="1" />
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#253c69" stroke-width="1" stroke-dasharray="2 4" />
+    <circle cx="0" cy="0" r="35" fill="none" stroke="#00F2FE" stroke-width="1.2" class="radar-pulse" />
+
+    <!-- Crosshairs -->
+    <line x1="-120" y1="0" x2="120" y2="0" stroke="#1e293b" stroke-width="1" stroke-dasharray="4 6" />
+    <line x1="0" y1="-120" x2="0" y2="120" stroke="#1e293b" stroke-width="1" stroke-dasharray="4 6" />
+
+    <!-- Rotating Outer Ring with Orbiting Nodes -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="24s" repeatCount="indefinite" />
+      <circle cx="0" cy="0" r="95" fill="none" stroke="url(#borderGrad)" stroke-width="1.5" stroke-dasharray="30 80 15 60" />
+      <circle cx="95" cy="0" r="4" fill="#00F2FE" filter="url(#softGlow)" />
+      <circle cx="-95" cy="0" r="3" fill="#7F00FF" />
+      <circle cx="0" cy="95" r="3.5" fill="#00F5A0" filter="url(#softGlow)" />
+    </g>
+
+    <!-- Counter-rotating Inner Segment Ring -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="16s" repeatCount="indefinite" />
+      <circle cx="0" cy="0" r="68" fill="none" stroke="#00F2FE" stroke-width="1.2" stroke-dasharray="25 35 10 40" stroke-opacity="0.6" />
+      <polygon points="68,0 72,-4 76,0 72,4" fill="#00F2FE" />
+      <polygon points="-68,0 -72,-4 -76,0 -72,4" fill="#7F00FF" />
+    </g>
+
+    <!-- Cyber Monogram Center (Hexagonal Faceted Core) -->
+    <polygon points="0,-36 31,-18 31,18 0,36 -31,18 -31,-18" fill="#080c18" stroke="url(#cyanViolet)" stroke-width="2" filter="url(#softGlow)" />
+    
+    <!-- Inner Geometric 'D' Emblem -->
+    <path d="M -14 -18 L 4 -18 C 16 -18 22 -10 22 0 C 22 10 16 18 4 18 L -14 18 Z M -6 -10 L -6 10 L 3 10 C 10 10 14 6 14 0 C 14 -6 10 -10 3 -10 Z" 
+          fill="url(#logoGrad)" />
+
+    <!-- Micro Nodes Around Core -->
+    <circle cx="0" cy="-36" r="2" fill="#00F2FE" />
+    <circle cx="31" cy="-18" r="2" fill="#7F00FF" />
+    <circle cx="31" cy="18" r="2" fill="#00F5A0" />
+    <circle cx="0" cy="36" r="2" fill="#00F2FE" />
+    <circle cx="-31" cy="18" r="2" fill="#7F00FF" />
+    <circle cx="-31" cy="-18" r="2" fill="#00F5A0" />
+
+    <!-- Telemetry Coordinates -->
+    <text x="0" y="118" fill="#64748b" font-size="8.5" font-weight="600" text-anchor="middle" letter-spacing="1.5" class="mono-text">LOC: 28.6139°N 77.2090°E</text>
+  </g>
+
+  <!-- Ambient Floating Data Particles -->
+  <circle cx="560" cy="80" r="2" fill="#00F2FE" class="p-float-1" />
+  <circle cx="600" cy="230" r="1.5" fill="#7F00FF" class="p-float-2" />
+  <circle cx="480" cy="65" r="2.5" fill="#00F5A0" class="p-float-2" />
+  <circle cx="530" cy="275" r="1.5" fill="#4FACFE" class="p-float-1" />
+  <circle cx="680" cy="50" r="2" fill="#c084fc" class="p-float-1" />
+</svg>
