@@ -1,37 +1,65 @@
 <div align="center">
 
-  <img src="assets/hero.svg" alt="DECOY // ARCHITECTING NEXT-GEN SYSTEMS & AGENTIC AI" width="100%" />
+  <!-- HUD STATUS BADGE -->
+  <p align="center">
+    <code>● SYSTEM NODE: DECOY-OS // REVISION 2.4.0-HARDENED // REGION: IN-NORTH-1 // RUNTIME: DETERMINISTIC</code>
+  </p>
+
+  <!-- CINEMATIC LEVEL 10 HERO -->
+  <a href="#-executive-dispatch">
+    <img src="assets/hero.svg" alt="DECOY // ARCHITECTING NEXT-GEN SYSTEMS & AGENTIC AI" width="100%" />
+  </a>
 
   <br />
 
+  <!-- EXECUTIVE METRIC PILLS -->
   <p align="center">
-    <a href="https://github.com/DecoyINDIA"><img src="https://img.shields.io/badge/FOUNDER-XolverLabs-0A101D?style=for-the-badge&logo=target&logoColor=00F2FE" alt="XolverLabs" /></a>
-    <a href="#flagship-engineering-projects"><img src="https://img.shields.io/badge/RUNTIME-LOW--LATENCY%20%7C%20AGENTIC%20AI-0A101D?style=for-the-badge&logo=rust&logoColor=FF6B00" alt="Runtime" /></a>
-    <a href="#architectural-pillars"><img src="https://img.shields.io/badge/ARCHITECTURE-SOVEREIGN%20%26%20LOCAL--FIRST-0A101D?style=for-the-badge&logo=shield&logoColor=00F5A0" alt="Architecture" /></a>
-    <a href="#direct-connect--communication-console"><img src="https://img.shields.io/badge/COMMUNICATION-LAWFLOW.INDIA%40GMAIL.COM-0A101D?style=for-the-badge&logo=gmail&logoColor=E100FF" alt="Contact" /></a>
+    <a href="https://github.com/DecoyINDIA"><img src="https://img.shields.io/badge/FOUNDER-XolverLabs-060911?style=for-the-badge&logo=target&logoColor=00F2FE" alt="XolverLabs" /></a>
+    <a href="#-architectural-pillars"><img src="https://img.shields.io/badge/CORE-LOW--LATENCY%20%7C%20AGENTIC%20AI-060911?style=for-the-badge&logo=rust&logoColor=FF6B00" alt="Runtime" /></a>
+    <a href="#-flagship-engineering-projects"><img src="https://img.shields.io/badge/ETHOS-SOVEREIGN%20%26%20ZERO--EGRESS-060911?style=for-the-badge&logo=shield&logoColor=00F5A0" alt="Architecture" /></a>
+    <a href="#-direct-connect--communication-console"><img src="https://img.shields.io/badge/TRANSMIT-LAWFLOW.INDIA%40GMAIL.COM-060911?style=for-the-badge&logo=gmail&logoColor=E100FF" alt="Contact" /></a>
+  </p>
+
+  <!-- QUICK NAVIGATION CONSOLE -->
+  <p align="center">
+    <a href="#-executive-dispatch"><b>Dispatch</b></a> &bull;
+    <a href="#-architectural-pillars"><b>Pillars</b></a> &bull;
+    <a href="#-flagship-engineering-projects"><b>Flagship Projects</b></a> &bull;
+    <a href="#-open-source-radar--developer-tooling"><b>Open Source</b></a> &bull;
+    <a href="#-technology-ecosystem"><b>Ecosystem</b></a> &bull;
+    <a href="#-telemetry--verified-metrics"><b>Telemetry</b></a> &bull;
+    <a href="#-engineering-philosophy--core-tenets"><b>Philosophy</b></a> &bull;
+    <a href="#-direct-connect--communication-console"><b>Console</b></a>
   </p>
 
 </div>
 
 ---
 
+<a id="-executive-dispatch"></a>
 ## ⚡ Executive Dispatch
 
-> **"Building at the convergence of agentic AI, low-latency systems, and sovereign software architecture."**
+> **"We engineer software as deterministic instruments. In an industry overwhelmed by brittle abstractions, cloud sprawl, and telemetry spyware, our mission is unequivocal: bare-metal execution speed, sovereign local-first privacy, and resilient agentic intelligence that respects human cognition."**
 
-I am an engineering architect, systems builder, and founder at **XolverLabs**, operating from India for the global sovereign software ecosystem. My focus spans deterministic low-latency software engines, production-grade autonomous agentic workflows, multi-lingual acoustic voice agents, and cryptographically verified data ledgers.
+I am an engineering architect, systems builder, and founder at **XolverLabs**, operating from India for the global sovereign software ecosystem. My work investigates the boundary between bare-metal systems engineering and autonomous cognitive computing.
 
-Modern software suffers from bloat, brittle abstractions, and unnecessary cloud egress. I engineer counter-systems: **local-first runtimes** that refuse to phone home, **multi-threaded chunked transport layers** that saturate raw hardware throughput, and **grounded agentic workflows** that speak regional vernaculars with zero tolerance for hallucinations.
+Modern web and enterprise architectures have normalized massive memory footprints, non-deterministic latency spikes, and invasive data harvesting. My engineering practice builds the explicit counter-model:
+- **Local-first runtimes** that enforce zero outbound egress and run air-gapped on bare metal.
+- **High-throughput concurrency pipelines** in **Rust** and **Java 21 (Loom)** that saturate line-rate hardware bandwidth.
+- **Multilingual agentic architectures** that converse fluently in native Indian vernaculars without hallucinations.
+- **Cryptographic dual-consent ledgers** that eliminate institutional asymmetry in metropolitan tenancy and property registries.
 
 ```text
 ┌─────────────────────────┬──────────────────────────────────────────────────────────────────┐
-│ ARCHITECTURAL CO-ORDINATE│ VALUE & SPECIFICATION                                           │
+│ ARCHITECTURAL CO-ORDINATE│ VALUE & VERIFIED SPECIFICATION                                   │
 ├─────────────────────────┼──────────────────────────────────────────────────────────────────┤
 │ IDENTITY & HANDLE       │ Subham Jena (DecoyINDIA)                                         │
+│ PRIMARY AFFILIATION     │ Founder & Lead Architect // XolverLabs (https://xolver.com)      │
 │ CORE SPECIALIZATIONS    │ Low-Latency Concurrency · Agentic AI · Sovereign Trust Ledgers   │
-│ PRIMARY TOOLCHAINS      │ Rust · Java 21 (Loom) · Python (FastAPI/LangGraph) · TypeScript   │
-│ OPERATIONAL ETHOS       │ Zero Bloat · Deterministic Latency · Air-Gapped Privacy          │
-│ FLAGSHIP LABS           │ XolverLabs (xolver.com) · Open Source Infrastructure R&D         │
+│ PRIMARY TOOLCHAINS      │ Rust · Java 21 (Virtual Threads) · Python (FastAPI/LangGraph)    │
+│ INTERFACE ENGINEERING   │ TypeScript · React/Next.js · LivelyUI Physics · Optical Glass    │
+│ OPERATIONAL INVARIANT   │ Zero Bloat · Deterministic Latencies · Local-First Sovereignty   │
+│ ACTIVE RESEARCH LAB     │ High-Throughput Packet Engines · Grounded Indic Speech Models    │
 └─────────────────────────┴──────────────────────────────────────────────────────────────────┘
 ```
 
@@ -39,31 +67,31 @@ Modern software suffers from bloat, brittle abstractions, and unnecessary cloud 
   <img src="assets/divider.svg" alt="Section Separator" width="100%" />
 </div>
 
-<a id="architectural-pillars"></a>
+<a id="-architectural-pillars"></a>
 ## 🏛️ Architectural Pillars
 
-Four core disciplines govern every system engineered in this laboratory:
+Four foundational disciplines govern every system engineered across our laboratories:
 
 <table>
   <tr>
     <td width="50%" valign="top">
       <h3>⚡ 01 // Low-Latency & Systems Concurrency</h3>
       <p>
-        Building bare-metal and memory-disciplined engines in <b>Rust</b> and <b>Java 21+</b> (Project Loom virtual threads). Eliminating garbage collection jitter, orchestrating non-blocking async runtimes, and engineering lock-free circular buffers capable of saturating line-rate multi-threaded downloads and high-throughput document parsing.
+        Building bare-metal, memory-disciplined engines in <b>Rust</b> and <b>Java 21+</b> (Project Loom virtual threads). Eliminating garbage collection jitter, orchestrating non-blocking asynchronous event loops, and engineering lock-free circular ring buffers capable of saturating line-rate multi-threaded downloads and high-throughput document parsing.
       </p>
       <ul>
-        <li><b>Primitives:</b> Tokio Async, Chunked Stream Allocation, Java NIO Channels</li>
-        <li><b>Standard:</b> Predictable tail-latencies (p99 < 15ms), zero unnecessary heap allocation</li>
+        <li><b>Core Primitives:</b> Tokio Async, Chunked Stream Allocation, Java NIO Channels, Zero-Copy Sockets.</li>
+        <li><b>Latency Profile:</b> Predictable tail-latencies (p99 &lt; 15ms), zero unnecessary heap allocation, cache-line aligned structures.</li>
       </ul>
     </td>
     <td width="50%" valign="top">
       <h3>🤖 02 // Agentic AI & Vernacular Voice</h3>
       <p>
-        Orchestrating stateful, multi-agent conversational DAGs with <b>LangGraph</b> and <b>FastAPI</b>. Grounding generative LLMs with strict taxonomy gates, Atlas vector indexes, and discrete token matching. Delivering real-time conversational front-desks in native Indic tongues with zero hallucination.
+        Orchestrating stateful, multi-agent conversational directed acyclic graphs (DAGs) with <b>LangGraph</b> and <b>FastAPI</b>. Grounding generative LLMs with strict taxonomy gates, tenant-filtered Atlas vector indexes, and discrete token matching. Delivering real-time conversational front desks in native Indic tongues with absolute zero tolerance for hallucinations.
       </p>
       <ul>
-        <li><b>Primitives:</b> Dual Scope Gates, RAG Vector Filtering, Real-time SIP/STT/TTS</li>
-        <li><b>Dialects:</b> Native Hindi, Odia, Hinglish, and English with sub-3s voice dispatch</li>
+        <li><b>Core Primitives:</b> Dual Scope Gates, Grounded RAG Retrieval, Real-time SIP/STT/TTS bridges.</li>
+        <li><b>Dialects Supported:</b> Native Hindi, Odia, Hinglish, and English with sub-3s end-to-end voice dispatch.</li>
       </ul>
     </td>
   </tr>
@@ -71,21 +99,21 @@ Four core disciplines govern every system engineered in this laboratory:
     <td width="50%" valign="top">
       <h3>🛡️ 03 // Sovereign Data & Trust Ledgers</h3>
       <p>
-        Designing software for total institutional and personal sovereignty. Architecting air-gapped zero-egress runtimes that execute on-premise without tracking pixels, paired with immutable dual-consent cryptographic ledgers for rental agreements, legal discovery, and deposit escrows.
+        Designing software architectures for total institutional and individual sovereignty. Architecting air-gapped zero-egress runtimes that execute on-premise without tracking pixels, paired with immutable dual-consent cryptographic ledgers for rental agreements, legal discovery, and deposit escrows.
       </p>
       <ul>
-        <li><b>Primitives:</b> Cryptographic Signatures, DPDP Act 2025 Compliance, Immutable Audit Hashes</li>
-        <li><b>Standard:</b> Zero outbound telemetry, fail-closed operational contracts</li>
+        <li><b>Core Primitives:</b> Cryptographic Signatures, DPDP Act 2025 Compliance, Immutable Audit Hashes.</li>
+        <li><b>Operational Standard:</b> Zero outbound telemetry, read-only root containers, fail-closed contracts.</li>
       </ul>
     </td>
     <td width="50%" valign="top">
-      <h3>🎨 04 // High-Craft Interfaces & Micro-UX</h3>
+      <h3>🎨 04 // High-Craft Interfaces & Kinetic Micro-UX</h3>
       <p>
-        Treating user interface as an engineering discipline rather than superficial decoration. Drawing from the tactile design language of Apple, Vercel, and Linear: fluid physics springs, dark-obsidian canvases, kinetic data telemetry, and responsive typography that feels alive under fingertip or mouse.
+        Treating user interface as an engineering discipline rather than superficial decoration. Drawing from the tactile design language of Apple, Vercel, and Linear: fluid physics springs (LivelyUI), dark-obsidian canvases, optical liquid glass filters, kinetic data telemetry, and responsive typography that feels alive under fingertip or mouse.
       </p>
       <ul>
-        <li><b>Primitives:</b> LivelyUI Spring Dynamics, Custom SVG Animations, Kinetic CSS</li>
-        <li><b>Standard:</b> 60fps rendering, tactile micro-feedback, high-density telemetry readability</li>
+        <li><b>Core Primitives:</b> LivelyUI Spring Dynamics, Custom SVG Animations, Kinetic CSS, Lenis Inertial Flow.</li>
+        <li><b>Visual Standard:</b> 60fps rendering, tactile micro-feedback, high-density telemetry readability.</li>
       </ul>
     </td>
   </tr>
@@ -95,7 +123,7 @@ Four core disciplines govern every system engineered in this laboratory:
   <img src="assets/divider.svg" alt="Section Separator" width="100%" />
 </div>
 
-<a id="flagship-engineering-projects"></a>
+<a id="-flagship-engineering-projects"></a>
 ## 🚀 Flagship Engineering Projects
 
 A curated showcase of production platforms, developer runtimes, and open-source infrastructure.
@@ -118,9 +146,9 @@ A curated showcase of production platforms, developer runtimes, and open-source 
         A calm, air-gapped document workspace engineered in Java 21+ for reading, splitting, annotating, redacting, and converting high-volume PDF files. Built on the <i>Paper Desk</i> design system with 50+ Command Palette tools and absolute privacy guarantees.
       </p>
       <ul>
-        <li><b>Zero Egress Architecture:</b> Permanent removal of third-party tracking pixels; containers operate with read-only root filesystems and internal network isolation (`internal: true`).</li>
+        <li><b>Zero Egress Architecture:</b> Permanent removal of third-party tracking pixels; containers operate with read-only root filesystems and internal network isolation (<code>internal: true</code>), completely blocking WAN leakage.</li>
         <li><b>Universal Intake Deck:</b> Instant page breakout into interactive vector thumbnails with sub-12ms page rendering latency.</li>
-        <li><b>Single-Pass Pipelines:</b> Chain multi-step redactions, rotations, and cleanups into atomic batch executions.</li>
+        <li><b>Single-Pass Pipelines:</b> Chain multi-step redactions, rotations, and cleanups into atomic batch executions via GUI, API, or CLI.</li>
       </ul>
       <p>
         <code>Java 21</code> · <code>XolverLabs</code> · <code>Project Loom</code> · <code>Zero-Egress</code> · <code>Docker</code>
@@ -141,11 +169,11 @@ A curated showcase of production platforms, developer runtimes, and open-source 
       </h3>
       <p><b>Vernacular AI Front Desk & Autonomous Voice/WhatsApp Booking Employee</b></p>
       <p>
-        The autonomous front office employee for Indian SMBs (clinics, salons, diagnostic labs, institutes). Resolves incoming WhatsApp interactions and telephony calls in native Indic tongues with atomic calendar conflict prevention.
+        The autonomous front office employee for Indian SMBs (clinics, salons, diagnostic labs, tuition institutes). Resolves incoming WhatsApp interactions and telephony calls in native Indic tongues with atomic calendar conflict prevention.
       </p>
       <ul>
         <li><b>Multilingual Reception:</b> Fluent conversation in Hindi, Odia, Hinglish, and English with sub-3s response latencies.</li>
-        <li><b>0-Hallucination Scope Gates:</b> Dual-scope LangGraph routing paired with discrete token grounding against tenant business facts.</li>
+        <li><b>0-Hallucination Scope Gates:</b> Dual-scope LangGraph routing paired with discrete token grounding against verified tenant business facts.</li>
         <li><b>Atomic Booking Engine:</b> Validated against 500-concurrent-claim race conditions on MongoDB replica sets; zero double-booking guarantee.</li>
       </ul>
       <p>
@@ -274,6 +302,11 @@ A curated showcase of production platforms, developer runtimes, and open-source 
   </tr>
 </table>
 
+<div align="center">
+  <img src="assets/divider.svg" alt="Section Separator" width="100%" />
+</div>
+
+<a id="-open-source-radar--developer-tooling"></a>
 ### 🛰️ Open Source Radar & Developer Tooling
 
 Specialized tools, agent skills, and creative experiments engineered for the software craft community:
@@ -288,6 +321,7 @@ Specialized tools, agent skills, and creative experiments engineered for the sof
   <img src="assets/divider.svg" alt="Section Separator" width="100%" />
 </div>
 
+<a id="-technology-ecosystem"></a>
 ## 🧬 Technology Ecosystem
 
 A cohesive technical matrix spanning low-level system runtimes, distributed cloud services, and agentic intelligence frameworks:
@@ -309,6 +343,7 @@ A cohesive technical matrix spanning low-level system runtimes, distributed clou
   <img src="assets/divider.svg" alt="Section Separator" width="100%" />
 </div>
 
+<a id="-telemetry--verified-metrics"></a>
 ## 📊 Telemetry & Verified Metrics
 
 Real-time telemetry and developer cadence across GitHub infrastructure:
@@ -332,6 +367,7 @@ Real-time telemetry and developer cadence across GitHub infrastructure:
   <img src="assets/divider.svg" alt="Section Separator" width="100%" />
 </div>
 
+<a id="-engineering-philosophy--core-tenets"></a>
 ## ⚖️ Engineering Philosophy & Core Tenets
 
 ```
@@ -356,7 +392,7 @@ Real-time telemetry and developer cadence across GitHub infrastructure:
   <img src="assets/divider.svg" alt="Section Separator" width="100%" />
 </div>
 
-<a id="direct-connect--communication-console"></a>
+<a id="-direct-connect--communication-console"></a>
 ## 📡 Direct Connect & Communication Console
 
 Open for technical architectural consultations, high-performance systems engineering, and strategic enterprise pilots:
@@ -394,5 +430,7 @@ Open for technical architectural consultations, high-performance systems enginee
 <br />
 
 <div align="center">
-  <img src="assets/footer.svg" alt="Decoy // Building The Unreasonable" width="100%" />
+  <a href="#-executive-dispatch">
+    <img src="assets/footer.svg" alt="Decoy // Building The Unreasonable" width="100%" />
+  </a>
 </div>

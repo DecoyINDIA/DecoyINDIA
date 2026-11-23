@@ -1,29 +1,52 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 200" width="440" height="200" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <linearGradient id="bmdBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#120804" />
-      <stop offset="60%" stop-color="#1c0e06" />
-      <stop offset="100%" stop-color="#080402" />
+    <!-- Base Canvas -->
+    <linearGradient id="bmdBg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#120603" />
+      <stop offset="55%" stop-color="#1e0c05" />
+      <stop offset="100%" stop-color="#080301" />
     </linearGradient>
 
-    <linearGradient id="bmdBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FF6B00" stop-opacity="0.8" />
-      <stop offset="50%" stop-color="#FFAE00" stop-opacity="0.4" />
-      <stop offset="100%" stop-color="#00F2FE" stop-opacity="0.4" />
+    <!-- 1px Specular Border -->
+    <linearGradient id="bmdGlassBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.45" />
+      <stop offset="30%" stop-color="#FF6B00" stop-opacity="0.8" />
+      <stop offset="70%" stop-color="#FFAE00" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#00F2FE" stop-opacity="0.5" />
     </linearGradient>
 
-    <linearGradient id="flameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FF5722" />
-      <stop offset="50%" stop-color="#FF6B00" />
-      <stop offset="100%" stop-color="#FFAE00" />
+    <!-- Border Comet Gradient -->
+    <linearGradient id="bmdComet" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF6B00" stop-opacity="0" />
+      <stop offset="60%" stop-color="#FFAE00" stop-opacity="0.85" />
+      <stop offset="90%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="100%" stop-color="#00F2FE" stop-opacity="0" />
     </linearGradient>
 
-    <pattern id="bmdGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2b1409" stroke-width="0.5" stroke-opacity="0.6" />
+    <!-- Liquid Metal Core Gradient -->
+    <linearGradient id="liquidMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="35%" stop-color="#FFAE00" />
+      <stop offset="70%" stop-color="#FF6B00" />
+      <stop offset="100%" stop-color="#FF5722" />
+    </linearGradient>
+
+    <pattern id="bmdGrid2" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2b1408" stroke-width="0.5" stroke-opacity="0.5" />
+      <circle cx="0" cy="0" r="0.7" fill="#FFAE00" fill-opacity="0.3" />
     </pattern>
 
-    <filter id="bmdGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3.5" result="blur" />
+    <!-- Liquid Glass Specular Filter -->
+    <filter id="glassRefractBmd" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur" />
+      <feSpecularLighting in="blur" surfaceScale="2.5" specularConstant="1.5" specularExponent="24" lighting-color="#ffffff" result="specular">
+        <feDistantLight azimuth="225" elevation="50" />
+      </feSpecularLighting>
+      <feComposite in="SourceGraphic" in2="specular" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" />
+    </filter>
+
+    <filter id="softGlowBmd" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
   </defs>
@@ -32,57 +55,80 @@
     .mono { font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace; }
     .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
 
-    @keyframes chunkFlow {
-      0% { stroke-dashoffset: 40; }
+    @keyframes bmdCometRun {
+      0% { stroke-dashoffset: 1240; }
       100% { stroke-dashoffset: 0; }
     }
-    @keyframes speedPulse {
-      0%, 100% { opacity: 0.8; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.05); }
+    @keyframes shockwaveExpand {
+      0% { r: 18; opacity: 0.9; }
+      100% { r: 56; opacity: 0; }
     }
-    @keyframes gearRotate {
+    @keyframes gearSpinSlow {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+    @keyframes chunkStreamSpeed {
+      0% { stroke-dashoffset: 48; }
+      100% { stroke-dashoffset: 0; }
+    }
 
-    .chunk-stream-1 { stroke-dasharray: 8 6; animation: chunkFlow 0.8s linear infinite; }
-    .chunk-stream-2 { stroke-dasharray: 6 5; animation: chunkFlow 0.6s linear infinite; }
-    .chunk-stream-3 { stroke-dasharray: 10 7; animation: chunkFlow 1.0s linear infinite; }
-    .chunk-stream-4 { stroke-dasharray: 5 4; animation: chunkFlow 0.7s linear infinite; }
-    .rust-gear { animation: gearRotate 16s linear infinite; transform-origin: 345px 75px; }
-    .speed-glow { animation: speedPulse 2s ease-in-out infinite; transform-origin: 345px 75px; }
+    .card-comet-bmd {
+      stroke-dasharray: 80 1160;
+      animation: bmdCometRun 5.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+    }
+    .shockwave-1 {
+      animation: shockwaveExpand 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+      transform-origin: 345px 75px;
+    }
+    .shockwave-2 {
+      animation: shockwaveExpand 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite 1.2s;
+      transform-origin: 345px 75px;
+    }
+    .gear-rust {
+      animation: gearSpinSlow 18s linear infinite;
+      transform-origin: 345px 75px;
+    }
+    .c-pipe-1 { stroke-dasharray: 8 6; animation: chunkStreamSpeed 0.7s linear infinite; }
+    .c-pipe-2 { stroke-dasharray: 6 5; animation: chunkStreamSpeed 0.5s linear infinite; }
+    .c-pipe-3 { stroke-dasharray: 10 7; animation: chunkStreamSpeed 0.9s linear infinite; }
+    .c-pipe-4 { stroke-dasharray: 5 4; animation: chunkStreamSpeed 0.6s linear infinite; }
   </style>
 
   <!-- Background Canvas -->
-  <rect width="440" height="200" rx="12" fill="url(#bmdBg)" />
-  <rect width="440" height="200" rx="12" fill="url(#bmdGrid)" />
-  <rect width="440" height="200" rx="12" fill="none" stroke="url(#bmdBorder)" stroke-width="1.2" />
+  <rect width="440" height="200" rx="12" fill="url(#bmdBg2)" />
+  <rect width="440" height="200" rx="12" fill="url(#bmdGrid2)" />
+  <rect width="440" height="200" rx="12" fill="none" stroke="url(#bmdGlassBorder)" stroke-width="1.2" />
+
+  <!-- React-Bits Border Comet -->
+  <rect width="440" height="200" rx="12" fill="none" stroke="url(#bmdComet)" stroke-width="2" class="card-comet-bmd" />
 
   <!-- Corner Brackets -->
-  <path d="M 12 25 L 12 12 L 25 12" fill="none" stroke="#FF6B00" stroke-width="1.5" />
-  <path d="M 428 25 L 428 12 L 415 12" fill="none" stroke="#FFAE00" stroke-width="1.5" />
-  <path d="M 12 175 L 12 188 L 25 188" fill="none" stroke="#FF5722" stroke-width="1.5" />
-  <path d="M 428 175 L 428 188 L 415 188" fill="none" stroke="#00F2FE" stroke-width="1.5" />
+  <path d="M 12 24 L 12 12 L 24 12" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.8" />
+  <path d="M 428 24 L 428 12 L 416 12" fill="none" stroke="#FFAE00" stroke-width="1.5" />
+  <path d="M 12 176 L 12 188 L 24 188" fill="none" stroke="#FF5722" stroke-width="1.5" />
+  <path d="M 428 176 L 428 188 L 416 188" fill="none" stroke="#00F2FE" stroke-width="1.5" />
 
-  <!-- Ambient Light Orbs -->
-  <circle cx="345" cy="75" r="55" fill="#FF6B00" opacity="0.1" filter="url(#bmdGlow)" />
+  <!-- Ambient Light Spotlight -->
+  <circle cx="345" cy="75" r="70" fill="#FF6B00" opacity="0.1" filter="url(#softGlowBmd)" />
 
-  <!-- Left Header & Info -->
-  <g transform="translate(24, 28)">
-    <!-- Category Pill -->
-    <rect width="146" height="20" rx="4" fill="#2b1104" stroke="#FF6B00" stroke-width="0.8" />
-    <text x="73" y="14" fill="#FFAE00" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1" class="mono">RUST // HIGH-THROUGHPUT</text>
+  <!-- Left Header and Info -->
+  <g transform="translate(24, 26)">
+    <!-- Glass Category Pill -->
+    <rect width="148" height="22" rx="6" fill="#2b1104" fill-opacity="0.85" stroke="url(#bmdGlassBorder)" stroke-width="0.9" filter="url(#glassRefractBmd)" />
+    <path d="M 6 2 L 142 2" stroke="#ffffff" stroke-opacity="0.4" stroke-width="0.6" stroke-linecap="round" />
+    <text x="74" y="15" fill="#FFAE00" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1" class="mono">RUST // HIGH-THROUGHPUT</text>
 
-    <!-- Title -->
-    <text x="0" y="48" fill="#ffffff" font-size="22" font-weight="800" letter-spacing="0.5" class="sans">BMD</text>
-    <text x="56" y="47" fill="#64748b" font-size="11" font-weight="600" class="mono">BLACK MARLIN</text>
+    <!-- Title with Specular Lighting -->
+    <text x="0" y="52" fill="#ffffff" font-size="24" font-weight="900" letter-spacing="0.5" class="sans" filter="url(#glassRefractBmd)">BMD</text>
+    <text x="64" y="50" fill="#64748b" font-size="11" font-weight="600" class="mono">BLACK MARLIN</text>
 
     <!-- Description -->
-    <text x="0" y="70" fill="#94a3b8" font-size="11.5" font-weight="400" class="sans">Multi-threaded chunked downloader &amp; zero-copy</text>
+    <text x="0" y="73" fill="#94a3b8" font-size="11.5" font-weight="400" class="sans">Multi-threaded chunked downloader &amp; zero-copy</text>
 
-    <!-- Telemetry Box -->
+    <!-- Frosted Glass Telemetry Box -->
     <g transform="translate(0, 92)">
-      <rect width="210" height="48" rx="6" fill="#140a04" stroke="#3d1d0c" stroke-width="1" />
+      <rect width="210" height="48" rx="7" fill="#140803" fill-opacity="0.8" stroke="url(#bmdGlassBorder)" stroke-width="0.9" filter="url(#glassRefractBmd)" />
+      <path d="M 6 2 L 204 2" stroke="#ffffff" stroke-opacity="0.3" stroke-width="0.6" stroke-linecap="round" />
       
       <text x="10" y="16" fill="#64748b" font-size="8.5" font-weight="600" letter-spacing="0.8" class="mono">TRANSFER BANDWIDTH</text>
       <text x="10" y="36" fill="#FFAE00" font-size="13" font-weight="700" class="mono">1.4 GB/s</text>
@@ -91,42 +137,47 @@
     </g>
   </g>
 
-  <!-- Right Visual: Multi-threaded Packet Streams & Rust Cog -->
+  <!-- Right Visual: Liquid-Metal Packet Accelerator and Supersonic Shockwaves -->
   <g transform="translate(345, 75)">
-    <!-- Rust Gear Outer Mechanism -->
-    <g class="rust-gear">
-      <circle cx="0" cy="0" r="42" fill="none" stroke="#FF6B00" stroke-width="1.2" stroke-opacity="0.4" stroke-dasharray="6 4" />
-      <polygon points="0,-45 4,-42 -4,-42" fill="#FFAE00" />
-      <polygon points="45,0 42,4 42,-4" fill="#FFAE00" />
-      <polygon points="0,45 4,42 -4,42" fill="#FFAE00" />
-      <polygon points="-45,0 -42,4 -42,-4" fill="#FFAE00" />
+    <!-- Expanding Supersonic Shockwaves -->
+    <circle cx="0" cy="0" r="18" fill="none" stroke="#FF6B00" stroke-width="1.4" class="shockwave-1" />
+    <circle cx="0" cy="0" r="18" fill="none" stroke="#FFAE00" stroke-width="1.2" class="shockwave-2" />
+
+    <!-- Rotating Rust Mechanical Glass Gear -->
+    <g class="gear-rust">
+      <circle cx="0" cy="0" r="44" fill="none" stroke="#FF6B00" stroke-width="1.4" stroke-opacity="0.5" stroke-dasharray="8 5" />
+      <polygon points="0,-47 4,-44 -4,-44" fill="#FFAE00" />
+      <polygon points="47,0 44,4 44,-4" fill="#FFAE00" />
+      <polygon points="0,47 4,44 -4,44" fill="#FFAE00" />
+      <polygon points="-47,0 -42,4 -42,-4" fill="#FFAE00" />
     </g>
 
-    <!-- 4 Parallel Chunk Streams -->
-    <g transform="translate(-55, -24)">
-      <!-- Stream 1 -->
-      <line x1="0" y1="0" x2="60" y2="0" stroke="#FF6B00" stroke-width="2" class="chunk-stream-1" />
-      <circle cx="64" cy="0" r="2.5" fill="#FFAE00" />
-      <!-- Stream 2 -->
-      <line x1="0" y1="14" x2="60" y2="14" stroke="#FFAE00" stroke-width="2" class="chunk-stream-2" />
-      <circle cx="64" cy="14" r="2.5" fill="#00F2FE" />
-      <!-- Stream 3 -->
-      <line x1="0" y1="28" x2="60" y2="28" stroke="#FF5722" stroke-width="2" class="chunk-stream-3" />
-      <circle cx="64" cy="28" r="2.5" fill="#FFAE00" />
-      <!-- Stream 4 -->
-      <line x1="0" y1="42" x2="60" y2="42" stroke="#00F2FE" stroke-width="2" class="chunk-stream-4" />
-      <circle cx="64" cy="42" r="2.5" fill="#FF6B00" />
+    <!-- 4 Tokio Parallel Packet Pipelines -->
+    <g transform="translate(-56, -24)">
+      <!-- Pipeline 1 -->
+      <line x1="0" y1="0" x2="60" y2="0" stroke="#FF6B00" stroke-width="2.2" class="c-pipe-1" />
+      <circle cx="64" cy="0" r="3" fill="#ffffff" filter="url(#softGlowBmd)" />
+      <!-- Pipeline 2 -->
+      <line x1="0" y1="14" x2="60" y2="14" stroke="#FFAE00" stroke-width="2.2" class="c-pipe-2" />
+      <circle cx="64" cy="14" r="3" fill="#00F2FE" />
+      <!-- Pipeline 3 -->
+      <line x1="0" y1="28" x2="60" y2="28" stroke="#FF5722" stroke-width="2.2" class="c-pipe-3" />
+      <circle cx="64" cy="28" r="3" fill="#ffffff" filter="url(#softGlowBmd)" />
+      <!-- Pipeline 4 -->
+      <line x1="0" y1="42" x2="60" y2="42" stroke="#00F2FE" stroke-width="2.2" class="c-pipe-4" />
+      <circle cx="64" cy="42" r="3" fill="#FF6B00" />
     </g>
 
-    <!-- Speed Core Engine Hub -->
-    <g class="speed-glow" transform="translate(25, 0)">
-      <circle cx="0" cy="0" r="18" fill="#1a0c04" stroke="#FF6B00" stroke-width="1.5" filter="url(#bmdGlow)" />
-      <!-- Lightning Bolt Bolt Icon -->
-      <path d="M 2 -9 L -6 1 L 0 1 L -2 9 L 6 -1 L 0 -1 Z" fill="url(#flameGrad)" />
+    <!-- Center Liquid-Metal Accelerator Hub -->
+    <g filter="url(#glassRefractBmd)" transform="translate(26, 0)">
+      <circle cx="0" cy="0" r="20" fill="#200d05" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1.6" />
+      <circle cx="0" cy="0" r="17" fill="#2b1106" stroke="#FF6B00" stroke-width="1.2" />
+      <!-- Kinetic Lightning Bolt Glyph -->
+      <path d="M 2 -10 L -7 1 L 0 1 L -2 10 L 7 -1 L 0 -1 Z" fill="url(#liquidMetal)" />
     </g>
 
-    <!-- Status Sub-label -->
-    <text x="0" y="55" fill="#64748b" font-size="8" font-weight="600" text-anchor="middle" class="mono">TOKIO ASYNC // ZERO HEAP</text>
+    <!-- Telemetry Coordinates -->
+    <text x="0" y="56" fill="#64748b" font-size="8" font-weight="600" text-anchor="middle" class="mono">TOKIO ASYNC // ZERO HEAP</text>
   </g>
 
   <!-- Bottom Tag Bar -->

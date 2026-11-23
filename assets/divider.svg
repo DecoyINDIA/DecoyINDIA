@@ -1,105 +1,146 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 32" width="900" height="32" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <linearGradient id="divLineL" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Liquid Glass Light Guide Tube Gradients -->
+    <linearGradient id="tubeFill" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#00F2FE" stop-opacity="0" />
-      <stop offset="60%" stop-color="#00F2FE" stop-opacity="0.5" />
-      <stop offset="100%" stop-color="#7F00FF" stop-opacity="0.9" />
-    </linearGradient>
-
-    <linearGradient id="divLineR" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7F00FF" stop-opacity="0.9" />
-      <stop offset="40%" stop-color="#00F2FE" stop-opacity="0.5" />
+      <stop offset="20%" stop-color="#00F2FE" stop-opacity="0.1" />
+      <stop offset="50%" stop-color="#7F00FF" stop-opacity="0.2" />
+      <stop offset="80%" stop-color="#00F5A0" stop-opacity="0.1" />
       <stop offset="100%" stop-color="#00F2FE" stop-opacity="0" />
     </linearGradient>
 
-    <linearGradient id="pulseGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Specular Bevel Line Gradient -->
+    <linearGradient id="specularLine" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#00F2FE" stop-opacity="0" />
+      <stop offset="30%" stop-color="#ffffff" stop-opacity="0.8" />
       <stop offset="50%" stop-color="#00F2FE" stop-opacity="1" />
+      <stop offset="70%" stop-color="#ffffff" stop-opacity="0.8" />
       <stop offset="100%" stop-color="#7F00FF" stop-opacity="0" />
     </linearGradient>
 
-    <filter id="divGlow" x="-20%" y="-40%" width="140%" height="180%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
+    <!-- Mercury Energy Packet Glow -->
+    <linearGradient id="mercuryGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="80%" stop-color="#00F2FE" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#7F00FF" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Chromatic Dispersion Fringe -->
+    <linearGradient id="dispersionGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF007F" />
+      <stop offset="35%" stop-color="#7F00FF" />
+      <stop offset="70%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#00F5A0" />
+    </linearGradient>
+
+    <!-- Specular Glass Filter -->
+    <filter id="glassRefractDiv" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feSpecularLighting in="blur" surfaceScale="2" specularConstant="1.5" specularExponent="24" lighting-color="#ffffff" result="specular">
+        <feDistantLight azimuth="225" elevation="45" />
+      </feSpecularLighting>
+      <feComposite in="SourceGraphic" in2="specular" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" />
+    </filter>
+
+    <filter id="softGlowDiv" x="-30%" y="-50%" width="160%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
   </defs>
 
   <style>
-    @keyframes pulseMoveL {
+    /* GSAP / Lenis Fluid Motion */
+    @keyframes mercuryFlowLeft {
       0% { transform: translateX(0); opacity: 0; }
-      30% { opacity: 1; }
-      80% { opacity: 1; }
-      100% { transform: translateX(400px); opacity: 0; }
+      20% { opacity: 0.9; }
+      80% { opacity: 0.9; }
+      100% { transform: translateX(390px); opacity: 0; }
     }
-    @keyframes pulseMoveR {
+    @keyframes mercuryFlowRight {
       0% { transform: translateX(0); opacity: 0; }
-      30% { opacity: 1; }
-      80% { opacity: 1; }
-      100% { transform: translateX(400px); opacity: 0; }
+      20% { opacity: 0.9; }
+      80% { opacity: 0.9; }
+      100% { transform: translateX(390px); opacity: 0; }
     }
-    @keyframes diamondBreathe {
-      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px #00F2FE); }
-      50% { transform: scale(1.15); filter: drop-shadow(0 0 8px #7F00FF); }
+    @keyframes diamondPulse {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 3px #00F2FE); }
+      50% { transform: scale(1.14); filter: drop-shadow(0 0 10px #7F00FF); }
     }
-    .diamond-center {
-      animation: diamondBreathe 3s ease-in-out infinite;
+    @keyframes prismFringeDiv {
+      0%, 100% { transform: translate(0, 0); opacity: 0.5; }
+      50% { transform: translate(1px, -1px); opacity: 0.85; }
+    }
+
+    .mercury-pulse-l {
+      animation: mercuryFlowLeft 4.3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    }
+    .mercury-pulse-r {
+      animation: mercuryFlowRight 4.3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    }
+    .center-glass-node {
+      animation: diamondPulse 3.7s cubic-bezier(0.25, 1, 0.5, 1) infinite;
       transform-origin: 450px 16px;
     }
-    .pulse-packet-l {
-      animation: pulseMoveL 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    }
-    .pulse-packet-r {
-      animation: pulseMoveR 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    .dispersion-shift {
+      animation: prismFringeDiv 2.8s ease-in-out infinite;
     }
   </style>
 
-  <!-- Left Main Line -->
-  <line x1="40" y1="16" x2="432" y2="16" stroke="url(#divLineL)" stroke-width="1.5" />
-  <!-- Left Accent Rail -->
-  <line x1="120" y1="12" x2="380" y2="12" stroke="#00F2FE" stroke-opacity="0.25" stroke-width="0.75" stroke-dasharray="8 12" />
-  <line x1="260" y1="20" x2="410" y2="20" stroke="#7F00FF" stroke-opacity="0.3" stroke-width="0.75" />
+  <!-- Cylindrical Liquid Glass Light Guide Chamber Left -->
+  <rect x="40" y="13" width="392" height="6" rx="3" fill="url(#tubeFill)" />
+  <line x1="40" y1="13" x2="432" y2="13" stroke="#ffffff" stroke-opacity="0.3" stroke-width="0.75" />
+  <line x1="40" y1="16" x2="432" y2="16" stroke="url(#specularLine)" stroke-width="1.2" />
+  <line x1="40" y1="19" x2="432" y2="19" stroke="#00F2FE" stroke-opacity="0.2" stroke-width="0.75" />
 
-  <!-- Left Circuit Nodes & Ticks -->
-  <circle cx="200" cy="16" r="1.5" fill="#00F2FE" opacity="0.6" />
-  <circle cx="320" cy="16" r="2" fill="#00F2FE" opacity="0.8" />
-  <rect x="420" y="14" width="4" height="4" fill="#7F00FF" opacity="0.8" />
-  <line x1="280" y1="13" x2="280" y2="19" stroke="#00F2FE" stroke-opacity="0.5" stroke-width="1" />
-  <line x1="360" y1="13" x2="360" y2="19" stroke="#7F00FF" stroke-opacity="0.6" stroke-width="1" />
+  <!-- Accent Optical Rails Left -->
+  <line x1="120" y1="10" x2="380" y2="10" stroke="#00F2FE" stroke-opacity="0.25" stroke-width="0.75" stroke-dasharray="6 10" />
+  <line x1="240" y1="22" x2="410" y2="22" stroke="#7F00FF" stroke-opacity="0.3" stroke-width="0.75" />
 
-  <!-- Traveling Light Pulse Left -->
-  <g class="pulse-packet-l">
-    <ellipse cx="40" cy="16" rx="28" ry="2.5" fill="url(#pulseGlow)" filter="url(#divGlow)" />
+  <!-- Optical Nodes and Ticks Left -->
+  <circle cx="180" cy="16" r="1.5" fill="#00F2FE" opacity="0.6" />
+  <circle cx="310" cy="16" r="2.5" fill="#ffffff" filter="url(#softGlowDiv)" />
+  <rect x="418" y="14" width="4" height="4" fill="#7F00FF" rx="1" />
+
+  <!-- Traveling Mercury Packet Left -->
+  <g class="mercury-pulse-l">
+    <ellipse cx="40" cy="16" rx="32" ry="2.8" fill="url(#mercuryGlow)" filter="url(#softGlowDiv)" />
   </g>
 
-  <!-- Right Main Line -->
-  <line x1="468" y1="16" x2="860" y2="16" stroke="url(#divLineR)" stroke-width="1.5" />
-  <!-- Right Accent Rail -->
-  <line x1="520" y1="12" x2="780" y2="12" stroke="#00F2FE" stroke-opacity="0.25" stroke-width="0.75" stroke-dasharray="8 12" />
-  <line x1="490" y1="20" x2="640" y2="20" stroke="#7F00FF" stroke-opacity="0.3" stroke-width="0.75" />
+  <!-- Cylindrical Liquid Glass Light Guide Chamber Right -->
+  <rect x="468" y="13" width="392" height="6" rx="3" fill="url(#tubeFill)" />
+  <line x1="468" y1="13" x2="860" y2="13" stroke="#ffffff" stroke-opacity="0.3" stroke-width="0.75" />
+  <line x1="468" y1="16" x2="860" y2="16" stroke="url(#specularLine)" stroke-width="1.2" />
+  <line x1="468" y1="19" x2="860" y2="19" stroke="#7F00FF" stroke-opacity="0.2" stroke-width="0.75" />
 
-  <!-- Right Circuit Nodes & Ticks -->
-  <circle cx="700" cy="16" r="1.5" fill="#00F2FE" opacity="0.6" />
-  <circle cx="580" cy="16" r="2" fill="#00F2FE" opacity="0.8" />
-  <rect x="476" y="14" width="4" height="4" fill="#7F00FF" opacity="0.8" />
-  <line x1="620" y1="13" x2="620" y2="19" stroke="#7F00FF" stroke-opacity="0.6" stroke-width="1" />
-  <line x1="540" y1="13" x2="540" y2="19" stroke="#00F2FE" stroke-opacity="0.5" stroke-width="1" />
+  <!-- Accent Optical Rails Right -->
+  <line x1="520" y1="10" x2="780" y2="10" stroke="#00F5A0" stroke-opacity="0.25" stroke-width="0.75" stroke-dasharray="6 10" />
+  <line x1="490" y1="22" x2="660" y2="22" stroke="#00F2FE" stroke-opacity="0.3" stroke-width="0.75" />
 
-  <!-- Traveling Light Pulse Right -->
-  <g class="pulse-packet-r">
-    <ellipse cx="468" cy="16" rx="28" ry="2.5" fill="url(#pulseGlow)" filter="url(#divGlow)" />
+  <!-- Optical Nodes and Ticks Right -->
+  <circle cx="720" cy="16" r="1.5" fill="#00F5A0" opacity="0.6" />
+  <circle cx="590" cy="16" r="2.5" fill="#ffffff" filter="url(#softGlowDiv)" />
+  <rect x="478" y="14" width="4" height="4" fill="#00F2FE" rx="1" />
+
+  <!-- Traveling Mercury Packet Right -->
+  <g class="mercury-pulse-r">
+    <ellipse cx="468" cy="16" rx="32" ry="2.8" fill="url(#mercuryGlow)" filter="url(#softGlowDiv)" />
   </g>
 
-  <!-- Center Diamond & Geometric Array -->
-  <g class="diamond-center">
-    <!-- Outer Diamond -->
-    <polygon points="450,4 462,16 450,28 438,16" fill="#0a0f1d" stroke="#00F2FE" stroke-width="1.5" />
-    <!-- Mid Diamond -->
-    <polygon points="450,8 458,16 450,24 442,16" fill="#131b2e" stroke="#7F00FF" stroke-width="1" />
-    <!-- Core Diamond Glow -->
-    <polygon points="450,12 454,16 450,20 446,16" fill="#00F2FE" />
+  <!-- Central Faceted Glass Diamond with Chromatic Dispersion -->
+  <g class="center-glass-node">
+    <!-- Chromatic dispersion underlay -->
+    <polygon points="450,3 463,16 450,29 437,16" fill="none" stroke="url(#dispersionGrad)" stroke-width="2" class="dispersion-shift" />
+    
+    <!-- Outer Specular Diamond -->
+    <polygon points="450,4 462,16 450,28 438,16" fill="#091222" stroke="#ffffff" stroke-width="1.2" filter="url(#glassRefractDiv)" />
+    <!-- Mid Prismatic Diamond -->
+    <polygon points="450,8 458,16 450,24 442,16" fill="#140a28" stroke="#00F2FE" stroke-width="1" />
+    <!-- Core Mercury Spark -->
+    <polygon points="450,12 454,16 450,20 446,16" fill="#ffffff" filter="url(#softGlowDiv)" />
   </g>
 
-  <!-- Micro Coordinate Ticks around Center -->
-  <circle cx="434" cy="16" r="1" fill="#00F2FE" opacity="0.5" />
-  <circle cx="466" cy="16" r="1" fill="#00F2FE" opacity="0.5" />
+  <!-- Micro Optical Reticles -->
+  <circle cx="432" cy="16" r="1.2" fill="#00F2FE" opacity="0.8" />
+  <circle cx="468" cy="16" r="1.2" fill="#7F00FF" opacity="0.8" />
 </svg>
