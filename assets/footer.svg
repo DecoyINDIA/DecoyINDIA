@@ -42,7 +42,7 @@
 
     <!-- Sweeping Aurora Horizon Gradient -->
     <linearGradient id="ftAuroraHorizon" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7F00FF" stop-opacity="0.16" />
+      <stop offset="0%" stop-color="#7F00FF" stop-opacity="0.14" />
       <stop offset="50%" stop-color="#00F2FE" stop-opacity="0.1" />
       <stop offset="100%" stop-color="#00F5A0" stop-opacity="0.08" />
     </linearGradient>
@@ -79,18 +79,6 @@
       0% { stroke-dashoffset: 480; }
       100% { stroke-dashoffset: 0; }
     }
-    @keyframes ftLedBreathe {
-      0%, 100% { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 2px #00F5A0); }
-      50% { opacity: 0.45; transform: scale(0.9); filter: drop-shadow(0 0 7px #00F5A0); }
-    }
-    @keyframes auroraHorizonWave {
-      0%, 100% { transform: translateY(0px) scale(1); }
-      50% { transform: translateY(-14px) scale(1.04); }
-    }
-    @keyframes prismFringeFt {
-      0%, 100% { transform: translate(0, 0); opacity: 0.5; }
-      50% { transform: translate(1px, -1px); opacity: 0.85; }
-    }
 
     .card-comet-ft {
       stroke-dasharray: 120 2060;
@@ -100,25 +88,16 @@
       stroke-dasharray: 70 140;
       animation: ecgTravelFlow 2.8s linear infinite;
     }
-    .ft-led {
-      animation: ftLedBreathe 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-      transform-origin: center;
-    }
-    .aurora-horizon {
-      animation: auroraHorizonWave 10.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-      transform-origin: 450px 180px;
-    }
-    .sig-fringe {
-      animation: prismFringeFt 3.8s ease-in-out infinite;
-    }
   </style>
 
   <!-- Background Canvas -->
   <rect width="900" height="220" rx="14" fill="url(#ftBg2)" />
   <rect width="900" height="220" rx="14" fill="url(#ftGrid2)" />
 
-  <!-- Sweeping Aurora Horizon -->
-  <path d="M -50 160 Q 220 90 480 190 T 950 140 L 950 220 L -50 220 Z" fill="url(#ftAuroraHorizon)" class="aurora-horizon" filter="url(#softGlowFt)" />
+  <!-- Sweeping Aurora Horizon (Stable Native Opacity Pulse) -->
+  <path d="M -50 160 Q 220 90 480 190 T 950 140 L 950 220 L -50 220 Z" fill="url(#ftAuroraHorizon)" filter="url(#softGlowFt)">
+    <animate attributeName="opacity" values="0.7; 1; 0.7" dur="10.5s" repeatCount="indefinite" />
+  </path>
 
   <!-- 1px Specular Border -->
   <rect width="900" height="220" rx="14" fill="none" stroke="url(#ftGlassBorder)" stroke-width="1.2" />
@@ -133,7 +112,7 @@
   <path d="M 886 194 L 886 206 L 874 206" fill="none" stroke="#7F00FF" stroke-width="1.6" />
 
   <!-- Ambient Light Orbs -->
-  <circle cx="160" cy="110" r="110" fill="#7F00FF" opacity="0.08" filter="url(#softGlowFt)" />
+  <circle cx="160" cy="110" r="110" fill="#7F00FF" opacity="0.07" filter="url(#softGlowFt)" />
   <circle cx="700" cy="110" r="110" fill="#00F2FE" opacity="0.06" filter="url(#softGlowFt)" />
 
   <!-- Left Content Block -->
@@ -141,17 +120,13 @@
     <!-- Eyebrow Tag -->
     <text x="0" y="10" fill="#64748b" font-size="9.5" font-weight="700" letter-spacing="2" class="mono">// DECOY // CLOSING TRANSMISSION</text>
 
-    <!-- Monumental Holographic Signature Title -->
+    <!-- Monumental Single-Layer Crisp Title (Zero Double-Vision) -->
     <g transform="translate(0, 44)">
-      <!-- Chromatic Underlayer -->
-      <text x="-1" y="1" fill="#FF007F" font-size="29" font-weight="900" letter-spacing="1.5" class="sans sig-fringe" opacity="0.4">BUILDING THE UNREASONABLE.</text>
-      <text x="1" y="-1" fill="#00F2FE" font-size="29" font-weight="900" letter-spacing="1.5" class="sans sig-fringe" opacity="0.4">BUILDING THE UNREASONABLE.</text>
-      <!-- Main Specular Title -->
-      <text x="0" y="0" fill="url(#ftHoloSig)" font-size="29" font-weight="900" letter-spacing="1.5" class="sans" filter="url(#glassRefractFt)">BUILDING THE UNREASONABLE.</text>
+      <text x="0" y="0" fill="url(#ftHoloSig)" font-size="28" font-weight="900" letter-spacing="1.5" class="sans" filter="url(#glassRefractFt)">BUILDING THE UNREASONABLE.</text>
     </g>
 
     <!-- Subtitle -->
-    <text x="0" y="70" fill="#94a3b8" font-size="12" font-weight="400" class="sans">Crafting high-leverage sovereign systems, agentic architectures &amp; resilient foundations.</text>
+    <text x="0" y="70" fill="#94a3b8" font-size="12" font-weight="400" class="sans">Crafting high-leverage sovereign systems, agentic architectures and resilient foundations.</text>
 
     <!-- Pulse ECG Heartbeat Trace with Traveling Laser -->
     <g transform="translate(0, 105)">
@@ -172,9 +147,11 @@
     <rect width="300" height="148" rx="8" fill="#060c18" fill-opacity="0.85" stroke="url(#ftGlassBorder)" stroke-width="1" filter="url(#glassRefractFt)" />
     <path d="M 8 2 L 292 2" stroke="#ffffff" stroke-opacity="0.4" stroke-width="0.7" stroke-linecap="round" />
     
-    <!-- Console Header -->
+    <!-- Console Header (Rock-Solid LED with pure opacity animation) -->
     <g transform="translate(16, 20)">
-      <circle cx="4" cy="5" r="4.5" fill="#00F5A0" class="ft-led" />
+      <circle cx="4" cy="5" r="4.5" fill="#00F5A0">
+        <animate attributeName="opacity" values="1; 0.35; 1" dur="2s" repeatCount="indefinite" />
+      </circle>
       <text x="16" y="9" fill="#00F5A0" font-size="10" font-weight="700" letter-spacing="1" class="mono">STATUS: ACTIVE // DEPLOYED</text>
     </g>
 

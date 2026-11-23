@@ -36,7 +36,7 @@
 
     <!-- Specular Glass Filter -->
     <filter id="glassRefractDiv" x="-20%" y="-40%" width="140%" height="180%">
-      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
       <feSpecularLighting in="blur" surfaceScale="2" specularConstant="1.5" specularExponent="24" lighting-color="#ffffff" result="specular">
         <feDistantLight azimuth="225" elevation="45" />
       </feSpecularLighting>
@@ -44,48 +44,10 @@
     </filter>
 
     <filter id="softGlowDiv" x="-30%" y="-50%" width="160%" height="200%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
   </defs>
-
-  <style>
-    /* GSAP / Lenis Fluid Motion */
-    @keyframes mercuryFlowLeft {
-      0% { transform: translateX(0); opacity: 0; }
-      20% { opacity: 0.9; }
-      80% { opacity: 0.9; }
-      100% { transform: translateX(390px); opacity: 0; }
-    }
-    @keyframes mercuryFlowRight {
-      0% { transform: translateX(0); opacity: 0; }
-      20% { opacity: 0.9; }
-      80% { opacity: 0.9; }
-      100% { transform: translateX(390px); opacity: 0; }
-    }
-    @keyframes diamondPulse {
-      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 3px #00F2FE); }
-      50% { transform: scale(1.14); filter: drop-shadow(0 0 10px #7F00FF); }
-    }
-    @keyframes prismFringeDiv {
-      0%, 100% { transform: translate(0, 0); opacity: 0.5; }
-      50% { transform: translate(1px, -1px); opacity: 0.85; }
-    }
-
-    .mercury-pulse-l {
-      animation: mercuryFlowLeft 4.3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-    }
-    .mercury-pulse-r {
-      animation: mercuryFlowRight 4.3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-    }
-    .center-glass-node {
-      animation: diamondPulse 3.7s cubic-bezier(0.25, 1, 0.5, 1) infinite;
-      transform-origin: 450px 16px;
-    }
-    .dispersion-shift {
-      animation: prismFringeDiv 2.8s ease-in-out infinite;
-    }
-  </style>
 
   <!-- Cylindrical Liquid Glass Light Guide Chamber Left -->
   <rect x="40" y="13" width="392" height="6" rx="3" fill="url(#tubeFill)" />
@@ -102,10 +64,11 @@
   <circle cx="310" cy="16" r="2.5" fill="#ffffff" filter="url(#softGlowDiv)" />
   <rect x="418" y="14" width="4" height="4" fill="#7F00FF" rx="1" />
 
-  <!-- Traveling Mercury Packet Left -->
-  <g class="mercury-pulse-l">
-    <ellipse cx="40" cy="16" rx="32" ry="2.8" fill="url(#mercuryGlow)" filter="url(#softGlowDiv)" />
-  </g>
+  <!-- Traveling Mercury Packet Left (Native SVG Animation - Zero Pivot Drift) -->
+  <ellipse cy="16" rx="32" ry="2.8" fill="url(#mercuryGlow)" filter="url(#softGlowDiv)">
+    <animate attributeName="cx" values="40; 430" dur="4.3s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.2; 0.8; 1" dur="4.3s" repeatCount="indefinite" />
+  </ellipse>
 
   <!-- Cylindrical Liquid Glass Light Guide Chamber Right -->
   <rect x="468" y="13" width="392" height="6" rx="3" fill="url(#tubeFill)" />
@@ -122,22 +85,27 @@
   <circle cx="590" cy="16" r="2.5" fill="#ffffff" filter="url(#softGlowDiv)" />
   <rect x="478" y="14" width="4" height="4" fill="#00F2FE" rx="1" />
 
-  <!-- Traveling Mercury Packet Right -->
-  <g class="mercury-pulse-r">
-    <ellipse cx="468" cy="16" rx="32" ry="2.8" fill="url(#mercuryGlow)" filter="url(#softGlowDiv)" />
-  </g>
+  <!-- Traveling Mercury Packet Right (Native SVG Animation - Zero Pivot Drift) -->
+  <ellipse cy="16" rx="32" ry="2.8" fill="url(#mercuryGlow)" filter="url(#softGlowDiv)">
+    <animate attributeName="cx" values="470; 860" dur="4.3s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.2; 0.8; 1" dur="4.3s" repeatCount="indefinite" />
+  </ellipse>
 
-  <!-- Central Faceted Glass Diamond with Chromatic Dispersion -->
-  <g class="center-glass-node">
-    <!-- Chromatic dispersion underlay -->
-    <polygon points="450,3 463,16 450,29 437,16" fill="none" stroke="url(#dispersionGrad)" stroke-width="2" class="dispersion-shift" />
-    
-    <!-- Outer Specular Diamond -->
-    <polygon points="450,4 462,16 450,28 438,16" fill="#091222" stroke="#ffffff" stroke-width="1.2" filter="url(#glassRefractDiv)" />
-    <!-- Mid Prismatic Diamond -->
-    <polygon points="450,8 458,16 450,24 442,16" fill="#140a28" stroke="#00F2FE" stroke-width="1" />
-    <!-- Core Mercury Spark -->
-    <polygon points="450,12 454,16 450,20 446,16" fill="#ffffff" filter="url(#softGlowDiv)" />
+  <!-- Central Faceted Glass Diamond (Strict Local (0,0) Origin) -->
+  <g transform="translate(450, 16)">
+    <!-- Scale Pulse around (0,0) -->
+    <g>
+      <animateTransform attributeName="transform" type="scale" values="1; 1.14; 1" keyTimes="0; 0.5; 1" dur="3.5s" repeatCount="indefinite" />
+      <!-- Chromatic dispersion underlay -->
+      <polygon points="0,-13 13,0 0,13 -13,0" fill="none" stroke="url(#dispersionGrad)" stroke-width="1.8" />
+      
+      <!-- Outer Specular Diamond -->
+      <polygon points="0,-12 12,0 0,12 -12,0" fill="#091222" stroke="#ffffff" stroke-width="1.2" filter="url(#glassRefractDiv)" />
+      <!-- Mid Prismatic Diamond -->
+      <polygon points="0,-8 8,0 0,8 -8,0" fill="#140a28" stroke="#00F2FE" stroke-width="1" />
+      <!-- Core Mercury Spark -->
+      <polygon points="0,-4 4,0 0,4 -4,0" fill="#ffffff" filter="url(#softGlowDiv)" />
+    </g>
   </g>
 
   <!-- Micro Optical Reticles -->

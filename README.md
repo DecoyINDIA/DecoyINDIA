@@ -50,17 +50,17 @@ Modern web and enterprise architectures have normalized massive memory footprint
 - **Cryptographic dual-consent ledgers** that eliminate institutional asymmetry in metropolitan tenancy and property registries.
 
 ```text
-┌─────────────────────────┬──────────────────────────────────────────────────────────────────┐
-│ ARCHITECTURAL CO-ORDINATE│ VALUE & VERIFIED SPECIFICATION                                   │
-├─────────────────────────┼──────────────────────────────────────────────────────────────────┤
-│ IDENTITY & HANDLE       │ Subham Jena (DecoyINDIA)                                         │
-│ PRIMARY AFFILIATION     │ Founder & Lead Architect // XolverLabs (https://xolver.com)      │
-│ CORE SPECIALIZATIONS    │ Low-Latency Concurrency · Agentic AI · Sovereign Trust Ledgers   │
-│ PRIMARY TOOLCHAINS      │ Rust · Java 21 (Virtual Threads) · Python (FastAPI/LangGraph)    │
-│ INTERFACE ENGINEERING   │ TypeScript · React/Next.js · LivelyUI Physics · Optical Glass    │
-│ OPERATIONAL INVARIANT   │ Zero Bloat · Deterministic Latencies · Local-First Sovereignty   │
-│ ACTIVE RESEARCH LAB     │ High-Throughput Packet Engines · Grounded Indic Speech Models    │
-└─────────────────────────┴──────────────────────────────────────────────────────────────────┘
+┌─────────────────────────┬────────────────────────────────────────────────────────┐
+│ ARCHITECTURAL CO-ORDINATE│ VALUE & VERIFIED SPECIFICATION                         │
+├─────────────────────────┼────────────────────────────────────────────────────────┤
+│ IDENTITY & HANDLE       │ Subham Jena (DecoyINDIA)                               │
+│ PRIMARY AFFILIATION     │ Founder & Lead Architect // XolverLabs                 │
+│ CORE SPECIALIZATIONS    │ Low-Latency Concurrency · Agentic AI · Sovereign Trust │
+│ PRIMARY TOOLCHAINS      │ Rust · Java 21 (Virtual Threads) · Python · TypeScript │
+│ INTERFACE ENGINEERING   │ TypeScript · React/Next.js · LivelyUI · Optical Glass  │
+│ OPERATIONAL INVARIANT   │ Zero Bloat · Deterministic Latencies · Local-First     │
+│ ACTIVE RESEARCH LAB     │ High-Throughput Packet Engines · Grounded Indic Speech │
+└─────────────────────────┴────────────────────────────────────────────────────────┘
 ```
 
 <div align="center">
@@ -136,11 +136,11 @@ A curated showcase of production platforms, developer runtimes, and open-source 
         <img src="assets/octapdf.svg" alt="OctaPDF Banner" width="100%" />
       </a>
       <br />
-      <h3>
-        <a href="https://github.com/DecoyINDIA/OctaPDF">OctaPDF</a>
+      <h3><a href="https://github.com/DecoyINDIA/OctaPDF">OctaPDF</a></h3>
+      <p>
         <a href="https://github.com/DecoyINDIA/OctaPDF/releases"><img src="https://img.shields.io/badge/Release-v0.46.2-E8501C?style=flat-square" alt="v0.46.2" /></a>
         <a href="https://github.com/DecoyINDIA/OctaPDF/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-00F5A0?style=flat-square" alt="MIT" /></a>
-      </h3>
+      </p>
       <p><b>High-Performance Local-First Document Workspace & Zero-Egress Engine</b></p>
       <p>
         A calm, air-gapped document workspace engineered in Java 21+ for reading, splitting, annotating, redacting, and converting high-volume PDF files. Built on the <i>Paper Desk</i> design system with 50+ Command Palette tools and absolute privacy guarantees.
@@ -162,11 +162,11 @@ A curated showcase of production platforms, developer runtimes, and open-source 
         <img src="assets/vaani.svg" alt="Vaani Banner" width="100%" />
       </a>
       <br />
-      <h3>
-        <a href="https://github.com/DecoyINDIA/vaani">Vaani</a>
+      <h3><a href="https://github.com/DecoyINDIA/vaani">Vaani</a></h3>
+      <p>
         <a href="https://github.com/DecoyINDIA/vaani"><img src="https://img.shields.io/badge/CI-191%20passing-00F5A0?style=flat-square" alt="CI Status" /></a>
         <a href="https://github.com/DecoyINDIA/vaani"><img src="https://img.shields.io/badge/Compliance-DPDP%202025-7F00FF?style=flat-square" alt="DPDP Act" /></a>
-      </h3>
+      </p>
       <p><b>Vernacular AI Front Desk & Autonomous Voice/WhatsApp Booking Employee</b></p>
       <p>
         The autonomous front office employee for Indian SMBs (clinics, salons, diagnostic labs, tuition institutes). Resolves incoming WhatsApp interactions and telephony calls in native Indic tongues with atomic calendar conflict prevention.
@@ -194,11 +194,11 @@ A curated showcase of production platforms, developer runtimes, and open-source 
         <img src="assets/settlr.svg" alt="Settlr Banner" width="100%" />
       </a>
       <br />
-      <h3>
-        <a href="https://github.com/DecoyINDIA/Settlr">Settlr</a>
+      <h3><a href="https://github.com/DecoyINDIA/Settlr">Settlr</a></h3>
+      <p>
         <img src="https://img.shields.io/badge/Cluster-Delhi%20Pilot-00F2FE?style=flat-square" alt="Delhi Pilot" />
         <img src="https://img.shields.io/badge/Trust-Dual--Consent-7F00FF?style=flat-square" alt="Dual Consent" />
-      </h3>
+      </p>
       <p><b>Ownership-Gated Rental Trust Platform with Cryptographic Dual-Consent Ledger</b></p>
       <p>
         A transformative trust infrastructure for metropolitan tenancy markets. Eliminates arbitrary security deposit deductions, fake broker inventory, and tenant-landlord friction through title-verified listings and dual-consent escrow milestones.
@@ -220,11 +220,11 @@ A curated showcase of production platforms, developer runtimes, and open-source 
         <img src="assets/sportshawk.svg" alt="SportsHawk Banner" width="100%" />
       </a>
       <br />
-      <h3>
-        <a href="https://github.com/DecoyINDIA/SportsHawk">SportsHawk</a>
+      <h3><a href="https://github.com/DecoyINDIA/SportsHawk">SportsHawk</a></h3>
+      <p>
         <img src="https://img.shields.io/badge/Access-100%25%20Free%20%7C%20No%20Ads-00F5A0?style=flat-square" alt="Free No Ads" />
         <img src="https://img.shields.io/badge/Languages-9%20Indic-FF6B00?style=flat-square" alt="9 Languages" />
-      </h3>
+      </p>
       <p><b>AI-Powered Grassroots Football Development Platform with Computer Vision Scoring</b></p>
       <p>
         Democratizing athletic talent development across India. Allows young footballers to record agility drills with any budget smartphone, receive instant on-device computer vision performance scoring, and generate verified Player Cards for scout discovery.
@@ -252,11 +252,11 @@ A curated showcase of production platforms, developer runtimes, and open-source 
         <img src="assets/bmd.svg" alt="BMD Banner" width="100%" />
       </a>
       <br />
-      <h3>
-        <a href="https://github.com/DecoyINDIA/BMD">BMD (Black Marlin Downloader)</a>
+      <h3><a href="https://github.com/DecoyINDIA/BMD">BMD (Black Marlin Downloader)</a></h3>
+      <p>
         <a href="https://github.com/DecoyINDIA/BMD/releases"><img src="https://img.shields.io/badge/Release-v1.0.0-00F2FE?style=flat-square" alt="v1.0.0" /></a>
         <a href="https://github.com/DecoyINDIA/BMD"><img src="https://img.shields.io/badge/Language-Rust-FF6B00?style=flat-square" alt="Rust" /></a>
-      </h3>
+      </p>
       <p><b>High-Throughput Multi-Threaded Chunked Download Manager for Desktop</b></p>
       <p>
         A blazing fast, native download acceleration engine written in Rust for Windows, Linux, and macOS. Saturates line-rate throughput via segmented byte streams with resilient resuming, browser extension dispatch, and torrent magnet ingestion.
@@ -278,11 +278,11 @@ A curated showcase of production platforms, developer runtimes, and open-source 
         <img src="assets/formspear.svg" alt="Formspear Banner" width="100%" />
       </a>
       <br />
-      <h3>
-        <a href="https://github.com/DecoyINDIA/Formspear">Formspear</a>
+      <h3><a href="https://github.com/DecoyINDIA/Formspear">Formspear</a></h3>
+      <p>
         <a href="https://github.com/DecoyINDIA/Formspear"><img src="https://img.shields.io/badge/Schema-39%20Tables-00F5A0?style=flat-square" alt="39 Tables" /></a>
         <a href="https://github.com/DecoyINDIA/Formspear"><img src="https://img.shields.io/badge/Queue-BullMQ-E100FF?style=flat-square" alt="BullMQ" /></a>
-      </h3>
+      </p>
       <p><b>Full-Stack Reactive Forms, Enterprise Surveys, Real-Time Analytics & AI Insights OS</b></p>
       <p>
         A battle-hardened feedback and telemetry platform built on an enterprise 39-table relational PostgreSQL schema baseline with 13 optimized indexes, real-time NPS tracking, BullMQ job queues, and fail-closed security contracts.
@@ -349,17 +349,10 @@ A cohesive technical matrix spanning low-level system runtimes, distributed clou
 Real-time telemetry and developer cadence across GitHub infrastructure:
 
 <div align="center">
-  <table border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td>
-        <img src="https://github-readme-stats.vercel.app/api?username=DecoyINDIA&show_icons=true&theme=tokyonight&hide_border=true&bg_color=060911&title_color=00F2FE&icon_color=00F5A0&text_color=94A3B8&count_private=true" alt="DecoyINDIA GitHub Stats" height="175" />
-      </td>
-      <td>
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DecoyINDIA&layout=compact&theme=tokyonight&hide_border=true&bg_color=060911&title_color=00F2FE&text_color=94A3B8" alt="Top Languages" height="175" />
-      </td>
-    </tr>
-  </table>
-  <br />
+  <img src="https://github-readme-stats.vercel.app/api?username=DecoyINDIA&show_icons=true&theme=tokyonight&hide_border=true&bg_color=060911&title_color=00F2FE&icon_color=00F5A0&text_color=94A3B8&count_private=true" alt="DecoyINDIA GitHub Stats" />
+  &nbsp;&nbsp;
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DecoyINDIA&layout=compact&theme=tokyonight&hide_border=true&bg_color=060911&title_color=00F2FE&text_color=94A3B8" alt="Top Languages" />
+  <br /><br />
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=DecoyINDIA&theme=tokyonight&hide_border=true&background=060911&ring=00F2FE&fire=FF6B00&currStreakLabel=00F5A0" alt="GitHub Streak" width="90%" />
 </div>
 

@@ -59,14 +59,6 @@
       0% { stroke-dashoffset: 1240; }
       100% { stroke-dashoffset: 0; }
     }
-    @keyframes shockwaveExpand {
-      0% { r: 18; opacity: 0.9; }
-      100% { r: 56; opacity: 0; }
-    }
-    @keyframes gearSpinSlow {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
     @keyframes chunkStreamSpeed {
       0% { stroke-dashoffset: 48; }
       100% { stroke-dashoffset: 0; }
@@ -75,18 +67,6 @@
     .card-comet-bmd {
       stroke-dasharray: 80 1160;
       animation: bmdCometRun 5.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-    }
-    .shockwave-1 {
-      animation: shockwaveExpand 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-      transform-origin: 345px 75px;
-    }
-    .shockwave-2 {
-      animation: shockwaveExpand 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite 1.2s;
-      transform-origin: 345px 75px;
-    }
-    .gear-rust {
-      animation: gearSpinSlow 18s linear infinite;
-      transform-origin: 345px 75px;
     }
     .c-pipe-1 { stroke-dasharray: 8 6; animation: chunkStreamSpeed 0.7s linear infinite; }
     .c-pipe-2 { stroke-dasharray: 6 5; animation: chunkStreamSpeed 0.5s linear infinite; }
@@ -123,28 +103,37 @@
     <text x="64" y="50" fill="#64748b" font-size="11" font-weight="600" class="mono">BLACK MARLIN</text>
 
     <!-- Description -->
-    <text x="0" y="73" fill="#94a3b8" font-size="11.5" font-weight="400" class="sans">Multi-threaded chunked downloader &amp; zero-copy</text>
+    <text x="0" y="73" fill="#94a3b8" font-size="11.5" font-weight="400" class="sans">Multi-threaded chunked downloader and zero-copy</text>
 
-    <!-- Frosted Glass Telemetry Box -->
+    <!-- Clean 2-Line Frosted Glass Telemetry Box (Zero Overlap) -->
     <g transform="translate(0, 92)">
       <rect width="210" height="48" rx="7" fill="#140803" fill-opacity="0.8" stroke="url(#bmdGlassBorder)" stroke-width="0.9" filter="url(#glassRefractBmd)" />
       <path d="M 6 2 L 204 2" stroke="#ffffff" stroke-opacity="0.3" stroke-width="0.6" stroke-linecap="round" />
       
-      <text x="10" y="16" fill="#64748b" font-size="8.5" font-weight="600" letter-spacing="0.8" class="mono">TRANSFER BANDWIDTH</text>
-      <text x="10" y="36" fill="#FFAE00" font-size="13" font-weight="700" class="mono">1.4 GB/s</text>
-      <text x="82" y="35" fill="#FF6B00" font-size="9.5" font-weight="600" class="mono">| 16x CHUNKS</text>
-      <text x="10" y="45" fill="#64748b" font-size="8" font-weight="500" class="mono">ZERO-COPY RING BUFFER</text>
+      <!-- Line 1: Label -->
+      <text x="12" y="18" fill="#64748b" font-size="8.5" font-weight="600" letter-spacing="0.8" class="mono">TRANSFER BANDWIDTH // RUST</text>
+      
+      <!-- Line 2: Value + Inline Secondary Tag -->
+      <text x="12" y="38" fill="#FFAE00" font-size="13" font-weight="700" class="mono">1.4 GB/s</text>
+      <text x="88" y="38" fill="#FF6B00" font-size="9.5" font-weight="600" class="mono">| 16x CHUNKS</text>
     </g>
   </g>
 
-  <!-- Right Visual: Liquid-Metal Packet Accelerator and Supersonic Shockwaves -->
+  <!-- Right Visual: Liquid-Metal Packet Accelerator (Strict Native (0,0,0) Pivot - Zero Orbit Bug) -->
   <g transform="translate(345, 75)">
-    <!-- Expanding Supersonic Shockwaves -->
-    <circle cx="0" cy="0" r="18" fill="none" stroke="#FF6B00" stroke-width="1.4" class="shockwave-1" />
-    <circle cx="0" cy="0" r="18" fill="none" stroke="#FFAE00" stroke-width="1.2" class="shockwave-2" />
+    <!-- Expanding Supersonic Shockwaves (Native Radius and Opacity) -->
+    <circle cx="0" cy="0" r="18" fill="none" stroke="#FF6B00" stroke-width="1.4">
+      <animate attributeName="r" values="18; 56" dur="2.4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.9; 0" dur="2.4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="18" fill="none" stroke="#FFAE00" stroke-width="1.2">
+      <animate attributeName="r" values="18; 56" begin="1.2s" dur="2.4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.9; 0" begin="1.2s" dur="2.4s" repeatCount="indefinite" />
+    </circle>
 
-    <!-- Rotating Rust Mechanical Glass Gear -->
-    <g class="gear-rust">
+    <!-- Rotating Rust Mechanical Glass Gear (Native SVG Rotate on (0,0,0)) -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="18s" repeatCount="indefinite" />
       <circle cx="0" cy="0" r="44" fill="none" stroke="#FF6B00" stroke-width="1.4" stroke-opacity="0.5" stroke-dasharray="8 5" />
       <polygon points="0,-47 4,-44 -4,-44" fill="#FFAE00" />
       <polygon points="47,0 44,4 44,-4" fill="#FFAE00" />
@@ -154,16 +143,15 @@
 
     <!-- 4 Tokio Parallel Packet Pipelines -->
     <g transform="translate(-56, -24)">
-      <!-- Pipeline 1 -->
       <line x1="0" y1="0" x2="60" y2="0" stroke="#FF6B00" stroke-width="2.2" class="c-pipe-1" />
       <circle cx="64" cy="0" r="3" fill="#ffffff" filter="url(#softGlowBmd)" />
-      <!-- Pipeline 2 -->
+      
       <line x1="0" y1="14" x2="60" y2="14" stroke="#FFAE00" stroke-width="2.2" class="c-pipe-2" />
       <circle cx="64" cy="14" r="3" fill="#00F2FE" />
-      <!-- Pipeline 3 -->
+      
       <line x1="0" y1="28" x2="60" y2="28" stroke="#FF5722" stroke-width="2.2" class="c-pipe-3" />
       <circle cx="64" cy="28" r="3" fill="#ffffff" filter="url(#softGlowBmd)" />
-      <!-- Pipeline 4 -->
+      
       <line x1="0" y1="42" x2="60" y2="42" stroke="#00F2FE" stroke-width="2.2" class="c-pipe-4" />
       <circle cx="64" cy="42" r="3" fill="#FF6B00" />
     </g>
@@ -172,7 +160,6 @@
     <g filter="url(#glassRefractBmd)" transform="translate(26, 0)">
       <circle cx="0" cy="0" r="20" fill="#200d05" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1.6" />
       <circle cx="0" cy="0" r="17" fill="#2b1106" stroke="#FF6B00" stroke-width="1.2" />
-      <!-- Kinetic Lightning Bolt Glyph -->
       <path d="M 2 -10 L -7 1 L 0 1 L -2 10 L 7 -1 L 0 -1 Z" fill="url(#liquidMetal)" />
     </g>
 
