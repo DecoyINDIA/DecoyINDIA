@@ -64,6 +64,8 @@ Built with advocates' actual days in mind: a desktop app in chambers, a phone ap
 
 ## Tools I reach for
 
+<img src="assets/stack.svg" alt="Rust, Java, Python, TypeScript, Postgres, Next.js, Flutter, Tauri." width="100%" />
+
 Rust, Java, Python and TypeScript. Postgres for almost everything. Next.js, Flutter, Expo and Tauri for the parts people touch. Docker to ship it.
 
 <br />
