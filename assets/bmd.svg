@@ -1,130 +1,73 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 200" width="440" height="200" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 220" width="440" height="220" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <!-- Background Canvas -->
-    <linearGradient id="bmdBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#100703" />
-      <stop offset="50%" stop-color="#1A0C06" />
-      <stop offset="100%" stop-color="#080301" />
+    <linearGradient id="bBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090B10" />
+      <stop offset="100%" stop-color="#0E1119" />
     </linearGradient>
-
-    <!-- 1px Hairline Border -->
-    <linearGradient id="bmdBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FF6B00" stop-opacity="0.8" />
-      <stop offset="50%" stop-color="#FFAE00" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#00F2FE" stop-opacity="0.4" />
-    </linearGradient>
-
-    <!-- Lightning Core Gradient -->
-    <linearGradient id="flameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FF5722" />
-      <stop offset="50%" stop-color="#FF6B00" />
-      <stop offset="100%" stop-color="#FFAE00" />
-    </linearGradient>
-
-    <!-- Precision Dot Grid -->
-    <pattern id="bmdGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="0.75" fill="#2E1408" />
+    <pattern id="bGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#141824" stroke-width="0.75" />
     </pattern>
+    <linearGradient id="streamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF5522" />
+      <stop offset="50%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
   </defs>
-
   <style>
-    .mono { font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace; }
-    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-
-    @keyframes streamFlow {
-      0% { stroke-dashoffset: 40; }
-      100% { stroke-dashoffset: 0; }
+    .mono { font-family: 'SF Mono', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', 'Inter', sans-serif; }
+    @keyframes streamProgress {
+      0% { width: 0%; opacity: 0.2; }
+      50% { width: 75%; opacity: 1; }
+      100% { width: 100%; opacity: 0.8; }
     }
-    .pipe-1 { stroke-dasharray: 8 6; animation: streamFlow 0.8s linear infinite; }
-    .pipe-2 { stroke-dasharray: 6 5; animation: streamFlow 0.6s linear infinite; }
-    .pipe-3 { stroke-dasharray: 10 7; animation: streamFlow 1.0s linear infinite; }
-    .pipe-4 { stroke-dasharray: 5 4; animation: streamFlow 0.7s linear infinite; }
+    .chunk-fill-1 { animation: streamProgress 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+    .chunk-fill-2 { animation: streamProgress 3.6s cubic-bezier(0.4, 0, 0.2, 1) infinite 0.4s; }
+    .chunk-fill-3 { animation: streamProgress 2.9s cubic-bezier(0.4, 0, 0.2, 1) infinite 0.8s; }
   </style>
 
-  <!-- Background Surface -->
-  <rect width="440" height="200" rx="12" fill="url(#bmdBg)" />
-  <rect width="440" height="200" rx="12" fill="url(#bmdGrid)" />
-  <rect width="440" height="200" rx="12" fill="none" stroke="url(#bmdBorder)" stroke-width="1.2" />
+  <rect width="440" height="220" rx="8" fill="url(#bBg)" />
+  <rect width="440" height="220" rx="8" fill="url(#bGrid)" />
+  <rect width="440" height="220" rx="8" fill="none" stroke="#1E2435" stroke-width="1.2" />
 
-  <!-- Corner Brackets -->
-  <path d="M 12 24 L 12 12 L 24 12" fill="none" stroke="#FF6B00" stroke-width="1.5" />
-  <path d="M 428 24 L 428 12 L 416 12" fill="none" stroke="#FFAE00" stroke-width="1.5" />
-  <path d="M 12 176 L 12 188 L 24 188" fill="none" stroke="#FF5722" stroke-width="1.5" />
-  <path d="M 428 176 L 428 188 L 416 188" fill="none" stroke="#00F2FE" stroke-width="1.5" />
-
-  <!-- Left Header and Info -->
+  <!-- Header Section -->
   <g transform="translate(24, 28)">
-    <!-- Category Pill -->
-    <rect width="144" height="20" rx="4" fill="#240E04" stroke="#7C2D12" stroke-width="1" />
-    <text x="72" y="14" fill="#FFAE00" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1" class="mono">RUST // HIGH-THROUGHPUT</text>
+    <circle cx="4" cy="4" r="3.5" fill="#38BDF8" />
+    <text x="14" y="8" fill="#94A3B8" font-size="9" font-weight="600" letter-spacing="1.5" class="mono">SYSTEM // 03 · SYSTEMS CONCURRENCY</text>
+    <text x="0" y="32" fill="#F8FAFC" font-size="18" font-weight="700" letter-spacing="-0.3" class="sans">BMD (Black Marlin)</text>
+    <text x="194" y="32" fill="#38BDF8" font-size="11" font-weight="600" letter-spacing="1" class="mono">[RUST ENGINE]</text>
+  </g>
 
-    <!-- Title -->
-    <text x="0" y="48" fill="#FFFFFF" font-size="22" font-weight="800" letter-spacing="0.5" class="sans">BMD</text>
-    <text x="58" y="47" fill="#64748B" font-size="11" font-weight="600" class="mono">BLACK MARLIN</text>
+  <!-- 8-Chunk Parallel Stream Saturation Deck -->
+  <g transform="translate(24, 82)">
+    <text x="0" y="0" fill="#64748B" font-size="8.5" font-weight="600" letter-spacing="1.2" class="mono">PARALLEL HTTP RANGE CHUNKS // LINE-RATE</text>
+    <text x="280" y="0" fill="#38BDF8" font-size="8.5" font-weight="600" letter-spacing="0.8" class="mono">SATURATION: 100%</text>
 
-    <!-- Description -->
-    <text x="0" y="68" fill="#94A3B8" font-size="11.5" font-weight="400" class="sans">Multi-threaded chunked downloader and zero-copy</text>
+    <!-- Chunk Rails (Visualizing 8 Segmented byte streams) -->
+    <g transform="translate(0, 16)">
+      <!-- Chunk Track 1 -->
+      <rect x="0" y="0" width="392" height="7" rx="3.5" fill="#141824" />
+      <rect x="0" y="0" width="310" height="7" rx="3.5" fill="url(#streamGrad)" opacity="0.85" />
 
-    <!-- Clean 2-Line Telemetry Box (Zero Overlap) -->
-    <g transform="translate(0, 88)">
-      <rect width="210" height="46" rx="6" fill="#130803" stroke="#371808" stroke-width="1" />
-      <text x="12" y="17" fill="#64748B" font-size="8.5" font-weight="600" letter-spacing="0.8" class="mono">TRANSFER BANDWIDTH // RUST</text>
-      <text x="12" y="35" fill="#FFAE00" font-size="13" font-weight="700" class="mono">1.4 GB/s</text>
-      <text x="86" y="35" fill="#FF6B00" font-size="9.5" font-weight="600" class="mono">| 16x CHUNKS</text>
+      <!-- Chunk Track 2 -->
+      <rect x="0" y="12" width="392" height="7" rx="3.5" fill="#141824" />
+      <rect x="0" y="12" width="260" height="7" rx="3.5" fill="#38BDF8" opacity="0.75" />
+
+      <!-- Chunk Track 3 -->
+      <rect x="0" y="24" width="392" height="7" rx="3.5" fill="#141824" />
+      <rect x="0" y="24" width="365" height="7" rx="3.5" fill="#FF5522" opacity="0.75" />
+
+      <!-- Chunk Track 4 -->
+      <rect x="0" y="36" width="392" height="7" rx="3.5" fill="#141824" />
+      <rect x="0" y="36" width="290" height="7" rx="3.5" fill="#10B981" opacity="0.75" />
     </g>
   </g>
 
-  <!-- Right Visual: Liquid-Metal Packet Accelerator (Pure Vector) -->
-  <g transform="translate(345, 75)">
-    <!-- Expanding Supersonic Shockwaves (Concentric) -->
-    <circle cx="0" cy="0" r="16" fill="none" stroke="#FF6B00" stroke-width="1.4">
-      <animate attributeName="r" values="16; 52" dur="2.2s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0.8; 0" dur="2.2s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="0" cy="0" r="16" fill="none" stroke="#FFAE00" stroke-width="1.2">
-      <animate attributeName="r" values="16; 52" begin="1.1s" dur="2.2s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0.8; 0" begin="1.1s" dur="2.2s" repeatCount="indefinite" />
-    </circle>
-
-    <!-- Rotating Rust Vector Gear (Native (0,0,0) Rotation - Zero Drift) -->
-    <g>
-      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="16s" repeatCount="indefinite" />
-      <circle cx="0" cy="0" r="42" fill="none" stroke="#FF6B00" stroke-width="1.4" stroke-opacity="0.4" stroke-dasharray="6 4" />
-      <polygon points="0,-45 4,-42 -4,-42" fill="#FFAE00" />
-      <polygon points="45,0 42,4 42,-4" fill="#FFAE00" />
-      <polygon points="0,45 4,42 -4,42" fill="#FFAE00" />
-      <polygon points="-45,0 -42,4 -42,-4" fill="#FFAE00" />
-    </g>
-
-    <!-- 4 High-Throughput Packet Streams -->
-    <g transform="translate(-56, -24)">
-      <line x1="0" y1="0" x2="60" y2="0" stroke="#FF6B00" stroke-width="2" class="pipe-1" />
-      <circle cx="64" cy="0" r="2.5" fill="#FFAE00" />
-      
-      <line x1="0" y1="14" x2="60" y2="14" stroke="#FFAE00" stroke-width="2" class="pipe-2" />
-      <circle cx="64" cy="14" r="2.5" fill="#00F2FE" />
-      
-      <line x1="0" y1="28" x2="60" y2="28" stroke="#FF5722" stroke-width="2" class="pipe-3" />
-      <circle cx="64" cy="28" r="2.5" fill="#FFAE00" />
-      
-      <line x1="0" y1="42" x2="60" y2="42" stroke="#00F2FE" stroke-width="2" class="pipe-4" />
-      <circle cx="64" cy="42" r="2.5" fill="#FF6B00" />
-    </g>
-
-    <!-- Center Accelerator Hub -->
-    <g transform="translate(24, 0)">
-      <circle cx="0" cy="0" r="18" fill="#1C0D05" stroke="#FF6B00" stroke-width="1.6" />
-      <path d="M 2 -9 L -6 1 L 0 1 L -2 9 L 6 -1 L 0 -1 Z" fill="url(#flameGrad)" />
-    </g>
-
-    <!-- Telemetry Coordinates -->
-    <text x="0" y="55" fill="#64748B" font-size="8" font-weight="600" text-anchor="middle" class="mono">TOKIO ASYNC // ZERO HEAP</text>
-  </g>
-
-  <!-- Bottom Tag Bar -->
-  <g transform="translate(24, 172)">
-    <circle cx="4" cy="5" r="3" fill="#FF6B00" />
-    <text x="14" y="8" fill="#64748B" font-size="9" font-weight="600" class="mono">RUNTIME: RUST NATIVE</text>
-    <text x="175" y="8" fill="#64748B" font-size="9" font-weight="600" class="mono">PARALLEL CHUNKS</text>
+  <!-- Technical Spec Footer -->
+  <g transform="translate(24, 180)">
+    <line x1="0" y1="0" x2="392" y2="0" stroke="#1B2130" stroke-width="1" />
+    <text x="0" y="18" fill="#64748B" font-size="8.5" font-weight="500" class="mono">
+      Rust · Tokio Async · Parallel Byte Streams · Torrent Magnets · Zero-Bloat GUI
+    </text>
   </g>
 </svg>

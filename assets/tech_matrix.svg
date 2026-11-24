@@ -1,197 +1,65 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" width="900" height="260" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 240" width="920" height="240" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <!-- Background Canvas -->
     <linearGradient id="tmBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#080B12" />
-      <stop offset="50%" stop-color="#0A0E18" />
-      <stop offset="100%" stop-color="#06080E" />
+      <stop offset="0%" stop-color="#080A0F" />
+      <stop offset="100%" stop-color="#0C0E17" />
     </linearGradient>
-
-    <!-- 1px Hairline Border -->
-    <linearGradient id="tmBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.6" />
-      <stop offset="33%" stop-color="#7F00FF" stop-opacity="0.3" />
-      <stop offset="66%" stop-color="#FF6B00" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#00F5A0" stop-opacity="0.5" />
-    </linearGradient>
-
-    <!-- Column Card Gradients -->
-    <linearGradient id="colGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#140904" />
-      <stop offset="100%" stop-color="#0A0603" />
-    </linearGradient>
-    <linearGradient id="colGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#08101C" />
-      <stop offset="100%" stop-color="#050A12" />
-    </linearGradient>
-    <linearGradient id="colGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#10081C" />
-      <stop offset="100%" stop-color="#080510" />
-    </linearGradient>
-    <linearGradient id="colGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#06140E" />
-      <stop offset="100%" stop-color="#040C08" />
-    </linearGradient>
-
-    <!-- Precision Dot Grid -->
     <pattern id="tmGrid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="0.75" fill="#162338" />
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#141824" stroke-width="0.75" />
     </pattern>
   </defs>
-
   <style>
-    .mono { font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace; }
-    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-
-    @keyframes busFlow {
-      0% { stroke-dashoffset: 120; }
-      100% { stroke-dashoffset: 0; }
+    .mono { font-family: 'SF Mono', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', 'Inter', sans-serif; }
+    @keyframes pulseWire {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -40; }
     }
-    .bus-line {
-      stroke-dasharray: 6 10;
-      animation: busFlow 1.8s linear infinite;
-    }
+    .wire-flow { stroke-dasharray: 4 6; animation: pulseWire 2.5s linear infinite; }
   </style>
 
-  <!-- Background Surface -->
-  <rect width="900" height="260" rx="14" fill="url(#tmBg)" />
-  <rect width="900" height="260" rx="14" fill="url(#tmGrid)" />
-  <rect width="900" height="260" rx="14" fill="none" stroke="url(#tmBorder)" stroke-width="1.2" />
+  <rect width="920" height="240" rx="8" fill="url(#tmBg)" />
+  <rect width="920" height="240" rx="8" fill="url(#tmGrid)" />
+  <rect width="920" height="240" rx="8" fill="none" stroke="#1D2232" stroke-width="1.2" />
 
-  <!-- Corner Brackets -->
-  <path d="M 14 26 L 14 14 L 26 14" fill="none" stroke="#00F2FE" stroke-width="1.6" />
-  <path d="M 886 26 L 886 14 L 874 14" fill="none" stroke="#00F5A0" stroke-width="1.6" />
-  <path d="M 14 234 L 14 246 L 26 246" fill="none" stroke="#7F00FF" stroke-width="1.6" />
-  <path d="M 886 234 L 886 246 L 874 246" fill="none" stroke="#FF6B00" stroke-width="1.6" />
-
-  <!-- Header Bar -->
-  <g transform="translate(32, 28)">
-    <circle cx="5" cy="5" r="4" fill="#00F2FE" />
-    <text x="18" y="9" fill="#00F2FE" font-size="11" font-weight="700" letter-spacing="1.5" class="mono">TECHNOLOGY ECOSYSTEM AND ARCHITECTURAL MATRIX</text>
-    <text x="560" y="9" fill="#64748B" font-size="9.5" font-weight="600" class="mono">// 4 CORE SPECIALIZATIONS // HIGH-CONCURRENCY STACK</text>
+  <!-- Section Eyebrow -->
+  <g transform="translate(36, 26)">
+    <circle cx="4" cy="4" r="3" fill="#FF5522" />
+    <text x="14" y="8" fill="#94A3B8" font-size="9.5" font-weight="600" letter-spacing="1.5" class="mono">SYSTEMS TOPOLOGY // ARCHITECTURAL STACK MATRIX</text>
   </g>
 
-  <!-- Data Bus Connecting Columns -->
-  <line x1="45" y1="52" x2="855" y2="52" stroke="#16253C" stroke-width="1" />
-  <line x1="45" y1="52" x2="855" y2="52" stroke="#00F2FE" stroke-width="1.2" stroke-opacity="0.8" class="bus-line" />
+  <!-- 4 Architectural Layers (2x2 Grid with Precision 1px Borders) -->
+  <g transform="translate(36, 52)">
+    <!-- Column 1, Row 1: Low-Latency Systems -->
+    <g transform="translate(0, 0)">
+      <rect width="412" height="72" rx="4" fill="#0C0F17" stroke="#1E2436" stroke-width="1" />
+      <text x="16" y="20" fill="#FF5522" font-size="9" font-weight="700" letter-spacing="1.2" class="mono">LAYER 01 // SYSTEMS &amp; RUNTIMES</text>
+      <text x="16" y="38" fill="#F1F5F9" font-size="13" font-weight="600" class="sans">Rust · Java 21 (Loom) · C/C++ · Tokio Async</text>
+      <text x="16" y="56" fill="#64748B" font-size="11" font-weight="400" class="sans">Lock-free queues, chunked byte allocation, memory-mapped I/O, zero-egress sandboxes.</text>
+    </g>
 
-  <!-- Column 1: Low-Latency Systems -->
-  <g transform="translate(32, 64)">
-    <rect width="195" height="170" rx="8" fill="url(#colGrad1)" stroke="#FF6B00" stroke-opacity="0.35" stroke-width="1" />
-    <g transform="translate(14, 16)">
-      <circle cx="4" cy="5" r="3.5" fill="#FF6B00" />
-      <text x="14" y="9" fill="#FFAE00" font-size="10.5" font-weight="700" letter-spacing="0.8" class="mono">SYSTEMS CORE</text>
-      <text x="0" y="24" fill="#FFFFFF" font-size="13" font-weight="800" class="sans">Low-Latency and IO</text>
+    <!-- Column 2, Row 1: Vernacular AI -->
+    <g transform="translate(436, 0)">
+      <rect width="412" height="72" rx="4" fill="#0C0F17" stroke="#1E2436" stroke-width="1" />
+      <text x="16" y="20" fill="#38BDF8" font-size="9" font-weight="700" letter-spacing="1.2" class="mono">LAYER 02 // VERNACULAR AI &amp; SPEECH</text>
+      <text x="16" y="38" fill="#F1F5F9" font-size="13" font-weight="600" class="sans">LangGraph · FastAPI · Indic Whisper · Atlas Vector</text>
+      <text x="16" y="56" fill="#64748B" font-size="11" font-weight="400" class="sans">Multi-agent DAG state machines, discrete token grounding, sub-3s voice dispatch.</text>
     </g>
-    <g transform="translate(14, 52)">
-      <g transform="translate(0, 0)">
-        <rect width="167" height="24" rx="4" fill="#1A0D06" stroke="#3D1C0C" stroke-width="0.8" />
-        <text x="8" y="16" fill="#FFAE00" font-size="10" font-weight="700" class="mono">Rust</text>
-        <text x="55" y="15" fill="#94A3B8" font-size="9" class="mono">Tokio / Zero-Copy</text>
-      </g>
-      <g transform="translate(0, 29)">
-        <rect width="167" height="24" rx="4" fill="#1A0D06" stroke="#3D1C0C" stroke-width="0.8" />
-        <text x="8" y="16" fill="#FF6B00" font-size="10" font-weight="700" class="mono">Java 21+</text>
-        <text x="65" y="15" fill="#94A3B8" font-size="9" class="mono">Virtual Threads</text>
-      </g>
-      <g transform="translate(0, 58)">
-        <rect width="167" height="24" rx="4" fill="#1A0D06" stroke="#3D1C0C" stroke-width="0.8" />
-        <text x="8" y="16" fill="#FFAE00" font-size="10" font-weight="700" class="mono">C / C++</text>
-        <text x="60" y="15" fill="#94A3B8" font-size="9" class="mono">Memory Protocols</text>
-      </g>
-      <g transform="translate(0, 87)">
-        <text x="0" y="15" fill="#64748B" font-size="8.5" font-weight="600" class="mono">METRIC: sub-millisecond IO</text>
-      </g>
-    </g>
-  </g>
 
-  <!-- Column 2: Interfaces and Frontend -->
-  <g transform="translate(247, 64)">
-    <rect width="195" height="170" rx="8" fill="url(#colGrad2)" stroke="#00F2FE" stroke-opacity="0.35" stroke-width="1" />
-    <g transform="translate(14, 16)">
-      <circle cx="4" cy="5" r="3.5" fill="#00F2FE" />
-      <text x="14" y="9" fill="#00F2FE" font-size="10.5" font-weight="700" letter-spacing="0.8" class="mono">INTERFACES</text>
-      <text x="0" y="24" fill="#FFFFFF" font-size="13" font-weight="800" class="sans">Kinetic Telemetry</text>
+    <!-- Column 1, Row 2: Persistence & Ledgers -->
+    <g transform="translate(0, 88)">
+      <rect width="412" height="72" rx="4" fill="#0C0F17" stroke="#1E2436" stroke-width="1" />
+      <text x="16" y="20" fill="#10B981" font-size="9" font-weight="700" letter-spacing="1.2" class="mono">LAYER 03 // PERSISTENCE &amp; TRUST LEDGERS</text>
+      <text x="16" y="38" fill="#F1F5F9" font-size="13" font-weight="600" class="sans">PostgreSQL Strict · MongoDB Replica · BullMQ · Redis</text>
+      <text x="16" y="56" fill="#64748B" font-size="11" font-weight="400" class="sans">39-table relational migrations, advisory locks, cryptographic dual-consent escrows.</text>
     </g>
-    <g transform="translate(14, 52)">
-      <g transform="translate(0, 0)">
-        <rect width="167" height="24" rx="4" fill="#0A1626" stroke="#163454" stroke-width="0.8" />
-        <text x="8" y="16" fill="#00F2FE" font-size="10" font-weight="700" class="mono">TypeScript</text>
-        <text x="80" y="15" fill="#94A3B8" font-size="9" class="mono">Strict Typing</text>
-      </g>
-      <g transform="translate(0, 29)">
-        <rect width="167" height="24" rx="4" fill="#0A1626" stroke="#163454" stroke-width="0.8" />
-        <text x="8" y="16" fill="#38BDF8" font-size="10" font-weight="700" class="mono">Next.js 15</text>
-        <text x="75" y="15" fill="#94A3B8" font-size="9" class="mono">App Router / SSR</text>
-      </g>
-      <g transform="translate(0, 58)">
-        <rect width="167" height="24" rx="4" fill="#0A1626" stroke="#163454" stroke-width="0.8" />
-        <text x="8" y="16" fill="#00F2FE" font-size="10" font-weight="700" class="mono">Tailwind</text>
-        <text x="70" y="15" fill="#94A3B8" font-size="9" class="mono">Precision Tokens</text>
-      </g>
-      <g transform="translate(0, 87)">
-        <text x="0" y="15" fill="#64748B" font-size="8.5" font-weight="600" class="mono">METRIC: 60fps kinetic visual UI</text>
-      </g>
-    </g>
-  </g>
 
-  <!-- Column 3: AI and Agentic Intelligence -->
-  <g transform="translate(462, 64)">
-    <rect width="195" height="170" rx="8" fill="url(#colGrad3)" stroke="#7F00FF" stroke-opacity="0.35" stroke-width="1" />
-    <g transform="translate(14, 16)">
-      <circle cx="4" cy="5" r="3.5" fill="#E100FF" />
-      <text x="14" y="9" fill="#C084FC" font-size="10.5" font-weight="700" letter-spacing="0.8" class="mono">AGENTIC INTELLIGENCE</text>
-      <text x="0" y="24" fill="#FFFFFF" font-size="13" font-weight="800" class="sans">Voice, CV and LLM</text>
-    </g>
-    <g transform="translate(14, 52)">
-      <g transform="translate(0, 0)">
-        <rect width="167" height="24" rx="4" fill="#160C26" stroke="#331A54" stroke-width="0.8" />
-        <text x="8" y="16" fill="#C084FC" font-size="10" font-weight="700" class="mono">Python</text>
-        <text x="60" y="15" fill="#94A3B8" font-size="9" class="mono">FastAPI / PyTorch</text>
-      </g>
-      <g transform="translate(0, 29)">
-        <rect width="167" height="24" rx="4" fill="#160C26" stroke="#331A54" stroke-width="0.8" />
-        <text x="8" y="16" fill="#E100FF" font-size="10" font-weight="700" class="mono">Voice / CV</text>
-        <text x="75" y="15" fill="#94A3B8" font-size="9" class="mono">Whisper / YOLO</text>
-      </g>
-      <g transform="translate(0, 58)">
-        <rect width="167" height="24" rx="4" fill="#160C26" stroke="#331A54" stroke-width="0.8" />
-        <text x="8" y="16" fill="#A855F7" font-size="10" font-weight="700" class="mono">Agentic</text>
-        <text x="65" y="15" fill="#94A3B8" font-size="9" class="mono">Tool Use / Swarms</text>
-      </g>
-      <g transform="translate(0, 87)">
-        <text x="0" y="15" fill="#64748B" font-size="8.5" font-weight="600" class="mono">METRIC: 140ms voice inference</text>
-      </g>
-    </g>
-  </g>
-
-  <!-- Column 4: Cloud and Data Sovereignty -->
-  <g transform="translate(677, 64)">
-    <rect width="191" height="170" rx="8" fill="url(#colGrad4)" stroke="#00F5A0" stroke-opacity="0.35" stroke-width="1" />
-    <g transform="translate(14, 16)">
-      <circle cx="4" cy="5" r="3.5" fill="#00F5A0" />
-      <text x="14" y="9" fill="#00F5A0" font-size="10.5" font-weight="700" letter-spacing="0.8" class="mono">DATA AND INFRA</text>
-      <text x="0" y="24" fill="#FFFFFF" font-size="13" font-weight="800" class="sans">Sovereign Cloud</text>
-    </g>
-    <g transform="translate(14, 52)">
-      <g transform="translate(0, 0)">
-        <rect width="163" height="24" rx="4" fill="#091A14" stroke="#164A38" stroke-width="0.8" />
-        <text x="8" y="16" fill="#00F5A0" font-size="10" font-weight="700" class="mono">PostgreSQL</text>
-        <text x="78" y="15" fill="#94A3B8" font-size="9" class="mono">JSONB / pgvector</text>
-      </g>
-      <g transform="translate(0, 29)">
-        <rect width="163" height="24" rx="4" fill="#091A14" stroke="#164A38" stroke-width="0.8" />
-        <text x="8" y="16" fill="#2DD4BF" font-size="10" font-weight="700" class="mono">Docker / K8s</text>
-        <text x="88" y="15" fill="#94A3B8" font-size="9" class="mono">Container Mesh</text>
-      </g>
-      <g transform="translate(0, 58)">
-        <rect width="163" height="24" rx="4" fill="#091A14" stroke="#164A38" stroke-width="0.8" />
-        <text x="8" y="16" fill="#00F5A0" font-size="10" font-weight="700" class="mono">WebSockets</text>
-        <text x="82" y="15" fill="#94A3B8" font-size="9" class="mono">Real-time PubSub</text>
-      </g>
-      <g transform="translate(0, 87)">
-        <text x="0" y="15" fill="#64748B" font-size="8.5" font-weight="600" class="mono">METRIC: Zero-loss persistence</text>
-      </g>
+    <!-- Column 2, Row 2: Tactile Interface -->
+    <g transform="translate(436, 88)">
+      <rect width="412" height="72" rx="4" fill="#0C0F17" stroke="#1E2436" stroke-width="1" />
+      <text x="16" y="20" fill="#E100FF" font-size="9" font-weight="700" letter-spacing="1.2" class="mono">LAYER 04 // TACTILE INTERACTION &amp; GRAPHICS</text>
+      <text x="16" y="38" fill="#F1F5F9" font-size="13" font-weight="600" class="sans">TypeScript · Next.js · Canvas 2D · LivelyUI Springs</text>
+      <text x="16" y="56" fill="#64748B" font-size="11" font-weight="400" class="sans">60fps kinetic micro-feedback, concentric radii, balanced typography, zero bloat.</text>
     </g>
   </g>
 </svg>

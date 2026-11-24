@@ -1,153 +1,103 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 200" width="440" height="200" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 220" width="440" height="220" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <!-- Background Canvas -->
-    <linearGradient id="vaaniBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#090614" />
-      <stop offset="50%" stop-color="#120A20" />
-      <stop offset="100%" stop-color="#06040F" />
+    <linearGradient id="vBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090B10" />
+      <stop offset="100%" stop-color="#0D1018" />
     </linearGradient>
-
-    <!-- 1px Hairline Border -->
-    <linearGradient id="vaaniBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#7F00FF" stop-opacity="0.7" />
-      <stop offset="50%" stop-color="#E100FF" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#25D366" stop-opacity="0.4" />
+    <linearGradient id="vAmber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF5522" />
+      <stop offset="100%" stop-color="#FFAA33" />
     </linearGradient>
-
-    <!-- Waveform Frequency Gradient -->
-    <linearGradient id="waveGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#7F00FF" />
-      <stop offset="50%" stop-color="#E100FF" />
-      <stop offset="100%" stop-color="#00F2FE" />
-    </linearGradient>
-
-    <!-- Precision Dot Grid -->
-    <pattern id="vaaniGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="0.75" fill="#1E1430" />
+    <pattern id="vGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#141824" stroke-width="0.75" />
     </pattern>
   </defs>
-
   <style>
-    .mono { font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace; }
-    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .mono { font-family: 'SF Mono', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', 'Inter', sans-serif; }
+    @keyframes barDance {
+      0%, 100% { height: 12px; y: 114px; }
+      50% { height: 38px; y: 88px; }
+    }
+    @keyframes pulseGate {
+      0%, 100% { stroke-opacity: 0.3; }
+      50% { stroke-opacity: 1; }
+    }
+    .bar-1 { animation: barDance 1.6s ease-in-out infinite; }
+    .bar-2 { animation: barDance 2.1s ease-in-out infinite 0.2s; }
+    .bar-3 { animation: barDance 1.8s ease-in-out infinite 0.4s; }
+    .bar-4 { animation: barDance 2.4s ease-in-out infinite 0.1s; }
+    .gate-line { animation: pulseGate 3s ease-in-out infinite; }
   </style>
 
-  <!-- Background Surface -->
-  <rect width="440" height="200" rx="12" fill="url(#vaaniBg)" />
-  <rect width="440" height="200" rx="12" fill="url(#vaaniGrid)" />
-  <rect width="440" height="200" rx="12" fill="none" stroke="url(#vaaniBorder)" stroke-width="1.2" />
+  <rect width="440" height="220" rx="8" fill="url(#vBg)" />
+  <rect width="440" height="220" rx="8" fill="url(#vGrid)" />
+  <rect width="440" height="220" rx="8" fill="none" stroke="#1E2435" stroke-width="1.2" />
 
-  <!-- Corner Brackets -->
-  <path d="M 12 24 L 12 12 L 24 12" fill="none" stroke="#E100FF" stroke-width="1.5" />
-  <path d="M 428 24 L 428 12 L 416 12" fill="none" stroke="#25D366" stroke-width="1.5" />
-  <path d="M 12 176 L 12 188 L 24 188" fill="none" stroke="#7F00FF" stroke-width="1.5" />
-  <path d="M 428 176 L 428 188 L 416 188" fill="none" stroke="#E100FF" stroke-width="1.5" />
-
-  <!-- Left Header and Info -->
+  <!-- Header Section -->
   <g transform="translate(24, 28)">
-    <!-- Category Pill -->
-    <rect width="144" height="20" rx="4" fill="#1C0D2E" stroke="#4C1D95" stroke-width="1" />
-    <text x="72" y="14" fill="#E100FF" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1" class="mono">VOICE // AGENTIC AI</text>
+    <circle cx="4" cy="4" r="3.5" fill="#FF5522" />
+    <text x="14" y="8" fill="#94A3B8" font-size="9" font-weight="600" letter-spacing="1.5" class="mono">SYSTEM // 01 · VOICE &amp; TELEPHONY</text>
+    <text x="0" y="32" fill="#F8FAFC" font-size="18" font-weight="700" letter-spacing="-0.3" class="sans">Vaani</text>
+    <text x="58" y="32" fill="#FF5522" font-size="11" font-weight="600" letter-spacing="1" class="mono">[INDIC FRONT DESK]</text>
+  </g>
 
-    <!-- Title -->
-    <text x="0" y="48" fill="#FFFFFF" font-size="22" font-weight="800" letter-spacing="0.5" class="sans">Vaani</text>
-    <text x="74" y="47" fill="#64748B" font-size="11" font-weight="600" class="mono">वाणी // v1.2</text>
+  <!-- Vernacular Waveform & Spectrogram Deck -->
+  <g transform="translate(24, 80)">
+    <!-- Channel Label -->
+    <text x="0" y="0" fill="#64748B" font-size="8.5" font-weight="600" letter-spacing="1.2" class="mono">INDIC SPEECH DUAL-GATE PIPELINE</text>
+    <text x="260" y="0" fill="#38BDF8" font-size="8.5" font-weight="600" letter-spacing="0.8" class="mono">&lt; 3.0s DISPATCH</text>
 
-    <!-- Description -->
-    <text x="0" y="68" fill="#94A3B8" font-size="11.5" font-weight="400" class="sans">Conversational voice AI and WhatsApp dispatch</text>
+    <!-- Waveform Frequency Bars (Multi-lingual STT simulation) -->
+    <g transform="translate(0, 16)">
+      <!-- Channel 1: Hindi -->
+      <rect x="0" y="10" width="3" height="20" rx="1.5" fill="#FF5522" opacity="0.8" class="bar-1" />
+      <rect x="7" y="6" width="3" height="28" rx="1.5" fill="#FF5522" opacity="0.8" class="bar-3" />
+      <rect x="14" y="12" width="3" height="16" rx="1.5" fill="#FF5522" opacity="0.8" class="bar-2" />
+      <rect x="21" y="2" width="3" height="36" rx="1.5" fill="#FFAA33" class="bar-4" />
+      <rect x="28" y="8" width="3" height="24" rx="1.5" fill="#FF5522" opacity="0.8" class="bar-1" />
+      <rect x="35" y="14" width="3" height="12" rx="1.5" fill="#FF5522" opacity="0.6" class="bar-2" />
 
-    <!-- Clean 2-Line Telemetry Box (Zero Overlap) -->
-    <g transform="translate(0, 88)">
-      <rect width="210" height="46" rx="6" fill="#0E081A" stroke="#281740" stroke-width="1" />
-      <text x="12" y="17" fill="#64748B" font-size="8.5" font-weight="600" letter-spacing="0.8" class="mono">PIPELINE LATENCY // INDIC</text>
-      <text x="12" y="35" fill="#25D366" font-size="13" font-weight="700" class="mono">140ms</text>
-      <text x="70" y="35" fill="#C084FC" font-size="9.5" font-weight="600" class="mono">| 12 INDIC LANGS</text>
+      <!-- Channel 2: Odia -->
+      <rect x="48" y="8" width="3" height="24" rx="1.5" fill="#38BDF8" opacity="0.8" class="bar-3" />
+      <rect x="55" y="4" width="3" height="32" rx="1.5" fill="#38BDF8" class="bar-4" />
+      <rect x="62" y="12" width="3" height="16" rx="1.5" fill="#38BDF8" opacity="0.8" class="bar-1" />
+      <rect x="69" y="6" width="3" height="28" rx="1.5" fill="#38BDF8" class="bar-2" />
+
+      <!-- Channel 3: Hinglish -->
+      <rect x="82" y="10" width="3" height="20" rx="1.5" fill="#10B981" opacity="0.8" class="bar-2" />
+      <rect x="89" y="2" width="3" height="36" rx="1.5" fill="#10B981" class="bar-1" />
+      <rect x="96" y="8" width="3" height="24" rx="1.5" fill="#10B981" opacity="0.8" class="bar-4" />
+      <rect x="103" y="14" width="3" height="12" rx="1.5" fill="#10B981" opacity="0.6" class="bar-3" />
+    </g>
+
+    <!-- State Machine Gate Diagram (LangGraph DAG) -->
+    <g transform="translate(136, 12)">
+      <!-- Node A: Intent Classify -->
+      <rect x="0" y="6" width="68" height="28" rx="4" fill="#111522" stroke="#252D42" stroke-width="1" />
+      <text x="34" y="23" fill="#E2E8F0" font-size="8.5" font-weight="600" text-anchor="middle" class="mono">SCOPE GATE</text>
+
+      <!-- Connecting Wire -->
+      <line x1="68" y1="20" x2="94" y2="20" stroke="#FF5522" stroke-width="1.2" stroke-dasharray="3 3" class="gate-line" />
+
+      <!-- Node B: Grounded RAG -->
+      <rect x="94" y="6" width="74" height="28" rx="4" fill="#111522" stroke="#252D42" stroke-width="1" />
+      <text x="131" y="23" fill="#E2E8F0" font-size="8.5" font-weight="600" text-anchor="middle" class="mono">TENANT RAG</text>
+
+      <!-- Connecting Wire -->
+      <line x1="168" y1="20" x2="194" y2="20" stroke="#10B981" stroke-width="1.2" stroke-dasharray="3 3" class="gate-line" />
+
+      <!-- Node C: Atomic Booking -->
+      <rect x="194" y="6" width="62" height="28" rx="4" fill="#111522" stroke="#10B981" stroke-width="1" />
+      <text x="225" y="23" fill="#10B981" font-size="8.5" font-weight="600" text-anchor="middle" class="mono">ATOMIC</text>
     </g>
   </g>
 
-  <!-- Right Visual: Voice Waveforms and Acoustic Dispatch Node (Pure Vector) -->
-  <g transform="translate(345, 78)">
-    <!-- Expanding Mercury Ripple Rings (Native Concentric Radii) -->
-    <circle cx="0" cy="0" r="16" fill="none" stroke="#25D366" stroke-width="1.2">
-      <animate attributeName="r" values="16; 50" dur="2.4s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0.8; 0" dur="2.4s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="0" cy="0" r="16" fill="none" stroke="#E100FF" stroke-width="1">
-      <animate attributeName="r" values="16; 50" begin="1.2s" dur="2.4s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0.8; 0" begin="1.2s" dur="2.4s" repeatCount="indefinite" />
-    </circle>
-
-    <!-- Waveform Frequency Bars (Symmetric, Native Attribute Animation) -->
-    <g transform="translate(-50, 0)">
-      <!-- Left Bars -->
-      <rect x="0" y="-8" width="4" height="16" rx="2" fill="url(#waveGrad)">
-        <animate attributeName="height" values="14; 36; 14" dur="1.2s" repeatCount="indefinite" />
-        <animate attributeName="y" values="-7; -18; -7" dur="1.2s" repeatCount="indefinite" />
-      </rect>
-      <rect x="8" y="-14" width="4" height="28" rx="2" fill="url(#waveGrad)">
-        <animate attributeName="height" values="24; 52; 24" dur="1.5s" repeatCount="indefinite" />
-        <animate attributeName="y" values="-12; -26; -12" dur="1.5s" repeatCount="indefinite" />
-      </rect>
-      <rect x="16" y="-20" width="4" height="40" rx="2" fill="url(#waveGrad)">
-        <animate attributeName="height" values="36; 18; 36" dur="1.3s" repeatCount="indefinite" />
-        <animate attributeName="y" values="-18; -9; -18" dur="1.3s" repeatCount="indefinite" />
-      </rect>
-      <rect x="24" y="-26" width="4" height="52" rx="2" fill="url(#waveGrad)">
-        <animate attributeName="height" values="48; 30; 48" dur="1.6s" repeatCount="indefinite" />
-        <animate attributeName="y" values="-24; -15; -24" dur="1.6s" repeatCount="indefinite" />
-      </rect>
-      <rect x="32" y="-18" width="4" height="36" rx="2" fill="url(#waveGrad)">
-        <animate attributeName="height" values="28; 56; 28" dur="1.4s" repeatCount="indefinite" />
-        <animate attributeName="y" values="-14; -28; -14" dur="1.4s" repeatCount="indefinite" />
-      </rect>
-
-      <!-- Center Acoustic Core Hub -->
-      <circle cx="50" cy="0" r="16" fill="#140924" stroke="#E100FF" stroke-width="1.8" />
-      <!-- Mic Icon -->
-      <path d="M 47 -4 L 53 -4 C 55 -4 55 -1 53 -1 L 47 -1 Z M 50 -1 L 50 4 M 47 4 L 53 4" stroke="#25D366" stroke-width="1.5" stroke-linecap="round" />
-
-      <!-- Right Bars -->
-      <rect x="64" y="-18" width="4" height="36" rx="2" fill="url(#waveGrad)">
-        <animate attributeName="height" values="28; 56; 28" dur="1.4s" repeatCount="indefinite" />
-        <animate attributeName="y" values="-14; -28; -14" dur="1.4s" repeatCount="indefinite" />
-      </rect>
-      <rect x="72" y="-26" width="4" height="52" rx="2" fill="url(#waveGrad)">
-        <animate attributeName="height" values="48; 30; 48" dur="1.6s" repeatCount="indefinite" />
-        <animate attributeName="y" values="-24; -15; -24" dur="1.6s" repeatCount="indefinite" />
-      </rect>
-      <rect x="80" y="-20" width="4" height="40" rx="2" fill="url(#waveGrad)">
-        <animate attributeName="height" values="36; 18; 36" dur="1.3s" repeatCount="indefinite" />
-        <animate attributeName="y" values="-18; -9; -18" dur="1.3s" repeatCount="indefinite" />
-      </rect>
-      <rect x="88" y="-14" width="4" height="28" rx="2" fill="url(#waveGrad)">
-        <animate attributeName="height" values="24; 52; 24" dur="1.5s" repeatCount="indefinite" />
-        <animate attributeName="y" values="-12; -26; -12" dur="1.5s" repeatCount="indefinite" />
-      </rect>
-      <rect x="96" y="-8" width="4" height="16" rx="2" fill="url(#waveGrad)">
-        <animate attributeName="height" values="14; 36; 14" dur="1.2s" repeatCount="indefinite" />
-        <animate attributeName="y" values="-7; -18; -7" dur="1.2s" repeatCount="indefinite" />
-      </rect>
-    </g>
-
-    <!-- Indic Dialect Badges -->
-    <g transform="translate(-56, 46)">
-      <rect width="34" height="16" rx="3" fill="#140924" stroke="#4C1D95" stroke-width="0.8" />
-      <text x="17" y="11.5" fill="#C084FC" font-size="8.5" font-weight="700" text-anchor="middle" class="mono">हिन्दी</text>
-    </g>
-    <g transform="translate(-16, 46)">
-      <rect width="34" height="16" rx="3" fill="#0C1B14" stroke="#165B3B" stroke-width="0.8" />
-      <text x="17" y="11.5" fill="#25D366" font-size="8.5" font-weight="700" text-anchor="middle" class="mono">தமிழ்</text>
-    </g>
-    <g transform="translate(24, 46)">
-      <rect width="34" height="16" rx="3" fill="#140924" stroke="#4C1D95" stroke-width="0.8" />
-      <text x="17" y="11.5" fill="#E100FF" font-size="8.5" font-weight="700" text-anchor="middle" class="mono">ENG</text>
-    </g>
-  </g>
-
-  <!-- Bottom Tag Bar -->
-  <g transform="translate(24, 172)">
-    <circle cx="4" cy="5" r="3" fill="#25D366" />
-    <text x="14" y="8" fill="#64748B" font-size="9" font-weight="600" class="mono">DISPATCH: WHATSAPP CLOUD API</text>
-    <text x="210" y="8" fill="#64748B" font-size="9" font-weight="600" class="mono">STREAMING WEBSOCKET</text>
+  <!-- Technical Spec Footer -->
+  <g transform="translate(24, 180)">
+    <line x1="0" y1="0" x2="392" y2="0" stroke="#1B2130" stroke-width="1" />
+    <text x="0" y="18" fill="#64748B" font-size="8.5" font-weight="500" class="mono">
+      Python 3.12 · LangGraph · FastAPI · MongoDB 7 Replica · Redis · DPDP Act 2025
+    </text>
   </g>
 </svg>

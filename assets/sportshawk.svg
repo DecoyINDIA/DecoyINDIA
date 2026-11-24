@@ -1,118 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 200" width="440" height="200" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 220" width="440" height="220" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <!-- Background Canvas -->
-    <linearGradient id="shBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#060E0A" />
-      <stop offset="50%" stop-color="#091812" />
-      <stop offset="100%" stop-color="#040A07" />
+    <linearGradient id="spBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090B10" />
+      <stop offset="100%" stop-color="#0E121A" />
     </linearGradient>
-
-    <!-- 1px Hairline Border -->
-    <linearGradient id="shBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00F5A0" stop-opacity="0.7" />
-      <stop offset="50%" stop-color="#FF6B00" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#00D9F5" stop-opacity="0.4" />
-    </linearGradient>
-
-    <!-- Trajectory Parabolic Arc Gradient -->
-    <linearGradient id="trajGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00F5A0" />
-      <stop offset="50%" stop-color="#FFAE00" />
-      <stop offset="100%" stop-color="#FF6B00" />
-    </linearGradient>
-
-    <!-- Precision Dot Grid -->
-    <pattern id="shGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="0.75" fill="#112A1F" />
+    <pattern id="spGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#141824" stroke-width="0.75" />
     </pattern>
   </defs>
-
   <style>
-    .mono { font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace; }
-    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-
-    @keyframes trajDash {
-      0% { stroke-dashoffset: 140; }
-      100% { stroke-dashoffset: 0; }
+    .mono { font-family: 'SF Mono', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', 'Inter', sans-serif; }
+    @keyframes trackPulse {
+      0%, 100% { r: 3px; opacity: 0.6; }
+      50% { r: 4.5px; opacity: 1; }
     }
-    .traj-line {
-      stroke-dasharray: 8 4;
-      animation: trajDash 1.5s linear infinite;
-    }
+    .joint-node { animation: trackPulse 2s ease-in-out infinite; }
   </style>
 
-  <!-- Background Surface -->
-  <rect width="440" height="200" rx="12" fill="url(#shBg)" />
-  <rect width="440" height="200" rx="12" fill="url(#shGrid)" />
-  <rect width="440" height="200" rx="12" fill="none" stroke="url(#shBorder)" stroke-width="1.2" />
+  <rect width="440" height="220" rx="8" fill="url(#spBg)" />
+  <rect width="440" height="220" rx="8" fill="url(#spGrid)" />
+  <rect width="440" height="220" rx="8" fill="none" stroke="#1E2435" stroke-width="1.2" />
 
-  <!-- Corner Brackets -->
-  <path d="M 12 24 L 12 12 L 24 12" fill="none" stroke="#00F5A0" stroke-width="1.5" />
-  <path d="M 428 24 L 428 12 L 416 12" fill="none" stroke="#FF6B00" stroke-width="1.5" />
-  <path d="M 12 176 L 12 188 L 24 188" fill="none" stroke="#00D9F5" stroke-width="1.5" />
-  <path d="M 428 176 L 428 188 L 416 188" fill="none" stroke="#00F5A0" stroke-width="1.5" />
-
-  <!-- Left Header and Info -->
+  <!-- Header Section -->
   <g transform="translate(24, 28)">
-    <!-- Category Pill -->
-    <rect width="144" height="20" rx="4" fill="#0D2418" stroke="#166534" stroke-width="1" />
-    <text x="72" y="14" fill="#00F5A0" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1" class="mono">COMPUTER VISION // AI</text>
+    <circle cx="4" cy="4" r="3.5" fill="#10B981" />
+    <text x="14" y="8" fill="#94A3B8" font-size="9" font-weight="600" letter-spacing="1.5" class="mono">SYSTEM // 06 · EDGE COMPUTER VISION</text>
+    <text x="0" y="32" fill="#F8FAFC" font-size="18" font-weight="700" letter-spacing="-0.3" class="sans">SportsHawk</text>
+    <text x="108" y="32" fill="#10B981" font-size="11" font-weight="600" letter-spacing="1" class="mono">[GRASSROOTS AI COACH]</text>
+  </g>
 
-    <!-- Title -->
-    <text x="0" y="48" fill="#FFFFFF" font-size="22" font-weight="800" letter-spacing="0.5" class="sans">SportsHawk</text>
-    <text x="135" y="47" fill="#64748B" font-size="11" font-weight="600" class="mono">v3.0</text>
+  <!-- Edge Computer Vision Kinematics & Player Card Radar -->
+  <g transform="translate(24, 82)">
+    <text x="0" y="0" fill="#64748B" font-size="8.5" font-weight="600" letter-spacing="1.2" class="mono">100% ON-DEVICE VISION // ZERO CLOUD EGRESS</text>
+    <text x="280" y="0" fill="#10B981" font-size="8.5" font-weight="600" letter-spacing="0.8" class="mono">9 INDIC DIALECTS</text>
 
-    <!-- Description -->
-    <text x="0" y="68" fill="#94A3B8" font-size="11.5" font-weight="400" class="sans">Grassroots football CV tracking and kinetic drills</text>
+    <!-- Kinematic Joint Tracking Mesh Visual -->
+    <g transform="translate(10, 12)">
+      <!-- Head -->
+      <circle cx="36" cy="6" r="3.5" fill="#FF5522" />
+      <!-- Torso -->
+      <line x1="36" y1="9.5" x2="36" y2="28" stroke="#38BDF8" stroke-width="1.2" />
+      <!-- Shoulders & Arms -->
+      <line x1="20" y1="16" x2="52" y2="16" stroke="#38BDF8" stroke-width="1.2" />
+      <line x1="20" y1="16" x2="14" y2="28" stroke="#38BDF8" stroke-width="1" />
+      <line x1="52" y1="16" x2="60" y2="24" stroke="#38BDF8" stroke-width="1" />
+      <!-- Legs -->
+      <line x1="36" y1="28" x2="24" y2="44" stroke="#10B981" stroke-width="1.2" />
+      <line x1="36" y1="28" x2="48" y2="44" stroke="#10B981" stroke-width="1.2" />
 
-    <!-- Clean 2-Line Telemetry Box (Zero Overlap) -->
-    <g transform="translate(0, 88)">
-      <rect width="210" height="46" rx="6" fill="#09140F" stroke="#173826" stroke-width="1" />
-      <text x="12" y="17" fill="#64748B" font-size="8.5" font-weight="600" letter-spacing="0.8" class="mono">REAL-TIME INFERENCE // CV</text>
-      <text x="12" y="35" fill="#00F5A0" font-size="13" font-weight="700" class="mono">60 FPS</text>
-      <text x="72" y="35" fill="#FFAE00" font-size="9.5" font-weight="600" class="mono">| 94.8% DRILL ACC</text>
+      <!-- Ball Kinematic Arc -->
+      <path d="M 64 42 Q 80 20 96 38" fill="none" stroke="#FF5522" stroke-width="1.2" stroke-dasharray="2 3" />
+      <circle cx="96" cy="38" r="4" fill="#FF5522" />
+    </g>
+
+    <!-- Player Card Performance Metrics Deck -->
+    <g transform="translate(140, 12)">
+      <rect width="240" height="42" rx="4" fill="#121624" stroke="#252E46" stroke-width="1" />
+      <text x="14" y="16" fill="#64748B" font-size="8" font-weight="600" letter-spacing="1" class="mono">BALL VELOCITY</text>
+      <text x="14" y="32" fill="#F1F5F9" font-size="12" font-weight="600" class="mono">84.2 KM/H</text>
+
+      <text x="130" y="16" fill="#64748B" font-size="8" font-weight="600" letter-spacing="1" class="mono">CONE AGILITY</text>
+      <text x="130" y="32" fill="#10B981" font-size="12" font-weight="600" class="mono">GRADE A+ (94%)</text>
     </g>
   </g>
 
-  <!-- Right Visual: Computer Vision Football Pitch and Tracking (Pure Vector) -->
-  <g transform="translate(345, 75)">
-    <!-- Pitch Perspective Outline -->
-    <polygon points="-55,34 55,34 40,-38 -40,-38" fill="#081811" stroke="#154B33" stroke-width="1.2" />
-    <ellipse cx="0" cy="-2" rx="20" ry="10" fill="none" stroke="#1B5C40" stroke-width="1" />
-    <line x1="-48" y1="-2" x2="48" y2="-2" stroke="#1B5C40" stroke-width="1" />
-    <rect x="-18" y="-38" width="36" height="12" fill="none" stroke="#1B5C40" stroke-width="1" />
-
-    <!-- Kinetic Trajectory Parabolic Arc -->
-    <path d="M -30 24 Q 5 -20 25 -32" fill="none" stroke="url(#trajGrad)" stroke-width="2" class="traj-line" />
-
-    <!-- Ball at Endpoint -->
-    <circle cx="25" cy="-32" r="4.5" fill="#FF6B00" />
-    <circle cx="25" cy="-32" r="2" fill="#FFFFFF" />
-
-    <!-- AI Bounding Box (Native Opacity Pulse) -->
-    <g>
-      <rect x="-18" y="-12" width="28" height="34" fill="none" stroke="#00F5A0" stroke-width="1.2" stroke-dasharray="4 2">
-        <animate attributeName="stroke-opacity" values="1; 0.4; 1" dur="2s" repeatCount="indefinite" />
-      </rect>
-      <!-- Corner Reticle Ticks -->
-      <path d="M -18 -8 L -18 -12 L -14 -12" fill="none" stroke="#00F5A0" stroke-width="1.5" />
-      <path d="M 6 -12 L 10 -12 L 10 -8" fill="none" stroke="#00F5A0" stroke-width="1.5" />
-      <path d="M -18 18 L -18 22 L -14 22" fill="none" stroke="#00F5A0" stroke-width="1.5" />
-      <path d="M 6 22 L 10 22 L 10 18" fill="none" stroke="#00F5A0" stroke-width="1.5" />
-
-      <!-- Player HUD Tag -->
-      <rect x="-18" y="-22" width="40" height="9" fill="#00F5A0" rx="1.5" />
-      <text x="2" y="-15" fill="#040F0A" font-size="6.5" font-weight="800" text-anchor="middle" class="mono">FWD #09</text>
-    </g>
-
-    <!-- Telemetry Coordinates -->
-    <text x="0" y="52" fill="#64748B" font-size="8" font-weight="600" text-anchor="middle" class="mono">POS: [X:142 Y:88] // 24 km/h</text>
-  </g>
-
-  <!-- Bottom Tag Bar -->
-  <g transform="translate(24, 172)">
-    <circle cx="4" cy="5" r="3" fill="#00F5A0" />
-    <text x="14" y="8" fill="#64748B" font-size="9" font-weight="600" class="mono">TRACK: COMPUTER VISION ENGINE</text>
-    <text x="210" y="8" fill="#64748B" font-size="9" font-weight="600" class="mono">SPORTS TELEMETRY</text>
+  <!-- Technical Spec Footer -->
+  <g transform="translate(24, 180)">
+    <line x1="0" y1="0" x2="392" y2="0" stroke="#1B2130" stroke-width="1" />
+    <text x="0" y="18" fill="#64748B" font-size="8.5" font-weight="500" class="mono">
+      JavaScript · MediaPipe · TensorFlow.js · Edge Computer Vision · PWA · Zero Player Fees
+    </text>
   </g>
 </svg>

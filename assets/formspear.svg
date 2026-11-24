@@ -1,121 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 200" width="440" height="200" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 220" width="440" height="220" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <!-- Background Canvas -->
-    <linearGradient id="fsBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#070614" />
-      <stop offset="50%" stop-color="#0E0C24" />
-      <stop offset="100%" stop-color="#05040E" />
+    <linearGradient id="fBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090B10" />
+      <stop offset="100%" stop-color="#0E121A" />
     </linearGradient>
-
-    <!-- 1px Hairline Border -->
-    <linearGradient id="fsBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.8" />
-      <stop offset="50%" stop-color="#00F2FE" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.4" />
-    </linearGradient>
-
-    <!-- Precision Dot Grid -->
-    <pattern id="fsGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="0.75" fill="#181534" />
+    <pattern id="fGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#141824" stroke-width="0.75" />
     </pattern>
   </defs>
-
   <style>
-    .mono { font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace; }
-    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-
-    @keyframes sparkFlow {
-      0% { stroke-dashoffset: 120; }
-      100% { stroke-dashoffset: 0; }
-    }
-    .spark-line {
-      stroke-dasharray: 6 4;
-      animation: sparkFlow 2s linear infinite;
-    }
+    .mono { font-family: 'SF Mono', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', 'Inter', sans-serif; }
   </style>
 
-  <!-- Background Surface -->
-  <rect width="440" height="200" rx="12" fill="url(#fsBg)" />
-  <rect width="440" height="200" rx="12" fill="url(#fsGrid)" />
-  <rect width="440" height="200" rx="12" fill="none" stroke="url(#fsBorder)" stroke-width="1.2" />
+  <rect width="440" height="220" rx="8" fill="url(#fBg)" />
+  <rect width="440" height="220" rx="8" fill="url(#fGrid)" />
+  <rect width="440" height="220" rx="8" fill="none" stroke="#1E2435" stroke-width="1.2" />
 
-  <!-- Corner Brackets -->
-  <path d="M 12 24 L 12 12 L 24 12" fill="none" stroke="#6366F1" stroke-width="1.5" />
-  <path d="M 428 24 L 428 12 L 416 12" fill="none" stroke="#00F2FE" stroke-width="1.5" />
-  <path d="M 12 176 L 12 188 L 24 188" fill="none" stroke="#8B5CF6" stroke-width="1.5" />
-  <path d="M 428 176 L 428 188 L 416 188" fill="none" stroke="#6366F1" stroke-width="1.5" />
-
-  <!-- Left Header and Info -->
+  <!-- Header Section -->
   <g transform="translate(24, 28)">
-    <!-- Category Pill -->
-    <rect width="144" height="20" rx="4" fill="#16133B" stroke="#4338CA" stroke-width="1" />
-    <text x="72" y="14" fill="#A5B4FC" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1" class="mono">FORMS // AI ANALYTICS</text>
+    <circle cx="4" cy="4" r="3.5" fill="#E100FF" />
+    <text x="14" y="8" fill="#94A3B8" font-size="9" font-weight="600" letter-spacing="1.5" class="mono">SYSTEM // 04 · ENTERPRISE FEEDBACK OS</text>
+    <text x="0" y="32" fill="#F8FAFC" font-size="18" font-weight="700" letter-spacing="-0.3" class="sans">Formspear</text>
+    <text x="96" y="32" fill="#E100FF" font-size="11" font-weight="600" letter-spacing="1" class="mono">[39 SQL TABLES]</text>
+  </g>
 
-    <!-- Title -->
-    <text x="0" y="48" fill="#FFFFFF" font-size="22" font-weight="800" letter-spacing="0.5" class="sans">Formspear</text>
-    <text x="120" y="47" fill="#64748B" font-size="11" font-weight="600" class="mono">v2.1</text>
+  <!-- Relational Schema Nodes & BullMQ Engine -->
+  <g transform="translate(24, 82)">
+    <text x="0" y="0" fill="#64748B" font-size="8.5" font-weight="600" letter-spacing="1.2" class="mono">RELATIONAL DATA MODEL // BULLMQ PIPELINE</text>
+    <text x="270" y="0" fill="#E100FF" font-size="8.5" font-weight="600" letter-spacing="0.8" class="mono">INDEXES: 13 OPTIMIZED</text>
 
-    <!-- Description -->
-    <text x="0" y="68" fill="#94A3B8" font-size="11.5" font-weight="400" class="sans">Dynamic schema builder and live AI telemetry</text>
+    <!-- Schema Topology Graph Visual -->
+    <g transform="translate(0, 16)">
+      <!-- Node: Form Def -->
+      <rect x="0" y="6" width="76" height="32" rx="4" fill="#121624" stroke="#252E46" stroke-width="1" />
+      <text x="38" y="26" fill="#F1F5F9" font-size="9" font-weight="600" text-anchor="middle" class="mono">SCHEMAS</text>
 
-    <!-- Clean 2-Line Telemetry Box (Zero Overlap) -->
-    <g transform="translate(0, 88)">
-      <rect width="210" height="46" rx="6" fill="#0C0A1F" stroke="#252054" stroke-width="1" />
-      <text x="12" y="17" fill="#64748B" font-size="8.5" font-weight="600" letter-spacing="0.8" class="mono">INGESTION LATENCY // SCHEMA</text>
-      <text x="12" y="35" fill="#00F2FE" font-size="13" font-weight="700" class="mono">12 ms</text>
-      <text x="68" y="35" fill="#A5B4FC" font-size="9.5" font-weight="600" class="mono">| SCHEMA: DYNAMIC</text>
+      <line x1="76" y1="22" x2="108" y2="22" stroke="#E100FF" stroke-width="1.2" stroke-dasharray="2 2" />
+
+      <!-- Node: Respondent Sessions -->
+      <rect x="108" y="6" width="84" height="32" rx="4" fill="#121624" stroke="#252E46" stroke-width="1" />
+      <text x="150" y="26" fill="#F1F5F9" font-size="9" font-weight="600" text-anchor="middle" class="mono">SESSIONS</text>
+
+      <line x1="192" y1="22" x2="224" y2="22" stroke="#E100FF" stroke-width="1.2" stroke-dasharray="2 2" />
+
+      <!-- Node: BullMQ Synthesis -->
+      <rect x="224" y="6" width="82" height="32" rx="4" fill="#121624" stroke="#E100FF" stroke-width="1" />
+      <text x="265" y="26" fill="#E100FF" font-size="9" font-weight="600" text-anchor="middle" class="mono">BULLMQ</text>
+
+      <line x1="306" y1="22" x2="334" y2="22" stroke="#10B981" stroke-width="1.2" stroke-dasharray="2 2" />
+
+      <!-- Node: AI Synthesis -->
+      <rect x="334" y="6" width="58" height="32" rx="4" fill="#121624" stroke="#10B981" stroke-width="1" />
+      <text x="363" y="26" fill="#10B981" font-size="9" font-weight="600" text-anchor="middle" class="mono">LLM</text>
     </g>
   </g>
 
-  <!-- Right Visual: Reactive Form Schema and Analytics Dashboard (Pure Vector) -->
-  <g transform="translate(345, 75)">
-    <!-- Terminal Window Frame -->
-    <rect x="-55" y="-35" width="110" height="74" rx="6" fill="#0B0920" stroke="#3730A3" stroke-width="1.2" />
-    <!-- Window Title Bar -->
-    <rect x="-55" y="-35" width="110" height="14" rx="6 6 0 0" fill="#14113B" />
-    <circle cx="-47" cy="-28" r="2.2" fill="#EF4444" />
-    <circle cx="-41" cy="-28" r="2.2" fill="#EAB308" />
-    <circle cx="-35" cy="-28" r="2.2" fill="#22C55E" />
-    <text x="6" y="-25" fill="#A5B4FC" font-size="7.5" font-weight="600" text-anchor="middle" class="mono">SCHEMA.STREAM</text>
-
-    <!-- Dynamic Telemetry Bars (Native SVG Attribute Animation) -->
-    <g transform="translate(-45, -5)">
-      <rect x="0" y="16" width="10" height="16" rx="2" fill="#6366F1">
-        <animate attributeName="height" values="16; 34; 16" dur="2s" repeatCount="indefinite" />
-        <animate attributeName="y" values="16; -2; 16" dur="2s" repeatCount="indefinite" />
-      </rect>
-      <rect x="15" y="4" width="10" height="28" rx="2" fill="#8B5CF6">
-        <animate attributeName="height" values="28; 14; 28" dur="2.4s" repeatCount="indefinite" />
-        <animate attributeName="y" values="4; 18; 4" dur="2.4s" repeatCount="indefinite" />
-      </rect>
-      <rect x="30" y="10" width="10" height="22" rx="2" fill="#00F2FE">
-        <animate attributeName="height" values="22; 36; 22" dur="1.8s" repeatCount="indefinite" />
-        <animate attributeName="y" values="10; -4; 10" dur="1.8s" repeatCount="indefinite" />
-      </rect>
-      <rect x="45" y="-2" width="10" height="34" rx="2" fill="#10B981">
-        <animate attributeName="height" values="34; 18; 34" dur="2.2s" repeatCount="indefinite" />
-        <animate attributeName="y" values="-2; 14; -2" dur="2.2s" repeatCount="indefinite" />
-      </rect>
-    </g>
-
-    <!-- Sparkline Overlay -->
-    <path d="M -45 15 Q -25 -10 -5 5 T 35 -15" fill="none" stroke="#00F2FE" stroke-width="1.6" class="spark-line" />
-    <circle cx="35" cy="-15" r="3" fill="#00F2FE" />
-
-    <!-- Schema Validation Checkmark -->
-    <g transform="translate(38, 22)">
-      <circle cx="0" cy="0" r="10" fill="#0A281D" stroke="#10B981" stroke-width="1.2" />
-      <path d="M -4 0 L -1 3 L 4 -3" fill="none" stroke="#10B981" stroke-width="1.4" stroke-linecap="round" />
-    </g>
-
-    <!-- Telemetry Coordinates -->
-    <text x="0" y="52" fill="#64748B" font-size="8" font-weight="600" text-anchor="middle" class="mono">REAL-TIME TELEMETRY</text>
-  </g>
-
-  <!-- Bottom Tag Bar -->
-  <g transform="translate(24, 172)">
-    <circle cx="4" cy="5" r="3" fill="#6366F1" />
-    <text x="14" y="8" fill="#64748B" font-size="9" font-weight="600" class="mono">FULLSTACK SCHEMA ARCHITECTURE</text>
-    <text x="210" y="8" fill="#64748B" font-size="9" font-weight="600" class="mono">LIVE ANALYTICS</text>
+  <!-- Technical Spec Footer -->
+  <g transform="translate(24, 180)">
+    <line x1="0" y1="0" x2="392" y2="0" stroke="#1B2130" stroke-width="1" />
+    <text x="0" y="18" fill="#64748B" font-size="8.5" font-weight="500" class="mono">
+      PostgreSQL Strict Relational · BullMQ · Redis · LLM Insight Synthesis · Zero-Dep SDK
+    </text>
   </g>
 </svg>
