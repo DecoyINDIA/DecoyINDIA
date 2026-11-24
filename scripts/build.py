@@ -387,14 +387,14 @@ def hero() -> str:
 
     # --- "I build ..." with phrases revealed letter by letter
     lead_size = 25
-    lead_d = SANS.path("I build", lead_size, 76, 324)
-    ph_x = 76 + SANS.width("I build", lead_size) + 11
+    lead_d = SANS.path("I turn", lead_size, 76, 324)
+    ph_x = 76 + SANS.width("I turn", lead_size) + 11
     phrases = [
-        "front desks that answer in Odia.",
-        "PDF tools that never phone home.",
-        "download managers in Rust.",
-        "scouting apps for small-town footballers.",
-        "rental deals both sides sign off on.",
+        "rough ideas into real products.",
+        "messy problems into simple software.",
+        "a napkin sketch into a working app.",
+        "big ideas into small, sharp tools.",
+        "\u201cwhat if\u201d into \u201cit\u2019s live.\u201d",
     ]
     period, first = 3.8, 6.2
     total = period * len(phrases)
@@ -565,7 +565,7 @@ def hero() -> str:
   <path class="meta" d="{studio}"/>
   <rect width="{W}" height="{H}" fill="url(#grain)" opacity=".55"/>
 </g>"""
-    return svg(W, H, body, css, "Subham Jena. I build software from Bhubaneswar, Odisha.")
+    return svg(W, H, body, css, "Subham Jena. I turn rough ideas into real products.")
 
 
 # --------------------------------------------------------------------------
