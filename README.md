@@ -1,12 +1,14 @@
 <p align="center">
-  <img src="assets/hero.svg" alt="Subham Jena. I build software from Bhubaneswar, Odisha." width="100%" />
+  <img src="assets/hero.svg" alt="Subham Jena. I turn rough ideas into real products." width="100%" />
 </p>
 
-Hi, I'm Subham. I write software from Bhubaneswar, Odisha.
+Hi, I'm Subham. I turn rough ideas into real products, from Bhubaneswar, Odisha.
 
-Most of what I build is for people the usual tech skips over: the clinic that can't pick up the phone after 7pm, the advocate who still tracks hearing dates in a diary, the kid in a small town who's good at football and has no way for a scout to ever find out.
+Hand me a napkin sketch or a messy problem and I'll take it the whole way to something people can actually use: the design, the backend, the app on the phone, and getting it live. Rust, Java, Python, TypeScript, Flutter, whatever the idea needs.
 
-I run a small studio called [XolverLabs](https://xolver.in), and that's where most of these projects live.
+The ideas that pull me in most are for people the usual tech skips over: the clinic that can't pick up the phone after 7pm, the advocate who still tracks hearing dates in a diary, the kid in a small town who's good at football and has no way for a scout to ever find out.
+
+I run a small studio called [XolverLabs](https://xolver.in), and most of what's below came out of it. I'd rather ship a small, sharp tool that works than a big one that almost does.
 
 A few things I keep coming back to:
 
