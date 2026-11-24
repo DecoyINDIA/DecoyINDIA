@@ -70,6 +70,14 @@ Rust, Java, Python and TypeScript. Postgres for almost everything. Next.js, Flut
 
 <br />
 
+## On GitHub
+
+<img src="assets/stats.svg" alt="My GitHub activity over the last 12 months: contributions, commits, active days, longest streak, contribution calendar and top languages." width="100%" />
+
+<sub>Redrawn every morning by a small script in this repo, from my real activity.</sub>
+
+<br />
+
 ## Say hello
 
 If you're working on something in the same space, or you just want to talk shop, email me at [subhamjena.j@gmail.com](mailto:subhamjena.j@gmail.com).
