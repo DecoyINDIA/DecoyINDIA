@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 120" width="960" height="120" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="footerBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080B10" />
+      <stop offset="50%" stop-color="#0D1117" />
+      <stop offset="100%" stop-color="#06080D" />
+    </linearGradient>
+    <linearGradient id="footerHairline" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#21262D" stop-opacity="0.2" />
+      <stop offset="50%" stop-color="#00F2FE" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#21262D" stop-opacity="0.2" />
+    </linearGradient>
+  </defs>
+
+  <style>
+
+    :root {
+      --bg-base: #080B10;
+      --bg-card: #0D1117;
+      --bg-elevated: #161B22;
+      --border-line: #21262D;
+      --border-accent: #30363D;
+      --text-head: #F8FAFC;
+      --text-body: #94A3B8;
+      --text-dim: #475569;
+      --accent-cyan: #00F2FE;
+      --accent-amber: #FF8C00;
+      --accent-emerald: #00E599;
+      --accent-violet: #A855F7;
+      --grid-line: #151926;
+      --glass-glow: rgba(0, 242, 254, 0.08);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-base: #F8FAFC;
+        --bg-card: #FFFFFF;
+        --bg-elevated: #F1F5F9;
+        --border-line: #CBD5E1;
+        --border-accent: #94A3B8;
+        --text-head: #0F172A;
+        --text-body: #334155;
+        --text-dim: #64748B;
+        --accent-cyan: #007799;
+        --accent-amber: #C25E00;
+        --accent-emerald: #059669;
+        --accent-violet: #7C3AED;
+        --grid-line: #E2E8F0;
+        --glass-glow: rgba(0, 119, 153, 0.04);
+      }
+      .theme-bg { fill: #F8FAFC !important; }
+      .theme-card { fill: #FFFFFF !important; }
+      .theme-elevated { fill: #F1F5F9 !important; }
+      .theme-border { stroke: #CBD5E1 !important; }
+      .theme-border-accent { stroke: #94A3B8 !important; }
+      .theme-text-head { fill: #0F172A !important; }
+      .theme-text-body { fill: #334155 !important; }
+      .theme-text-dim { fill: #64748B !important; }
+      .theme-grid { stroke: #E2E8F0 !important; }
+      .theme-cyan-stroke { stroke: #007799 !important; }
+      .theme-cyan-fill { fill: #007799 !important; }
+      .theme-amber-stroke { stroke: #C25E00 !important; }
+      .theme-amber-fill { fill: #C25E00 !important; }
+      .theme-emerald-stroke { stroke: #059669 !important; }
+      .theme-emerald-fill { fill: #059669 !important; }
+      .theme-violet-stroke { stroke: #7C3AED !important; }
+      .theme-violet-fill { fill: #7C3AED !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, .anim-spin, .anim-pulse, .anim-flow, .anim-dash {
+        animation: none !important;
+      }
+    }
+    .mono { font-family: ui-monospace, 'SF Mono', 'JetBrains Mono', 'Cascadia Code', Menlo, Consolas, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', 'Helvetica Neue', Arial, sans-serif; }
+    
+    @keyframes spinCW {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes spinCCW {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1.0; }
+    }
+    @keyframes dashStream {
+      to { stroke-dashoffset: -40; }
+    }
+    @keyframes packetFlow {
+      0% { stroke-dashoffset: 80; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes waveOscillate {
+      0%, 100% { transform: translateY(0px) scaleY(1); }
+      50% { transform: translateY(-2px) scaleY(1.06); }
+    }
+
+    .pulse-beacon { animation: pulseGlow 2.4s ease-in-out infinite; }
+  </style>
+
+  <!-- Canvas Surface -->
+  <rect width="960" height="120" rx="6" fill="url(#footerBg)" class="theme-bg" />
+  <rect width="960" height="120" rx="6" fill="none" stroke="#21262D" stroke-width="1.2" class="theme-border" />
+  <line x1="20" y1="1" x2="940" y2="1" stroke="url(#footerHairline)" stroke-width="1.5" />
+
+  <!-- Corner Precision Crosshairs -->
+  <g stroke="#30363D" stroke-width="1" opacity="0.8" class="theme-border-accent">
+    <path d="M 12 16 L 22 16 M 17 11 L 17 21" />
+    <path d="M 938 16 L 948 16 M 943 11 L 943 21" />
+    <path d="M 12 104 L 22 104 M 17 99 L 17 109" />
+    <path d="M 938 104 L 948 104 M 943 99 L 943 109" />
+  </g>
+
+  <!-- Main Terminal Console Layout -->
+  <g transform="translate(36, 26)">
+    <!-- Header Row -->
+    <g transform="translate(0, 0)">
+      <circle cx="4" cy="4" r="3" fill="#00E599" class="pulse-beacon theme-emerald-fill" />
+      <text x="14" y="7" fill="#00E599" font-size="9" font-weight="700" letter-spacing="0.16em" class="mono theme-emerald-fill">
+        DIRECT TRANSMISSION CONSOLE // FREQUENCY OPEN
+      </text>
+      <text x="888" y="7" fill="#475569" font-size="8.5" font-weight="600" letter-spacing="0.1em" text-anchor="end" class="mono theme-text-dim">
+        LAT: 20.2961° N · LON: 85.8245° E · BHUBANESWAR, INDIA
+      </text>
+    </g>
+
+    <!-- Primary Dispatch Strip -->
+    <g transform="translate(0, 24)">
+      <!-- Channel 1: Studio -->
+      <g transform="translate(0, 0)">
+        <text x="0" y="10" fill="#94A3B8" font-size="8.5" font-weight="700" letter-spacing="0.08em" class="mono theme-text-body">STUDIO ATELIER:</text>
+        <text x="0" y="24" fill="#F8FAFC" font-size="11" font-weight="700" class="mono theme-text-head">XolverLabs (xolver.in)</text>
+      </g>
+
+      <!-- Channel 2: Founder Inbox -->
+      <g transform="translate(240, 0)">
+        <text x="0" y="10" fill="#94A3B8" font-size="8.5" font-weight="700" letter-spacing="0.08em" class="mono theme-text-body">FOUNDER DIRECT:</text>
+        <text x="0" y="24" fill="#00F2FE" font-size="11" font-weight="700" class="mono theme-cyan-fill">subhamjena.j@gmail.com</text>
+      </g>
+
+      <!-- Channel 3: Systems Consulting -->
+      <g transform="translate(520, 0)">
+        <text x="0" y="10" fill="#94A3B8" font-size="8.5" font-weight="700" letter-spacing="0.08em" class="mono theme-text-body">SYSTEMS DISPATCH:</text>
+        <text x="0" y="24" fill="#FF8C00" font-size="11" font-weight="700" class="mono theme-amber-fill">lawflow.india@gmail.com</text>
+      </g>
+
+      <!-- Channel 4: Identity -->
+      <g transform="translate(740, 0)">
+        <text x="0" y="10" fill="#94A3B8" font-size="8.5" font-weight="700" letter-spacing="0.08em" class="mono theme-text-body">GITHUB PROTOCOL:</text>
+        <text x="0" y="24" fill="#00E599" font-size="11" font-weight="700" class="mono theme-emerald-fill">github.com/DecoyINDIA</text>
+      </g>
+    </g>
+
+    <!-- Bottom Cryptographic Seal -->
+    <g transform="translate(0, 72)">
+      <line x1="0" y1="0" x2="888" y2="0" stroke="#21262D" stroke-width="0.8" class="theme-border" />
+      <text x="0" y="14" fill="#475569" font-size="8" font-weight="500" letter-spacing="0.1em" class="mono theme-text-dim">
+        VERIFIED SOVEREIGN RECORD: 100% DETERMINISTIC ARCHITECTURES · ZERO THIRD-PARTY TELEMETRY · MIT / APACHE 2.0 LICENSED
+      </text>
+    </g>
+  </g>
+</svg>

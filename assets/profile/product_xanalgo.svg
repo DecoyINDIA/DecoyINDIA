@@ -1,0 +1,225 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 260" width="880" height="260" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="xaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080B10" />
+      <stop offset="60%" stop-color="#0D1117" />
+      <stop offset="100%" stop-color="#06080D" />
+    </linearGradient>
+  </defs>
+
+  <style>
+
+    :root {
+      --bg-base: #080B10;
+      --bg-card: #0D1117;
+      --bg-elevated: #161B22;
+      --border-line: #21262D;
+      --border-accent: #30363D;
+      --text-head: #F8FAFC;
+      --text-body: #94A3B8;
+      --text-dim: #475569;
+      --accent-cyan: #00F2FE;
+      --accent-amber: #FF8C00;
+      --accent-emerald: #00E599;
+      --accent-violet: #A855F7;
+      --grid-line: #151926;
+      --glass-glow: rgba(0, 242, 254, 0.08);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-base: #F8FAFC;
+        --bg-card: #FFFFFF;
+        --bg-elevated: #F1F5F9;
+        --border-line: #CBD5E1;
+        --border-accent: #94A3B8;
+        --text-head: #0F172A;
+        --text-body: #334155;
+        --text-dim: #64748B;
+        --accent-cyan: #007799;
+        --accent-amber: #C25E00;
+        --accent-emerald: #059669;
+        --accent-violet: #7C3AED;
+        --grid-line: #E2E8F0;
+        --glass-glow: rgba(0, 119, 153, 0.04);
+      }
+      .theme-bg { fill: #F8FAFC !important; }
+      .theme-card { fill: #FFFFFF !important; }
+      .theme-elevated { fill: #F1F5F9 !important; }
+      .theme-border { stroke: #CBD5E1 !important; }
+      .theme-border-accent { stroke: #94A3B8 !important; }
+      .theme-text-head { fill: #0F172A !important; }
+      .theme-text-body { fill: #334155 !important; }
+      .theme-text-dim { fill: #64748B !important; }
+      .theme-grid { stroke: #E2E8F0 !important; }
+      .theme-cyan-stroke { stroke: #007799 !important; }
+      .theme-cyan-fill { fill: #007799 !important; }
+      .theme-amber-stroke { stroke: #C25E00 !important; }
+      .theme-amber-fill { fill: #C25E00 !important; }
+      .theme-emerald-stroke { stroke: #059669 !important; }
+      .theme-emerald-fill { fill: #059669 !important; }
+      .theme-violet-stroke { stroke: #7C3AED !important; }
+      .theme-violet-fill { fill: #7C3AED !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, .anim-spin, .anim-pulse, .anim-flow, .anim-dash {
+        animation: none !important;
+      }
+    }
+    .mono { font-family: ui-monospace, 'SF Mono', 'JetBrains Mono', 'Cascadia Code', Menlo, Consolas, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', 'Helvetica Neue', Arial, sans-serif; }
+    
+    @keyframes spinCW {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes spinCCW {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1.0; }
+    }
+    @keyframes dashStream {
+      to { stroke-dashoffset: -40; }
+    }
+    @keyframes packetFlow {
+      0% { stroke-dashoffset: 80; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes waveOscillate {
+      0%, 100% { transform: translateY(0px) scaleY(1); }
+      50% { transform: translateY(-2px) scaleY(1.06); }
+    }
+
+    .flow-trade { stroke-dasharray: 4 6; animation: dashStream 2s linear infinite; }
+  </style>
+
+  <!-- Canvas Surface -->
+  <rect width="880" height="260" rx="6" fill="url(#xaBg)" class="theme-bg" />
+  <rect width="880" height="260" rx="6" fill="none" stroke="#21262D" stroke-width="1.2" class="theme-border" />
+  <line x1="0" y1="0" x2="880" y2="0" stroke="#A855F7" stroke-width="2" class="theme-violet-stroke" />
+
+  <!-- Corner Crosshairs -->
+  <g stroke="#30363D" stroke-width="0.8" opacity="0.7" class="theme-border-accent">
+    <path d="M 10 14 L 18 14 M 14 10 L 14 18" />
+    <path d="M 862 14 L 870 14 M 866 10 L 866 18" />
+    <path d="M 10 246 L 18 246 M 14 242 L 14 250" />
+    <path d="M 862 246 L 870 246 M 866 242 L 866 250" />
+  </g>
+
+  <!-- ==================== LEFT COLUMN: EDITORIAL SPECS ==================== -->
+  <g transform="translate(36, 32)">
+    <g transform="translate(0, 0)">
+      <circle cx="4" cy="4" r="3.5" fill="#A855F7" class="theme-violet-fill" />
+      <text x="14" y="7" fill="#A855F7" font-size="9" font-weight="700" letter-spacing="0.14em" class="mono theme-violet-fill">SYSTEM 07 // QUANTITATIVE EXECUTION</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="32" fill="#F8FAFC" font-size="22" font-weight="800" letter-spacing="0.02em" class="sans theme-text-head">
+      XENALGO: DETERMINISTIC NSE TRADING
+    </text>
+    <text x="0" y="48" fill="#94A3B8" font-size="11" font-weight="500" class="sans theme-text-body">
+      Guarded Algorithmic Swing Execution with Pre-Flight Risk Veto Layer
+    </text>
+
+    <!-- 3 Telemetry Spec Chips -->
+    <g transform="translate(0, 68)">
+      <g transform="translate(0, 0)">
+        <rect width="138" height="38" rx="3" fill="#0D1117" stroke="#21262D" stroke-width="0.8" class="theme-card theme-border" />
+        <text x="10" y="15" fill="#475569" font-size="7.5" font-weight="700" letter-spacing="0.08em" class="mono theme-text-dim">SAFETY ARCHITECTURE</text>
+        <text x="10" y="28" fill="#A855F7" font-size="10.5" font-weight="700" class="mono theme-violet-fill">RISK VETO LAYER</text>
+      </g>
+      <g transform="translate(146, 0)">
+        <rect width="144" height="38" rx="3" fill="#0D1117" stroke="#21262D" stroke-width="0.8" class="theme-card theme-border" />
+        <text x="10" y="15" fill="#475569" font-size="7.5" font-weight="700" letter-spacing="0.08em" class="mono theme-text-dim">STATE MUTATION</text>
+        <text x="10" y="28" fill="#00E599" font-size="10.5" font-weight="700" class="mono theme-emerald-fill">FILLS ARE TRUTH</text>
+      </g>
+      <g transform="translate(298, 0)">
+        <rect width="144" height="38" rx="3" fill="#0D1117" stroke="#21262D" stroke-width="0.8" class="theme-card theme-border" />
+        <text x="10" y="15" fill="#475569" font-size="7.5" font-weight="700" letter-spacing="0.08em" class="mono theme-text-dim">REGULATORY GOVERNOR</text>
+        <text x="10" y="28" fill="#FF8C00" font-size="10.5" font-weight="700" class="mono theme-amber-fill">SEBI 2 ORD/SEC</text>
+      </g>
+    </g>
+
+    <!-- Chaos Invariant Box -->
+    <g transform="translate(0, 122)">
+      <rect width="442" height="34" rx="3" fill="#161B22" stroke="#21262D" stroke-width="0.8" class="theme-elevated theme-border" />
+      <text x="12" y="16" fill="#94A3B8" font-size="8" font-weight="700" letter-spacing="0.1em" class="mono theme-text-body">CHAOS HARDENING &amp; RECONCILIATION:</text>
+      <text x="12" y="27" fill="#F8FAFC" font-size="9" font-weight="600" class="mono theme-text-head">
+        REPLAYABLE SQLITE EVENT JOURNAL · CRASH RESILIENT · BROKER DRIFT REPAIR
+      </text>
+    </g>
+
+    <!-- Stack Footnote -->
+    <text x="0" y="180" fill="#475569" font-size="9" font-weight="500" class="mono theme-text-dim">
+      INTEGRATION: Python 3.12 · Fyers API v3 · SQLite Journal · Hard Rate Governor
+    </text>
+  </g>
+
+  <!-- ==================== RIGHT COLUMN: RISK PIPELINE & TELEMETRY ==================== -->
+  <g id="xanalgo-hud" transform="translate(500, 30)">
+    <rect width="344" height="200" rx="4" fill="#0D1117" stroke="#21262D" stroke-width="0.8" class="theme-card theme-border" />
+    <text x="12" y="18" fill="#475569" font-size="7.5" font-weight="700" letter-spacing="0.08em" class="mono theme-text-dim">
+      ORDER EXECUTION VETO PIPELINE // 0 SPECULATIVE FILLS
+    </text>
+
+    <!-- Pipeline Stages -->
+    <g transform="translate(14, 34)">
+      <!-- Stage 1: Signal -->
+      <rect x="0" y="0" width="68" height="32" rx="2" fill="#161B22" stroke="#A855F7" stroke-width="0.8" class="theme-elevated theme-violet-stroke" />
+      <text x="34" y="15" fill="#F8FAFC" font-size="7.5" font-weight="600" text-anchor="middle" class="mono theme-text-head">Algorithmic</text>
+      <text x="34" y="25" fill="#A855F7" font-size="7.5" font-weight="700" text-anchor="middle" class="mono theme-violet-fill">Signal</text>
+
+      <line x1="68" y1="16" x2="80" y2="16" stroke="#A855F7" stroke-width="1" class="theme-violet-stroke" />
+
+      <!-- Stage 2: RiskEngine -->
+      <rect x="80" y="0" width="84" height="32" rx="2" fill="#161B22" stroke="#FF8C00" stroke-width="0.8" class="theme-elevated theme-amber-stroke" />
+      <text x="122" y="15" fill="#F8FAFC" font-size="7.5" font-weight="600" text-anchor="middle" class="mono theme-text-head">RiskEngine</text>
+      <text x="122" y="25" fill="#FF8C00" font-size="7.5" font-weight="700" text-anchor="middle" class="mono theme-amber-fill">check() VETO</text>
+
+      <line x1="164" y1="16" x2="176" y2="16" stroke="#FF8C00" stroke-width="1" class="theme-amber-stroke" />
+
+      <!-- Stage 3: Rate Governor -->
+      <rect x="176" y="0" width="66" height="32" rx="2" fill="#161B22" stroke="#00F2FE" stroke-width="0.8" class="theme-elevated theme-cyan-stroke" />
+      <text x="209" y="15" fill="#F8FAFC" font-size="7.5" font-weight="600" text-anchor="middle" class="mono theme-text-head">SEBI Rate</text>
+      <text x="209" y="25" fill="#00F2FE" font-size="7.5" font-weight="700" text-anchor="middle" class="mono theme-cyan-fill">Governor</text>
+
+      <line x1="242" y1="16" x2="254" y2="16" stroke="#00F2FE" stroke-width="1" class="theme-cyan-stroke" />
+
+      <!-- Stage 4: Broker Socket -->
+      <rect x="254" y="0" width="64" height="32" rx="2" fill="#161B22" stroke="#00E599" stroke-width="0.8" class="theme-elevated theme-emerald-stroke" />
+      <text x="286" y="15" fill="#F8FAFC" font-size="7.5" font-weight="600" text-anchor="middle" class="mono theme-text-head">Broker</text>
+      <text x="286" y="25" fill="#00E599" font-size="7.5" font-weight="700" text-anchor="middle" class="mono theme-emerald-fill">Socket</text>
+    </g>
+
+    <!-- Synthetic Candlestick Strip -->
+    <g transform="translate(14, 82)">
+      <rect width="316" height="64" rx="3" fill="#161B22" stroke="#21262D" stroke-width="0.8" class="theme-elevated theme-border" />
+      <!-- Candlesticks -->
+      <line x1="40" y1="12" x2="40" y2="52" stroke="#00E599" stroke-width="1" />
+      <rect x="36" y="20" width="8" height="24" fill="#00E599" />
+      <line x1="80" y1="18" x2="80" y2="58" stroke="#FF5555" stroke-width="1" />
+      <rect x="76" y="28" width="8" height="18" fill="#FF5555" />
+      <line x1="120" y1="8" x2="120" y2="48" stroke="#00E599" stroke-width="1" />
+      <rect x="116" y="14" width="8" height="26" fill="#00E599" />
+      <line x1="160" y1="14" x2="160" y2="50" stroke="#00E599" stroke-width="1" />
+      <rect x="156" y="20" width="8" height="20" fill="#00E599" />
+      <line x1="200" y1="10" x2="200" y2="46" stroke="#00E599" stroke-width="1" />
+      <rect x="196" y="16" width="8" height="22" fill="#00E599" />
+
+      <!-- Execution Marker -->
+      <circle cx="200" cy="16" r="4" fill="#00F2FE" />
+      <text x="210" y="20" fill="#00F2FE" font-size="7.5" font-weight="700" class="mono theme-cyan-fill">BUY_FILL @ 24,180.50</text>
+    </g>
+
+    <!-- State Journal Footer -->
+    <g transform="translate(14, 158)">
+      <rect width="316" height="26" rx="2" fill="#161B22" stroke="#21262D" stroke-width="0.8" class="theme-elevated theme-border" />
+      <circle cx="12" cy="13" r="3" fill="#A855F7" class="theme-violet-fill" />
+      <text x="22" y="17" fill="#F8FAFC" font-size="8" font-weight="600" class="mono theme-text-head">
+        REPLAY JOURNAL: 1,420 AUDITED EVENTS // DRIFT: 0.00%
+      </text>
+    </g>
+  </g>
+</svg>

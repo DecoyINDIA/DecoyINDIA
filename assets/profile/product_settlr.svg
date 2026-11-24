@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 260" width="880" height="260" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="settlrBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080B10" />
+      <stop offset="60%" stop-color="#0D1117" />
+      <stop offset="100%" stop-color="#07090E" />
+    </linearGradient>
+  </defs>
+
+  <style>
+
+    :root {
+      --bg-base: #080B10;
+      --bg-card: #0D1117;
+      --bg-elevated: #161B22;
+      --border-line: #21262D;
+      --border-accent: #30363D;
+      --text-head: #F8FAFC;
+      --text-body: #94A3B8;
+      --text-dim: #475569;
+      --accent-cyan: #00F2FE;
+      --accent-amber: #FF8C00;
+      --accent-emerald: #00E599;
+      --accent-violet: #A855F7;
+      --grid-line: #151926;
+      --glass-glow: rgba(0, 242, 254, 0.08);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-base: #F8FAFC;
+        --bg-card: #FFFFFF;
+        --bg-elevated: #F1F5F9;
+        --border-line: #CBD5E1;
+        --border-accent: #94A3B8;
+        --text-head: #0F172A;
+        --text-body: #334155;
+        --text-dim: #64748B;
+        --accent-cyan: #007799;
+        --accent-amber: #C25E00;
+        --accent-emerald: #059669;
+        --accent-violet: #7C3AED;
+        --grid-line: #E2E8F0;
+        --glass-glow: rgba(0, 119, 153, 0.04);
+      }
+      .theme-bg { fill: #F8FAFC !important; }
+      .theme-card { fill: #FFFFFF !important; }
+      .theme-elevated { fill: #F1F5F9 !important; }
+      .theme-border { stroke: #CBD5E1 !important; }
+      .theme-border-accent { stroke: #94A3B8 !important; }
+      .theme-text-head { fill: #0F172A !important; }
+      .theme-text-body { fill: #334155 !important; }
+      .theme-text-dim { fill: #64748B !important; }
+      .theme-grid { stroke: #E2E8F0 !important; }
+      .theme-cyan-stroke { stroke: #007799 !important; }
+      .theme-cyan-fill { fill: #007799 !important; }
+      .theme-amber-stroke { stroke: #C25E00 !important; }
+      .theme-amber-fill { fill: #C25E00 !important; }
+      .theme-emerald-stroke { stroke: #059669 !important; }
+      .theme-emerald-fill { fill: #059669 !important; }
+      .theme-violet-stroke { stroke: #7C3AED !important; }
+      .theme-violet-fill { fill: #7C3AED !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, .anim-spin, .anim-pulse, .anim-flow, .anim-dash {
+        animation: none !important;
+      }
+    }
+    .mono { font-family: ui-monospace, 'SF Mono', 'JetBrains Mono', 'Cascadia Code', Menlo, Consolas, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', 'Helvetica Neue', Arial, sans-serif; }
+    
+    @keyframes spinCW {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes spinCCW {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1.0; }
+    }
+    @keyframes dashStream {
+      to { stroke-dashoffset: -40; }
+    }
+    @keyframes packetFlow {
+      0% { stroke-dashoffset: 80; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes waveOscillate {
+      0%, 100% { transform: translateY(0px) scaleY(1); }
+      50% { transform: translateY(-2px) scaleY(1.06); }
+    }
+
+    .hash-flow { stroke-dasharray: 4 6; animation: dashStream 3s linear infinite; }
+    .pulse-ledger { animation: pulseGlow 2.8s ease-in-out infinite; }
+  </style>
+
+  <!-- Canvas Surface -->
+  <rect width="880" height="260" rx="6" fill="url(#settlrBg)" class="theme-bg" />
+  <rect width="880" height="260" rx="6" fill="none" stroke="#21262D" stroke-width="1.2" class="theme-border" />
+  <line x1="0" y1="0" x2="880" y2="0" stroke="#FF8C00" stroke-width="2" class="theme-amber-stroke" />
+
+  <!-- Corner Crosshairs -->
+  <g stroke="#30363D" stroke-width="0.8" opacity="0.7" class="theme-border-accent">
+    <path d="M 10 14 L 18 14 M 14 10 L 14 18" />
+    <path d="M 862 14 L 870 14 M 866 10 L 866 18" />
+    <path d="M 10 246 L 18 246 M 14 242 L 14 250" />
+    <path d="M 862 246 L 870 246 M 866 242 L 866 250" />
+  </g>
+
+  <!-- ==================== LEFT COLUMN: EDITORIAL SPECS ==================== -->
+  <g transform="translate(36, 32)">
+    <g transform="translate(0, 0)">
+      <circle cx="4" cy="4" r="3.5" fill="#FF8C00" class="theme-amber-fill" />
+      <text x="14" y="7" fill="#FF8C00" font-size="9" font-weight="700" letter-spacing="0.14em" class="mono theme-amber-fill">SYSTEM 04 // CRYPTOGRAPHIC TRUST</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="32" fill="#F8FAFC" font-size="22" font-weight="800" letter-spacing="0.02em" class="sans theme-text-head">
+      SETTLR: DUAL-CONSENT RENTAL ESCROW
+    </text>
+    <text x="0" y="48" fill="#94A3B8" font-size="11" font-weight="500" class="sans theme-text-body">
+      Ownership-Gated Rental Trust Platform Neutralizing Broker Asymmetry
+    </text>
+
+    <!-- 3 Telemetry Spec Chips -->
+    <g transform="translate(0, 68)">
+      <g transform="translate(0, 0)">
+        <rect width="138" height="38" rx="3" fill="#0D1117" stroke="#21262D" stroke-width="0.8" class="theme-card theme-border" />
+        <text x="10" y="15" fill="#475569" font-size="7.5" font-weight="700" letter-spacing="0.08em" class="mono theme-text-dim">IMMUTABLE RECORD</text>
+        <text x="10" y="28" fill="#FF8C00" font-size="10.5" font-weight="700" class="mono theme-amber-fill">SHA-256 LEDGER</text>
+      </g>
+      <g transform="translate(146, 0)">
+        <rect width="144" height="38" rx="3" fill="#0D1117" stroke="#21262D" stroke-width="0.8" class="theme-card theme-border" />
+        <text x="10" y="15" fill="#475569" font-size="7.5" font-weight="700" letter-spacing="0.08em" class="mono theme-text-dim">OWNERSHIP MOAT</text>
+        <text x="10" y="28" fill="#00E599" font-size="10.5" font-weight="700" class="mono theme-emerald-fill">MUNICIPAL DEED</text>
+      </g>
+      <g transform="translate(298, 0)">
+        <rect width="144" height="38" rx="3" fill="#0D1117" stroke="#21262D" stroke-width="0.8" class="theme-card theme-border" />
+        <text x="10" y="15" fill="#475569" font-size="7.5" font-weight="700" letter-spacing="0.08em" class="mono theme-text-dim">FUNDS SECURITY</text>
+        <text x="10" y="28" fill="#00F2FE" font-size="10.5" font-weight="700" class="mono theme-cyan-fill">ZERO CUSTODY</text>
+      </g>
+    </g>
+
+    <!-- Target Rollout Cluster Box -->
+    <g transform="translate(0, 122)">
+      <rect width="442" height="34" rx="3" fill="#161B22" stroke="#21262D" stroke-width="0.8" class="theme-elevated theme-border" />
+      <text x="12" y="16" fill="#94A3B8" font-size="8" font-weight="700" letter-spacing="0.1em" class="mono theme-text-body">TARGET LAUNCH METROPOLIS:</text>
+      <text x="12" y="27" fill="#F8FAFC" font-size="9" font-weight="600" class="mono theme-text-head">
+        DELHI NCR CLUSTER · SAKET · HAUZ KHAS · GK · VASANT KUNJ
+      </text>
+    </g>
+
+    <!-- Stack Footnote -->
+    <text x="0" y="180" fill="#475569" font-size="9" font-weight="500" class="mono theme-text-dim">
+      SECURITY: Tamper-Evident Hash Chain · Dual Cryptographic Co-Signatures · Fail-Closed
+    </text>
+  </g>
+
+  <!-- ==================== RIGHT COLUMN: SHA-256 BLOCKCHAIN SCHEMATIC ==================== -->
+  <g id="settlr-blocks" transform="translate(500, 32)">
+    <rect width="344" height="196" rx="4" fill="#0D1117" stroke="#21262D" stroke-width="0.8" class="theme-card theme-border" />
+    <text x="12" y="18" fill="#475569" font-size="7.5" font-weight="700" letter-spacing="0.08em" class="mono theme-text-dim">
+      APPEND-ONLY DUAL-CONSENT BLOCK CHAIN (TAMPER DETECTION: ACTIVE)
+    </text>
+
+    <!-- Block 1084 -->
+    <g transform="translate(14, 34)">
+      <rect width="144" height="66" rx="3" fill="#161B22" stroke="#21262D" stroke-width="0.8" class="theme-elevated theme-border" />
+      <text x="10" y="16" fill="#FF8C00" font-size="8.5" font-weight="700" class="mono theme-amber-fill">BLOCK #1084 [LEASE]</text>
+      <text x="10" y="30" fill="#94A3B8" font-size="7.5" font-weight="500" class="mono theme-text-body">PREV: 0x8a2f4c1e</text>
+      <text x="10" y="42" fill="#00E599" font-size="7.5" font-weight="600" class="mono theme-emerald-fill">SIGN: TENANT + OWNER</text>
+      <text x="10" y="54" fill="#475569" font-size="7" font-weight="500" class="mono theme-text-dim">DEED: DIGILOCKER VERIFIED</text>
+    </g>
+
+    <!-- Hash Pointer Arrow 1 to 2 -->
+    <line x1="158" y1="67" x2="186" y2="67" stroke="#FF8C00" stroke-width="1.2" class="hash-flow theme-amber-stroke" />
+
+    <!-- Block 1085 -->
+    <g transform="translate(186, 34)">
+      <rect width="144" height="66" rx="3" fill="#161B22" stroke="#00E599" stroke-width="1" class="theme-elevated theme-emerald-stroke" />
+      <text x="10" y="16" fill="#00E599" font-size="8.5" font-weight="700" class="mono theme-emerald-fill">BLOCK #1085 [ESCROW]</text>
+      <text x="10" y="30" fill="#94A3B8" font-size="7.5" font-weight="500" class="mono theme-text-body">PREV: 0xb73d810a</text>
+      <text x="10" y="42" fill="#00F2FE" font-size="7.5" font-weight="600" class="mono theme-cyan-fill">STATUS: MILESTONE LOCKED</text>
+      <text x="10" y="54" fill="#475569" font-size="7" font-weight="500" class="mono theme-text-dim">CLAIM: DUAL-KEY REQUIRED</text>
+    </g>
+
+    <!-- Verification Audit Banner -->
+    <g transform="translate(14, 114)">
+      <rect width="316" height="66" rx="3" fill="#161B22" stroke="#21262D" stroke-width="0.8" class="theme-elevated theme-border" />
+      <circle cx="14" cy="18" r="4" fill="#00E599" class="pulse-ledger theme-emerald-fill" />
+      <text x="26" y="21" fill="#F8FAFC" font-size="9" font-weight="700" class="mono theme-text-head">
+        CRYPTOGRAPHIC INTEGRITY: 100% UNBROKEN
+      </text>
+      <text x="14" y="38" fill="#94A3B8" font-size="7.5" font-weight="500" class="mono theme-text-body">
+        • Zero chain fracture detected across all recorded transactions
+      </text>
+      <text x="14" y="52" fill="#94A3B8" font-size="7.5" font-weight="500" class="mono theme-text-body">
+        • Direct municipal record validation neutralizes ghost broker listings
+      </text>
+    </g>
+  </g>
+</svg>

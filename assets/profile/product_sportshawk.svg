@@ -1,0 +1,223 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 260" width="880" height="260" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="shBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080B10" />
+      <stop offset="60%" stop-color="#0D1117" />
+      <stop offset="100%" stop-color="#05080D" />
+    </linearGradient>
+  </defs>
+
+  <style>
+
+    :root {
+      --bg-base: #080B10;
+      --bg-card: #0D1117;
+      --bg-elevated: #161B22;
+      --border-line: #21262D;
+      --border-accent: #30363D;
+      --text-head: #F8FAFC;
+      --text-body: #94A3B8;
+      --text-dim: #475569;
+      --accent-cyan: #00F2FE;
+      --accent-amber: #FF8C00;
+      --accent-emerald: #00E599;
+      --accent-violet: #A855F7;
+      --grid-line: #151926;
+      --glass-glow: rgba(0, 242, 254, 0.08);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-base: #F8FAFC;
+        --bg-card: #FFFFFF;
+        --bg-elevated: #F1F5F9;
+        --border-line: #CBD5E1;
+        --border-accent: #94A3B8;
+        --text-head: #0F172A;
+        --text-body: #334155;
+        --text-dim: #64748B;
+        --accent-cyan: #007799;
+        --accent-amber: #C25E00;
+        --accent-emerald: #059669;
+        --accent-violet: #7C3AED;
+        --grid-line: #E2E8F0;
+        --glass-glow: rgba(0, 119, 153, 0.04);
+      }
+      .theme-bg { fill: #F8FAFC !important; }
+      .theme-card { fill: #FFFFFF !important; }
+      .theme-elevated { fill: #F1F5F9 !important; }
+      .theme-border { stroke: #CBD5E1 !important; }
+      .theme-border-accent { stroke: #94A3B8 !important; }
+      .theme-text-head { fill: #0F172A !important; }
+      .theme-text-body { fill: #334155 !important; }
+      .theme-text-dim { fill: #64748B !important; }
+      .theme-grid { stroke: #E2E8F0 !important; }
+      .theme-cyan-stroke { stroke: #007799 !important; }
+      .theme-cyan-fill { fill: #007799 !important; }
+      .theme-amber-stroke { stroke: #C25E00 !important; }
+      .theme-amber-fill { fill: #C25E00 !important; }
+      .theme-emerald-stroke { stroke: #059669 !important; }
+      .theme-emerald-fill { fill: #059669 !important; }
+      .theme-violet-stroke { stroke: #7C3AED !important; }
+      .theme-violet-fill { fill: #7C3AED !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, .anim-spin, .anim-pulse, .anim-flow, .anim-dash {
+        animation: none !important;
+      }
+    }
+    .mono { font-family: ui-monospace, 'SF Mono', 'JetBrains Mono', 'Cascadia Code', Menlo, Consolas, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', 'Helvetica Neue', Arial, sans-serif; }
+    
+    @keyframes spinCW {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes spinCCW {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1.0; }
+    }
+    @keyframes dashStream {
+      to { stroke-dashoffset: -40; }
+    }
+    @keyframes packetFlow {
+      0% { stroke-dashoffset: 80; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes waveOscillate {
+      0%, 100% { transform: translateY(0px) scaleY(1); }
+      50% { transform: translateY(-2px) scaleY(1.06); }
+    }
+
+    .pulse-joint { animation: pulseGlow 2s ease-in-out infinite; }
+  </style>
+
+  <!-- Canvas Surface -->
+  <rect width="880" height="260" rx="6" fill="url(#shBg)" class="theme-bg" />
+  <rect width="880" height="260" rx="6" fill="none" stroke="#21262D" stroke-width="1.2" class="theme-border" />
+  <line x1="0" y1="0" x2="880" y2="0" stroke="#00F2FE" stroke-width="2" class="theme-cyan-stroke" />
+
+  <!-- Corner Crosshairs -->
+  <g stroke="#30363D" stroke-width="0.8" opacity="0.7" class="theme-border-accent">
+    <path d="M 10 14 L 18 14 M 14 10 L 14 18" />
+    <path d="M 862 14 L 870 14 M 866 10 L 866 18" />
+    <path d="M 10 246 L 18 246 M 14 242 L 14 250" />
+    <path d="M 862 246 L 870 246 M 866 242 L 866 250" />
+  </g>
+
+  <!-- ==================== LEFT COLUMN: EDITORIAL SPECS ==================== -->
+  <g transform="translate(36, 32)">
+    <g transform="translate(0, 0)">
+      <circle cx="4" cy="4" r="3.5" fill="#00F2FE" class="theme-cyan-fill" />
+      <text x="14" y="7" fill="#00F2FE" font-size="9" font-weight="700" letter-spacing="0.14em" class="mono theme-cyan-fill">SYSTEM 05 // EDGE COMPUTER VISION</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="32" fill="#F8FAFC" font-size="22" font-weight="800" letter-spacing="0.02em" class="sans theme-text-head">
+      SPORTSHAWK: GRASSROOTS FOOTBALL CV
+    </text>
+    <text x="0" y="48" fill="#94A3B8" font-size="11" font-weight="500" class="sans theme-text-body">
+      100% On-Device Kinematic Tracking &amp; Verified Scout Discovery Cards
+    </text>
+
+    <!-- 3 Telemetry Spec Chips -->
+    <g transform="translate(0, 68)">
+      <g transform="translate(0, 0)">
+        <rect width="138" height="38" rx="3" fill="#0D1117" stroke="#21262D" stroke-width="0.8" class="theme-card theme-border" />
+        <text x="10" y="15" fill="#475569" font-size="7.5" font-weight="700" letter-spacing="0.08em" class="mono theme-text-dim">PROCESSING EDGE</text>
+        <text x="10" y="28" fill="#00F2FE" font-size="10.5" font-weight="700" class="mono theme-cyan-fill">60 FPS ON-DEVICE</text>
+      </g>
+      <g transform="translate(146, 0)">
+        <rect width="144" height="38" rx="3" fill="#0D1117" stroke="#21262D" stroke-width="0.8" class="theme-card theme-border" />
+        <text x="10" y="15" fill="#475569" font-size="7.5" font-weight="700" letter-spacing="0.08em" class="mono theme-text-dim">CLOUD OVERHEAD</text>
+        <text x="10" y="28" fill="#00E599" font-size="10.5" font-weight="700" class="mono theme-emerald-fill">ZERO GPU OVERHEAD</text>
+      </g>
+      <g transform="translate(298, 0)">
+        <rect width="144" height="38" rx="3" fill="#0D1117" stroke="#21262D" stroke-width="0.8" class="theme-card theme-border" />
+        <text x="10" y="15" fill="#475569" font-size="7.5" font-weight="700" letter-spacing="0.08em" class="mono theme-text-dim">PRIVACY BY DESIGN</text>
+        <text x="10" y="28" fill="#FF8C00" font-size="10.5" font-weight="700" class="mono theme-amber-fill">NO VIDEO UPLOAD</text>
+      </g>
+    </g>
+
+    <!-- Grassroots Invariant Box -->
+    <g transform="translate(0, 122)">
+      <rect width="442" height="34" rx="3" fill="#161B22" stroke="#21262D" stroke-width="0.8" class="theme-elevated theme-border" />
+      <text x="12" y="16" fill="#94A3B8" font-size="8" font-weight="700" letter-spacing="0.1em" class="mono theme-text-body">ACCESSIBILITY &amp; LOCALIZATION:</text>
+      <text x="12" y="27" fill="#F8FAFC" font-size="9" font-weight="600" class="mono theme-text-head">
+        9 INDIAN REGIONAL LANGUAGES · ZERO SUBSCRIPTION FEES · PURE PUBLIC GOOD
+      </text>
+    </g>
+
+    <!-- Stack Footnote -->
+    <text x="0" y="180" fill="#475569" font-size="9" font-weight="500" class="mono theme-text-dim">
+      TECHNOLOGY: MediaPipe Edge · Apple Vision Framework · React 19 · DPDP Child Safety
+    </text>
+  </g>
+
+  <!-- ==================== RIGHT COLUMN: POSE KINEMATICS & HUD ==================== -->
+  <g id="sportshawk-hud" transform="translate(500, 24)">
+    <rect width="344" height="204" rx="4" fill="#0D1117" stroke="#21262D" stroke-width="0.8" class="theme-card theme-border" />
+    <text x="12" y="18" fill="#475569" font-size="7.5" font-weight="700" letter-spacing="0.08em" class="mono theme-text-dim">
+      EDGE COMPUTER VISION KINEMATIC POSE ESTIMATION (60 FPS)
+    </text>
+
+    <!-- Bounding Tracking Box -->
+    <rect x="605" y="50" width="110" height="155" rx="3" fill="none" stroke="#00F2FE" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.6" class="theme-cyan-stroke" />
+    <text x="610" y="59" fill="#00F2FE" font-size="7" font-weight="600" class="mono theme-cyan-fill">TARGET: ATHLETE_01</text>
+
+    <!-- Skeleton Bones -->
+    <g stroke="#00F2FE" stroke-width="1.5" opacity="0.85" class="theme-cyan-stroke">
+      <!-- Spine -->
+      <line x1="660" y1="65" x2="660" y2="80" />
+      <line x1="660" y1="80" x2="660" y2="120" />
+      <!-- Arms -->
+      <line x1="660" y1="80" x2="638" y2="85" />
+      <line x1="660" y1="80" x2="682" y2="85" />
+      <line x1="638" y1="85" x2="626" y2="105" />
+      <line x1="682" y1="85" x2="696" y2="107" />
+      <line x1="626" y1="105" x2="618" y2="127" />
+      <line x1="696" y1="107" x2="704" y2="129" />
+      <!-- Legs -->
+      <line x1="660" y1="120" x2="644" y2="120" />
+      <line x1="660" y1="120" x2="676" y2="120" />
+      <line x1="644" y1="120" x2="634" y2="155" />
+      <line x1="676" y1="120" x2="684" y2="159" />
+      <line x1="634" y1="155" x2="628" y2="190" />
+      <line x1="684" y1="159" x2="690" y2="195" />
+    </g>
+
+    <!-- Joint Markers -->
+    <g class="pulse-joint">
+      <circle cx="660" cy="65" r="3.5" fill="#FF8C00" />
+      <circle cx="660" cy="80" r="2.5" fill="#FF8C00" />
+      <circle cx="638" cy="85" r="2.5" fill="#FF8C00" />
+      <circle cx="682" cy="85" r="2.5" fill="#FF8C00" />
+      <circle cx="626" cy="105" r="2.5" fill="#FF8C00" />
+      <circle cx="696" cy="107" r="2.5" fill="#FF8C00" />
+      <circle cx="618" cy="127" r="2.5" fill="#FF8C00" />
+      <circle cx="704" cy="129" r="2.5" fill="#FF8C00" />
+      <circle cx="660" cy="120" r="3.5" fill="#FF8C00" />
+      <circle cx="644" cy="120" r="2.5" fill="#FF8C00" />
+      <circle cx="676" cy="120" r="2.5" fill="#FF8C00" />
+      <circle cx="634" cy="155" r="2.5" fill="#FF8C00" />
+      <circle cx="684" cy="159" r="2.5" fill="#FF8C00" />
+      <circle cx="628" cy="190" r="2.5" fill="#FF8C00" />
+      <circle cx="690" cy="195" r="2.5" fill="#FF8C00" />
+    </g>
+
+    <!-- Velocity Vector Arrow -->
+    <line x1="628" y1="190" x2="652" y2="182" stroke="#00E599" stroke-width="1.5" class="theme-emerald-stroke" />
+    <circle cx="652" cy="182" r="2" fill="#00E599" class="theme-emerald-fill" />
+
+    <!-- Telemetry Readouts -->
+    <g transform="translate(14, 168)">
+      <rect width="316" height="24" rx="2" fill="#161B22" stroke="#21262D" stroke-width="0.8" class="theme-elevated theme-border" />
+      <text x="12" y="16" fill="#F8FAFC" font-size="8" font-weight="600" class="mono theme-text-head">
+        CADENCE: 184 BPM // STABILITY: 98.4% // VELOCITY: 6.2 M/S
+      </text>
+    </g>
+  </g>
+</svg>
