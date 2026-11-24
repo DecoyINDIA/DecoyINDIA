@@ -237,7 +237,7 @@ def render(s: dict, updated: dt.date) -> str:
     # legend + busiest day
     lg_y = hy + 7 * pitch + 22
     bd, bc = s["busiest"]
-    busy = f"Busiest day: {bd:%d %B}, with {bc} contributions." if bc else "Quiet year so far."
+    busy = f"Busiest day: {bd.day} {bd:%B}, with {bc} contributions." if bc else "Quiet year so far."
     parts.append(f'<path class="bs" d="{SANS.path(busy, 13, hx, lg_y + 9)}"/>')
     lx = hx + 53 * pitch - 3
     parts.append(f'<path class="lb" d="{MONO.path("MORE", 9.5, lx, lg_y + 9, anchor="end", track=1.4)}"/>')
