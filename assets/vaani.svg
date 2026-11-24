@@ -1,179 +1,153 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 200" width="440" height="200" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <!-- Base Canvas -->
-    <linearGradient id="vaaniBg2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#080512" />
-      <stop offset="55%" stop-color="#140924" />
-      <stop offset="100%" stop-color="#05030c" />
+    <!-- Background Canvas -->
+    <linearGradient id="vaaniBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090614" />
+      <stop offset="50%" stop-color="#120A20" />
+      <stop offset="100%" stop-color="#06040F" />
     </linearGradient>
 
-    <!-- 1px Specular Border -->
-    <linearGradient id="vaaniGlassBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4" />
-      <stop offset="30%" stop-color="#E100FF" stop-opacity="0.7" />
-      <stop offset="70%" stop-color="#7F00FF" stop-opacity="0.4" />
-      <stop offset="100%" stop-color="#25D366" stop-opacity="0.5" />
+    <!-- 1px Hairline Border -->
+    <linearGradient id="vaaniBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7F00FF" stop-opacity="0.7" />
+      <stop offset="50%" stop-color="#E100FF" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#25D366" stop-opacity="0.4" />
     </linearGradient>
 
-    <!-- Border Comet Gradient -->
-    <linearGradient id="vaaniComet" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7F00FF" stop-opacity="0" />
-      <stop offset="60%" stop-color="#E100FF" stop-opacity="0.85" />
-      <stop offset="90%" stop-color="#ffffff" stop-opacity="1" />
-      <stop offset="100%" stop-color="#25D366" stop-opacity="0" />
-    </linearGradient>
-
-    <!-- Liquid Mercury Wave Gradient -->
-    <linearGradient id="vaaniMercury" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="30%" stop-color="#E100FF" />
-      <stop offset="70%" stop-color="#7F00FF" />
+    <!-- Waveform Frequency Gradient -->
+    <linearGradient id="waveGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#7F00FF" />
+      <stop offset="50%" stop-color="#E100FF" />
       <stop offset="100%" stop-color="#00F2FE" />
     </linearGradient>
 
-    <pattern id="vaaniGrid2" width="20" height="20" patternUnits="userSpaceOnUse">
-      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#221138" stroke-width="0.5" stroke-opacity="0.5" />
-      <circle cx="0" cy="0" r="0.7" fill="#E100FF" fill-opacity="0.3" />
+    <!-- Precision Dot Grid -->
+    <pattern id="vaaniGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.75" fill="#1E1430" />
     </pattern>
-
-    <!-- Liquid Glass Specular Filter -->
-    <filter id="glassRefractVn" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur" />
-      <feSpecularLighting in="blur" surfaceScale="2.5" specularConstant="1.5" specularExponent="24" lighting-color="#ffffff" result="specular">
-        <feDistantLight azimuth="225" elevation="50" />
-      </feSpecularLighting>
-      <feComposite in="SourceGraphic" in2="specular" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" />
-    </filter>
-
-    <filter id="softGlowVn" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
   </defs>
 
   <style>
     .mono { font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace; }
     .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-
-    @keyframes vnCometRun {
-      0% { stroke-dashoffset: 1240; }
-      100% { stroke-dashoffset: 0; }
-    }
-    @keyframes waveBar1 { 0%, 100% { height: 14px; y: -7px; } 50% { height: 46px; y: -23px; } }
-    @keyframes waveBar2 { 0%, 100% { height: 28px; y: -14px; } 50% { height: 62px; y: -31px; } }
-    @keyframes waveBar3 { 0%, 100% { height: 44px; y: -22px; } 50% { height: 20px; y: -10px; } }
-    @keyframes waveBar4 { 0%, 100% { height: 56px; y: -28px; } 50% { height: 34px; y: -17px; } }
-    @keyframes waveBar5 { 0%, 100% { height: 32px; y: -16px; } 50% { height: 68px; y: -34px; } }
-
-    .card-comet-vn {
-      stroke-dasharray: 80 1160;
-      animation: vnCometRun 5.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-    }
-    .wb-1 { animation: waveBar1 1.4s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
-    .wb-2 { animation: waveBar2 1.7s cubic-bezier(0.16, 1, 0.3, 1) infinite 0.2s; }
-    .wb-3 { animation: waveBar3 1.3s cubic-bezier(0.16, 1, 0.3, 1) infinite 0.4s; }
-    .wb-4 { animation: waveBar4 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite 0.1s; }
-    .wb-5 { animation: waveBar5 1.5s cubic-bezier(0.16, 1, 0.3, 1) infinite 0.3s; }
   </style>
 
-  <!-- Background Canvas -->
-  <rect width="440" height="200" rx="12" fill="url(#vaaniBg2)" />
-  <rect width="440" height="200" rx="12" fill="url(#vaaniGrid2)" />
-  <rect width="440" height="200" rx="12" fill="none" stroke="url(#vaaniGlassBorder)" stroke-width="1.2" />
-
-  <!-- React-Bits Border Comet -->
-  <rect width="440" height="200" rx="12" fill="none" stroke="url(#vaaniComet)" stroke-width="2" class="card-comet-vn" />
+  <!-- Background Surface -->
+  <rect width="440" height="200" rx="12" fill="url(#vaaniBg)" />
+  <rect width="440" height="200" rx="12" fill="url(#vaaniGrid)" />
+  <rect width="440" height="200" rx="12" fill="none" stroke="url(#vaaniBorder)" stroke-width="1.2" />
 
   <!-- Corner Brackets -->
-  <path d="M 12 24 L 12 12 L 24 12" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.8" />
+  <path d="M 12 24 L 12 12 L 24 12" fill="none" stroke="#E100FF" stroke-width="1.5" />
   <path d="M 428 24 L 428 12 L 416 12" fill="none" stroke="#25D366" stroke-width="1.5" />
   <path d="M 12 176 L 12 188 L 24 188" fill="none" stroke="#7F00FF" stroke-width="1.5" />
   <path d="M 428 176 L 428 188 L 416 188" fill="none" stroke="#E100FF" stroke-width="1.5" />
 
-  <!-- Ambient Light Spotlight -->
-  <circle cx="345" cy="78" r="70" fill="#7F00FF" opacity="0.12" filter="url(#softGlowVn)" />
-
   <!-- Left Header and Info -->
-  <g transform="translate(24, 26)">
-    <!-- Glass Category Pill -->
-    <rect width="148" height="22" rx="6" fill="#1b0a2e" fill-opacity="0.85" stroke="url(#vaaniGlassBorder)" stroke-width="0.9" filter="url(#glassRefractVn)" />
-    <path d="M 6 2 L 142 2" stroke="#ffffff" stroke-opacity="0.4" stroke-width="0.6" stroke-linecap="round" />
-    <text x="74" y="15" fill="#E100FF" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1" class="mono">VOICE // AGENTIC AI</text>
+  <g transform="translate(24, 28)">
+    <!-- Category Pill -->
+    <rect width="144" height="20" rx="4" fill="#1C0D2E" stroke="#4C1D95" stroke-width="1" />
+    <text x="72" y="14" fill="#E100FF" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1" class="mono">VOICE // AGENTIC AI</text>
 
-    <!-- Title with Specular Lighting -->
-    <text x="0" y="52" fill="#ffffff" font-size="24" font-weight="900" letter-spacing="0.5" class="sans" filter="url(#glassRefractVn)">Vaani</text>
-    <text x="76" y="50" fill="#64748b" font-size="11" font-weight="600" class="mono">वाणी // v1.2</text>
+    <!-- Title -->
+    <text x="0" y="48" fill="#FFFFFF" font-size="22" font-weight="800" letter-spacing="0.5" class="sans">Vaani</text>
+    <text x="74" y="47" fill="#64748B" font-size="11" font-weight="600" class="mono">वाणी // v1.2</text>
 
     <!-- Description -->
-    <text x="0" y="73" fill="#94a3b8" font-size="11.5" font-weight="400" class="sans">Conversational voice AI and WhatsApp dispatch</text>
+    <text x="0" y="68" fill="#94A3B8" font-size="11.5" font-weight="400" class="sans">Conversational voice AI and WhatsApp dispatch</text>
 
-    <!-- Clean 2-Line Frosted Glass Telemetry Box (Zero Overlap) -->
-    <g transform="translate(0, 92)">
-      <rect width="210" height="48" rx="7" fill="#0d081e" fill-opacity="0.8" stroke="url(#vaaniGlassBorder)" stroke-width="0.9" filter="url(#glassRefractVn)" />
-      <path d="M 6 2 L 204 2" stroke="#ffffff" stroke-opacity="0.3" stroke-width="0.6" stroke-linecap="round" />
-      
-      <!-- Line 1: Label -->
-      <text x="12" y="18" fill="#64748b" font-size="8.5" font-weight="600" letter-spacing="0.8" class="mono">PIPELINE LATENCY // INDIC</text>
-      
-      <!-- Line 2: Value + Inline Secondary Tag -->
-      <text x="12" y="38" fill="#25D366" font-size="13" font-weight="700" class="mono">140ms</text>
-      <text x="70" y="38" fill="#c084fc" font-size="9.5" font-weight="600" class="mono">| 12 INDIC LANGS</text>
+    <!-- Clean 2-Line Telemetry Box (Zero Overlap) -->
+    <g transform="translate(0, 88)">
+      <rect width="210" height="46" rx="6" fill="#0E081A" stroke="#281740" stroke-width="1" />
+      <text x="12" y="17" fill="#64748B" font-size="8.5" font-weight="600" letter-spacing="0.8" class="mono">PIPELINE LATENCY // INDIC</text>
+      <text x="12" y="35" fill="#25D366" font-size="13" font-weight="700" class="mono">140ms</text>
+      <text x="70" y="35" fill="#C084FC" font-size="9.5" font-weight="600" class="mono">| 12 INDIC LANGS</text>
     </g>
   </g>
 
-  <!-- Right Visual: Holographic Acoustic Orb and Fluid Mercury Waves (Pure Native Expansions) -->
+  <!-- Right Visual: Voice Waveforms and Acoustic Dispatch Node (Pure Vector) -->
   <g transform="translate(345, 78)">
-    <!-- Expanding Mercury Ripple Rings (Native Radius and Opacity - Zero Orbit Drift) -->
+    <!-- Expanding Mercury Ripple Rings (Native Concentric Radii) -->
     <circle cx="0" cy="0" r="16" fill="none" stroke="#25D366" stroke-width="1.2">
-      <animate attributeName="r" values="16; 52" dur="2.8s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0.9; 0" dur="2.8s" repeatCount="indefinite" />
+      <animate attributeName="r" values="16; 50" dur="2.4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8; 0" dur="2.4s" repeatCount="indefinite" />
     </circle>
     <circle cx="0" cy="0" r="16" fill="none" stroke="#E100FF" stroke-width="1">
-      <animate attributeName="r" values="16; 52" begin="1.4s" dur="2.8s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0.9; 0" begin="1.4s" dur="2.8s" repeatCount="indefinite" />
+      <animate attributeName="r" values="16; 50" begin="1.2s" dur="2.4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8; 0" begin="1.2s" dur="2.4s" repeatCount="indefinite" />
     </circle>
 
-    <!-- Multi-Frequency Waveform Bars (Mirrored vertically) -->
+    <!-- Waveform Frequency Bars (Symmetric, Native Attribute Animation) -->
     <g transform="translate(-50, 0)">
-      <rect x="0" y="-10" width="4" height="20" rx="2" fill="url(#vaaniMercury)" class="wb-1" />
-      <rect x="8" y="-16" width="4" height="32" rx="2" fill="url(#vaaniMercury)" class="wb-2" />
-      <rect x="16" y="-24" width="4" height="48" rx="2" fill="url(#vaaniMercury)" class="wb-3" />
-      <rect x="24" y="-32" width="4" height="64" rx="2" fill="url(#vaaniMercury)" class="wb-4" />
-      <rect x="32" y="-22" width="4" height="44" rx="2" fill="url(#vaaniMercury)" class="wb-5" />
+      <!-- Left Bars -->
+      <rect x="0" y="-8" width="4" height="16" rx="2" fill="url(#waveGrad)">
+        <animate attributeName="height" values="14; 36; 14" dur="1.2s" repeatCount="indefinite" />
+        <animate attributeName="y" values="-7; -18; -7" dur="1.2s" repeatCount="indefinite" />
+      </rect>
+      <rect x="8" y="-14" width="4" height="28" rx="2" fill="url(#waveGrad)">
+        <animate attributeName="height" values="24; 52; 24" dur="1.5s" repeatCount="indefinite" />
+        <animate attributeName="y" values="-12; -26; -12" dur="1.5s" repeatCount="indefinite" />
+      </rect>
+      <rect x="16" y="-20" width="4" height="40" rx="2" fill="url(#waveGrad)">
+        <animate attributeName="height" values="36; 18; 36" dur="1.3s" repeatCount="indefinite" />
+        <animate attributeName="y" values="-18; -9; -18" dur="1.3s" repeatCount="indefinite" />
+      </rect>
+      <rect x="24" y="-26" width="4" height="52" rx="2" fill="url(#waveGrad)">
+        <animate attributeName="height" values="48; 30; 48" dur="1.6s" repeatCount="indefinite" />
+        <animate attributeName="y" values="-24; -15; -24" dur="1.6s" repeatCount="indefinite" />
+      </rect>
+      <rect x="32" y="-18" width="4" height="36" rx="2" fill="url(#waveGrad)">
+        <animate attributeName="height" values="28; 56; 28" dur="1.4s" repeatCount="indefinite" />
+        <animate attributeName="y" values="-14; -28; -14" dur="1.4s" repeatCount="indefinite" />
+      </rect>
 
-      <!-- Center Holographic Acoustic Glass Orb -->
-      <g filter="url(#glassRefractVn)">
-        <circle cx="50" cy="0" r="16" fill="#14092b" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1.4" />
-        <circle cx="50" cy="0" r="14" fill="#1a0b38" stroke="#E100FF" stroke-width="1.2" />
-        <path d="M 47 -4 L 53 -4 C 55 -4 55 -1 53 -1 L 47 -1 Z M 50 -1 L 50 4 M 47 4 L 53 4" stroke="#25D366" stroke-width="1.5" stroke-linecap="round" />
-      </g>
+      <!-- Center Acoustic Core Hub -->
+      <circle cx="50" cy="0" r="16" fill="#140924" stroke="#E100FF" stroke-width="1.8" />
+      <!-- Mic Icon -->
+      <path d="M 47 -4 L 53 -4 C 55 -4 55 -1 53 -1 L 47 -1 Z M 50 -1 L 50 4 M 47 4 L 53 4" stroke="#25D366" stroke-width="1.5" stroke-linecap="round" />
 
-      <rect x="64" y="-22" width="4" height="44" rx="2" fill="url(#vaaniMercury)" class="wb-5" />
-      <rect x="72" y="-32" width="4" height="64" rx="2" fill="url(#vaaniMercury)" class="wb-4" />
-      <rect x="80" y="-24" width="4" height="48" rx="2" fill="url(#vaaniMercury)" class="wb-3" />
-      <rect x="88" y="-16" width="4" height="32" rx="2" fill="url(#vaaniMercury)" class="wb-2" />
-      <rect x="96" y="-10" width="4" height="20" rx="2" fill="url(#vaaniMercury)" class="wb-1" />
+      <!-- Right Bars -->
+      <rect x="64" y="-18" width="4" height="36" rx="2" fill="url(#waveGrad)">
+        <animate attributeName="height" values="28; 56; 28" dur="1.4s" repeatCount="indefinite" />
+        <animate attributeName="y" values="-14; -28; -14" dur="1.4s" repeatCount="indefinite" />
+      </rect>
+      <rect x="72" y="-26" width="4" height="52" rx="2" fill="url(#waveGrad)">
+        <animate attributeName="height" values="48; 30; 48" dur="1.6s" repeatCount="indefinite" />
+        <animate attributeName="y" values="-24; -15; -24" dur="1.6s" repeatCount="indefinite" />
+      </rect>
+      <rect x="80" y="-20" width="4" height="40" rx="2" fill="url(#waveGrad)">
+        <animate attributeName="height" values="36; 18; 36" dur="1.3s" repeatCount="indefinite" />
+        <animate attributeName="y" values="-18; -9; -18" dur="1.3s" repeatCount="indefinite" />
+      </rect>
+      <rect x="88" y="-14" width="4" height="28" rx="2" fill="url(#waveGrad)">
+        <animate attributeName="height" values="24; 52; 24" dur="1.5s" repeatCount="indefinite" />
+        <animate attributeName="y" values="-12; -26; -12" dur="1.5s" repeatCount="indefinite" />
+      </rect>
+      <rect x="96" y="-8" width="4" height="16" rx="2" fill="url(#waveGrad)">
+        <animate attributeName="height" values="14; 36; 14" dur="1.2s" repeatCount="indefinite" />
+        <animate attributeName="y" values="-7; -18; -7" dur="1.2s" repeatCount="indefinite" />
+      </rect>
     </g>
 
-    <!-- Indic Dialect Frosted Badges -->
-    <g transform="translate(-56, 48)">
-      <rect width="34" height="15" rx="4" fill="#1a0c32" fill-opacity="0.8" stroke="url(#vaaniGlassBorder)" stroke-width="0.8" />
-      <text x="17" y="11" fill="#c084fc" font-size="8.5" font-weight="700" text-anchor="middle" class="mono">हिन्दी</text>
+    <!-- Indic Dialect Badges -->
+    <g transform="translate(-56, 46)">
+      <rect width="34" height="16" rx="3" fill="#140924" stroke="#4C1D95" stroke-width="0.8" />
+      <text x="17" y="11.5" fill="#C084FC" font-size="8.5" font-weight="700" text-anchor="middle" class="mono">हिन्दी</text>
     </g>
-    <g transform="translate(-16, 48)">
-      <rect width="34" height="15" rx="4" fill="#0d2419" fill-opacity="0.8" stroke="url(#vaaniGlassBorder)" stroke-width="0.8" />
-      <text x="17" y="11" fill="#25D366" font-size="8.5" font-weight="700" text-anchor="middle" class="mono">தமிழ்</text>
+    <g transform="translate(-16, 46)">
+      <rect width="34" height="16" rx="3" fill="#0C1B14" stroke="#165B3B" stroke-width="0.8" />
+      <text x="17" y="11.5" fill="#25D366" font-size="8.5" font-weight="700" text-anchor="middle" class="mono">தமிழ்</text>
     </g>
-    <g transform="translate(24, 48)">
-      <rect width="34" height="15" rx="4" fill="#1a0c32" fill-opacity="0.8" stroke="url(#vaaniGlassBorder)" stroke-width="0.8" />
-      <text x="17" y="11" fill="#E100FF" font-size="8.5" font-weight="700" text-anchor="middle" class="mono">ENG</text>
+    <g transform="translate(24, 46)">
+      <rect width="34" height="16" rx="3" fill="#140924" stroke="#4C1D95" stroke-width="0.8" />
+      <text x="17" y="11.5" fill="#E100FF" font-size="8.5" font-weight="700" text-anchor="middle" class="mono">ENG</text>
     </g>
   </g>
 
   <!-- Bottom Tag Bar -->
   <g transform="translate(24, 172)">
     <circle cx="4" cy="5" r="3" fill="#25D366" />
-    <text x="14" y="8" fill="#64748b" font-size="9" font-weight="600" class="mono">DISPATCH: WHATSAPP CLOUD API</text>
-    <text x="210" y="8" fill="#64748b" font-size="9" font-weight="600" class="mono">STREAMING WEBSOCKET</text>
+    <text x="14" y="8" fill="#64748B" font-size="9" font-weight="600" class="mono">DISPATCH: WHATSAPP CLOUD API</text>
+    <text x="210" y="8" fill="#64748B" font-size="9" font-weight="600" class="mono">STREAMING WEBSOCKET</text>
   </g>
 </svg>

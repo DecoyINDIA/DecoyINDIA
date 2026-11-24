@@ -2,10 +2,10 @@
 
   <!-- HUD STATUS BADGE -->
   <p align="center">
-    <code>● SYSTEM NODE: DECOY-OS // REVISION 2.4.0-HARDENED // REGION: IN-NORTH-1 // RUNTIME: DETERMINISTIC</code>
+    <code>● SYSTEM NODE: DECOY-OS // REVISION 3.0.0-PROD // REGION: IN-NORTH-1 // RUNTIME: DETERMINISTIC</code>
   </p>
 
-  <!-- CINEMATIC LEVEL 10 HERO -->
+  <!-- CINEMATIC HERO -->
   <a href="#-executive-dispatch">
     <img src="assets/hero.svg" alt="DECOY // ARCHITECTING NEXT-GEN SYSTEMS & AGENTIC AI" width="100%" />
   </a>
@@ -14,22 +14,25 @@
 
   <!-- EXECUTIVE METRIC PILLS -->
   <p align="center">
-    <a href="https://github.com/DecoyINDIA"><img src="https://img.shields.io/badge/FOUNDER-XolverLabs-060911?style=for-the-badge&logo=target&logoColor=00F2FE" alt="XolverLabs" /></a>
-    <a href="#-architectural-pillars"><img src="https://img.shields.io/badge/CORE-LOW--LATENCY%20%7C%20AGENTIC%20AI-060911?style=for-the-badge&logo=rust&logoColor=FF6B00" alt="Runtime" /></a>
-    <a href="#-flagship-engineering-projects"><img src="https://img.shields.io/badge/ETHOS-SOVEREIGN%20%26%20ZERO--EGRESS-060911?style=for-the-badge&logo=shield&logoColor=00F5A0" alt="Architecture" /></a>
-    <a href="#-direct-connect--communication-console"><img src="https://img.shields.io/badge/TRANSMIT-LAWFLOW.INDIA%40GMAIL.COM-060911?style=for-the-badge&logo=gmail&logoColor=E100FF" alt="Contact" /></a>
+    <a href="https://github.com/DecoyINDIA"><img src="https://img.shields.io/badge/FOUNDER-XolverLabs-0A0C14?style=flat-square&logo=target&logoColor=00F2FE" alt="XolverLabs" /></a>
+    &nbsp;
+    <a href="#-architectural-pillars"><img src="https://img.shields.io/badge/SPECIALIZATION-LOW--LATENCY%20%7C%20AGENTIC%20AI-0A0C14?style=flat-square&logo=rust&logoColor=FF6B00" alt="Runtime" /></a>
+    &nbsp;
+    <a href="#-flagship-engineering-projects"><img src="https://img.shields.io/badge/ARCHITECTURE-SOVEREIGN%20%26%20AIR--GAPPED-0A0C14?style=flat-square&logo=shield&logoColor=00F5A0" alt="Architecture" /></a>
+    &nbsp;
+    <a href="#-direct-connect--communication-console"><img src="https://img.shields.io/badge/DISPATCH-LAWFLOW.INDIA%40GMAIL.COM-0A0C14?style=flat-square&logo=gmail&logoColor=E100FF" alt="Contact" /></a>
   </p>
 
   <!-- QUICK NAVIGATION CONSOLE -->
   <p align="center">
-    <a href="#-executive-dispatch"><b>Dispatch</b></a> &bull;
-    <a href="#-architectural-pillars"><b>Pillars</b></a> &bull;
-    <a href="#-flagship-engineering-projects"><b>Flagship Projects</b></a> &bull;
-    <a href="#-open-source-radar--developer-tooling"><b>Open Source</b></a> &bull;
-    <a href="#-technology-ecosystem"><b>Ecosystem</b></a> &bull;
-    <a href="#-telemetry--verified-metrics"><b>Telemetry</b></a> &bull;
-    <a href="#-engineering-philosophy--core-tenets"><b>Philosophy</b></a> &bull;
-    <a href="#-direct-connect--communication-console"><b>Console</b></a>
+    <a href="#-executive-dispatch"><code>DISPATCH</code></a> &bull;
+    <a href="#-architectural-pillars"><code>PILLARS</code></a> &bull;
+    <a href="#-flagship-engineering-projects"><code>PROJECTS</code></a> &bull;
+    <a href="#-open-source-radar--developer-tooling"><code>OPEN SOURCE</code></a> &bull;
+    <a href="#-technology-ecosystem"><code>ECOSYSTEM</code></a> &bull;
+    <a href="#-telemetry--verified-metrics"><code>TELEMETRY</code></a> &bull;
+    <a href="#-engineering-philosophy--core-tenets"><code>PHILOSOPHY</code></a> &bull;
+    <a href="#-direct-connect--communication-console"><code>CONSOLE</code></a>
   </p>
 
 </div>
@@ -57,7 +60,7 @@ Modern web and enterprise architectures have normalized massive memory footprint
 │ PRIMARY AFFILIATION     │ Founder & Lead Architect // XolverLabs                 │
 │ CORE SPECIALIZATIONS    │ Low-Latency Concurrency · Agentic AI · Sovereign Trust │
 │ PRIMARY TOOLCHAINS      │ Rust · Java 21 (Virtual Threads) · Python · TypeScript │
-│ INTERFACE ENGINEERING   │ TypeScript · React/Next.js · LivelyUI · Optical Glass  │
+│ INTERFACE ENGINEERING   │ TypeScript · React/Next.js · LivelyUI · Dark Obsidian  │
 │ OPERATIONAL INVARIANT   │ Zero Bloat · Deterministic Latencies · Local-First     │
 │ ACTIVE RESEARCH LAB     │ High-Throughput Packet Engines · Grounded Indic Speech │
 └─────────────────────────┴────────────────────────────────────────────────────────┘
@@ -109,7 +112,7 @@ Four foundational disciplines govern every system engineered across our laborato
     <td width="50%" valign="top">
       <h3>🎨 04 // High-Craft Interfaces & Kinetic Micro-UX</h3>
       <p>
-        Treating user interface as an engineering discipline rather than superficial decoration. Drawing from the tactile design language of Apple, Vercel, and Linear: fluid physics springs (LivelyUI), dark-obsidian canvases, optical liquid glass filters, kinetic data telemetry, and responsive typography that feels alive under fingertip or mouse.
+        Treating user interface as an engineering discipline rather than superficial decoration. Drawing from the tactile design language of Apple, Vercel, and Linear: fluid physics springs (LivelyUI), dark-obsidian canvases, kinetic data telemetry, and responsive typography that feels alive under fingertip or mouse.
       </p>
       <ul>
         <li><b>Core Primitives:</b> LivelyUI Spring Dynamics, Custom SVG Animations, Kinetic CSS, Lenis Inertial Flow.</li>
@@ -349,11 +352,11 @@ A cohesive technical matrix spanning low-level system runtimes, distributed clou
 Real-time telemetry and developer cadence across GitHub infrastructure:
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=DecoyINDIA&show_icons=true&theme=tokyonight&hide_border=true&bg_color=060911&title_color=00F2FE&icon_color=00F5A0&text_color=94A3B8&count_private=true" alt="DecoyINDIA GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api?username=DecoyINDIA&show_icons=true&theme=tokyonight&hide_border=false&border_color=1E293B&bg_color=07090E&title_color=00F2FE&icon_color=00F5A0&text_color=94A3B8&count_private=true" alt="DecoyINDIA GitHub Stats" />
   &nbsp;&nbsp;
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DecoyINDIA&layout=compact&theme=tokyonight&hide_border=true&bg_color=060911&title_color=00F2FE&text_color=94A3B8" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DecoyINDIA&layout=compact&theme=tokyonight&hide_border=false&border_color=1E293B&bg_color=07090E&title_color=00F2FE&text_color=94A3B8" alt="Top Languages" />
   <br /><br />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=DecoyINDIA&theme=tokyonight&hide_border=true&background=060911&ring=00F2FE&fire=FF6B00&currStreakLabel=00F5A0" alt="GitHub Streak" width="90%" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=DecoyINDIA&theme=tokyonight&hide_border=false&border_color=1E293B&background=07090E&ring=00F2FE&fire=FF6B00&currStreakLabel=00F5A0" alt="GitHub Streak" width="90%" />
 </div>
 
 <div align="center">
@@ -405,19 +408,11 @@ Open for technical architectural consultations, high-performance systems enginee
 <br />
 
 <div align="center">
-
-  <a href="mailto:lawflow.india@gmail.com">
-    <img src="https://img.shields.io/badge/TRANSMIT_DISPATCH-00F2FE?style=for-the-badge&logo=minutemailer&logoColor=060911" alt="Transmit Dispatch" />
-  </a>
+  <a href="mailto:lawflow.india@gmail.com"><img src="https://img.shields.io/badge/TRANSMIT%20DISPATCH-lawflow.india%40gmail.com-00F2FE?style=flat-square&logo=minutemailer&logoColor=060911" alt="Transmit Dispatch" /></a>
   &nbsp;&nbsp;
-  <a href="https://github.com/DecoyINDIA">
-    <img src="https://img.shields.io/badge/INSPECT_SOURCE_NETWORK-7F00FF?style=for-the-badge&logo=github&logoColor=ffffff" alt="Inspect GitHub" />
-  </a>
+  <a href="https://github.com/DecoyINDIA"><img src="https://img.shields.io/badge/EXPLORE%20GITHUB-%40DecoyINDIA-7F00FF?style=flat-square&logo=github&logoColor=ffffff" alt="Inspect GitHub" /></a>
   &nbsp;&nbsp;
-  <a href="https://github.com/DecoyINDIA/OctaPDF">
-    <img src="https://img.shields.io/badge/LOCAL_DOC_WORKSPACE-00F5A0?style=for-the-badge&logo=adobeacrobatreader&logoColor=060911" alt="OctaPDF" />
-  </a>
-
+  <a href="https://github.com/DecoyINDIA/OctaPDF"><img src="https://img.shields.io/badge/FLAGSHIP%20SYSTEM-OctaPDF%20Workspace-00F5A0?style=flat-square&logo=adobeacrobatreader&logoColor=060911" alt="OctaPDF" /></a>
 </div>
 
 <br />

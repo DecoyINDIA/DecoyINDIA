@@ -1,114 +1,70 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 32" width="900" height="32" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <!-- Liquid Glass Light Guide Tube Gradients -->
-    <linearGradient id="tubeFill" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Left Rail Gradient -->
+    <linearGradient id="railL" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#00F2FE" stop-opacity="0" />
-      <stop offset="20%" stop-color="#00F2FE" stop-opacity="0.1" />
-      <stop offset="50%" stop-color="#7F00FF" stop-opacity="0.2" />
-      <stop offset="80%" stop-color="#00F5A0" stop-opacity="0.1" />
+      <stop offset="60%" stop-color="#00F2FE" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#7F00FF" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- Right Rail Gradient -->
+    <linearGradient id="railR" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7F00FF" stop-opacity="0.8" />
+      <stop offset="40%" stop-color="#00F2FE" stop-opacity="0.4" />
       <stop offset="100%" stop-color="#00F2FE" stop-opacity="0" />
     </linearGradient>
 
-    <!-- Specular Bevel Line Gradient -->
-    <linearGradient id="specularLine" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Light Pulse Packet -->
+    <linearGradient id="packetGlow" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#00F2FE" stop-opacity="0" />
-      <stop offset="30%" stop-color="#ffffff" stop-opacity="0.8" />
       <stop offset="50%" stop-color="#00F2FE" stop-opacity="1" />
-      <stop offset="70%" stop-color="#ffffff" stop-opacity="0.8" />
       <stop offset="100%" stop-color="#7F00FF" stop-opacity="0" />
     </linearGradient>
-
-    <!-- Mercury Energy Packet Glow -->
-    <linearGradient id="mercuryGlow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0" />
-      <stop offset="50%" stop-color="#ffffff" stop-opacity="1" />
-      <stop offset="80%" stop-color="#00F2FE" stop-opacity="0.8" />
-      <stop offset="100%" stop-color="#7F00FF" stop-opacity="0" />
-    </linearGradient>
-
-    <!-- Chromatic Dispersion Fringe -->
-    <linearGradient id="dispersionGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FF007F" />
-      <stop offset="35%" stop-color="#7F00FF" />
-      <stop offset="70%" stop-color="#00F2FE" />
-      <stop offset="100%" stop-color="#00F5A0" />
-    </linearGradient>
-
-    <!-- Specular Glass Filter -->
-    <filter id="glassRefractDiv" x="-20%" y="-40%" width="140%" height="180%">
-      <feGaussianBlur stdDeviation="1.5" result="blur" />
-      <feSpecularLighting in="blur" surfaceScale="2" specularConstant="1.5" specularExponent="24" lighting-color="#ffffff" result="specular">
-        <feDistantLight azimuth="225" elevation="45" />
-      </feSpecularLighting>
-      <feComposite in="SourceGraphic" in2="specular" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" />
-    </filter>
-
-    <filter id="softGlowDiv" x="-30%" y="-50%" width="160%" height="200%">
-      <feGaussianBlur stdDeviation="3.5" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
   </defs>
 
-  <!-- Cylindrical Liquid Glass Light Guide Chamber Left -->
-  <rect x="40" y="13" width="392" height="6" rx="3" fill="url(#tubeFill)" />
-  <line x1="40" y1="13" x2="432" y2="13" stroke="#ffffff" stroke-opacity="0.3" stroke-width="0.75" />
-  <line x1="40" y1="16" x2="432" y2="16" stroke="url(#specularLine)" stroke-width="1.2" />
-  <line x1="40" y1="19" x2="432" y2="19" stroke="#00F2FE" stroke-opacity="0.2" stroke-width="0.75" />
+  <!-- Left Main Rail -->
+  <line x1="40" y1="16" x2="434" y2="16" stroke="url(#railL)" stroke-width="1.5" />
+  <line x1="120" y1="12" x2="390" y2="12" stroke="#00F2FE" stroke-opacity="0.2" stroke-width="0.75" stroke-dasharray="6 10" />
+  <line x1="260" y1="20" x2="420" y2="20" stroke="#7F00FF" stroke-opacity="0.25" stroke-width="0.75" />
 
-  <!-- Accent Optical Rails Left -->
-  <line x1="120" y1="10" x2="380" y2="10" stroke="#00F2FE" stroke-opacity="0.25" stroke-width="0.75" stroke-dasharray="6 10" />
-  <line x1="240" y1="22" x2="410" y2="22" stroke="#7F00FF" stroke-opacity="0.3" stroke-width="0.75" />
+  <!-- Left Nodes and Ticks -->
+  <circle cx="200" cy="16" r="1.5" fill="#00F2FE" opacity="0.6" />
+  <circle cx="330" cy="16" r="2" fill="#00F2FE" opacity="0.8" />
+  <rect x="424" y="14" width="4" height="4" fill="#7F00FF" />
 
-  <!-- Optical Nodes and Ticks Left -->
-  <circle cx="180" cy="16" r="1.5" fill="#00F2FE" opacity="0.6" />
-  <circle cx="310" cy="16" r="2.5" fill="#ffffff" filter="url(#softGlowDiv)" />
-  <rect x="418" y="14" width="4" height="4" fill="#7F00FF" rx="1" />
-
-  <!-- Traveling Mercury Packet Left (Native SVG Animation - Zero Pivot Drift) -->
-  <ellipse cy="16" rx="32" ry="2.8" fill="url(#mercuryGlow)" filter="url(#softGlowDiv)">
-    <animate attributeName="cx" values="40; 430" dur="4.3s" repeatCount="indefinite" />
-    <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.2; 0.8; 1" dur="4.3s" repeatCount="indefinite" />
+  <!-- Left Traveling Light Pulse (Pure Vector animate) -->
+  <ellipse cy="16" rx="28" ry="2" fill="url(#packetGlow)">
+    <animate attributeName="cx" values="40; 430" dur="3.8s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.2; 0.8; 1" dur="3.8s" repeatCount="indefinite" />
   </ellipse>
 
-  <!-- Cylindrical Liquid Glass Light Guide Chamber Right -->
-  <rect x="468" y="13" width="392" height="6" rx="3" fill="url(#tubeFill)" />
-  <line x1="468" y1="13" x2="860" y2="13" stroke="#ffffff" stroke-opacity="0.3" stroke-width="0.75" />
-  <line x1="468" y1="16" x2="860" y2="16" stroke="url(#specularLine)" stroke-width="1.2" />
-  <line x1="468" y1="19" x2="860" y2="19" stroke="#7F00FF" stroke-opacity="0.2" stroke-width="0.75" />
+  <!-- Right Main Rail -->
+  <line x1="466" y1="16" x2="860" y2="16" stroke="url(#railR)" stroke-width="1.5" />
+  <line x1="510" y1="12" x2="780" y2="12" stroke="#00F2FE" stroke-opacity="0.2" stroke-width="0.75" stroke-dasharray="6 10" />
+  <line x1="480" y1="20" x2="640" y2="20" stroke="#7F00FF" stroke-opacity="0.25" stroke-width="0.75" />
 
-  <!-- Accent Optical Rails Right -->
-  <line x1="520" y1="10" x2="780" y2="10" stroke="#00F5A0" stroke-opacity="0.25" stroke-width="0.75" stroke-dasharray="6 10" />
-  <line x1="490" y1="22" x2="660" y2="22" stroke="#00F2FE" stroke-opacity="0.3" stroke-width="0.75" />
+  <!-- Right Nodes and Ticks -->
+  <circle cx="700" cy="16" r="1.5" fill="#00F2FE" opacity="0.6" />
+  <circle cx="570" cy="16" r="2" fill="#00F2FE" opacity="0.8" />
+  <rect x="472" y="14" width="4" height="4" fill="#7F00FF" />
 
-  <!-- Optical Nodes and Ticks Right -->
-  <circle cx="720" cy="16" r="1.5" fill="#00F5A0" opacity="0.6" />
-  <circle cx="590" cy="16" r="2.5" fill="#ffffff" filter="url(#softGlowDiv)" />
-  <rect x="478" y="14" width="4" height="4" fill="#00F2FE" rx="1" />
-
-  <!-- Traveling Mercury Packet Right (Native SVG Animation - Zero Pivot Drift) -->
-  <ellipse cy="16" rx="32" ry="2.8" fill="url(#mercuryGlow)" filter="url(#softGlowDiv)">
-    <animate attributeName="cx" values="470; 860" dur="4.3s" repeatCount="indefinite" />
-    <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.2; 0.8; 1" dur="4.3s" repeatCount="indefinite" />
+  <!-- Right Traveling Light Pulse (Pure Vector animate) -->
+  <ellipse cy="16" rx="28" ry="2" fill="url(#packetGlow)">
+    <animate attributeName="cx" values="470; 860" dur="3.8s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.2; 0.8; 1" dur="3.8s" repeatCount="indefinite" />
   </ellipse>
 
-  <!-- Central Faceted Glass Diamond (Strict Local (0,0) Origin) -->
+  <!-- Center Diamond Array (Native Local Scale - Zero Drift) -->
   <g transform="translate(450, 16)">
-    <!-- Scale Pulse around (0,0) -->
     <g>
-      <animateTransform attributeName="transform" type="scale" values="1; 1.14; 1" keyTimes="0; 0.5; 1" dur="3.5s" repeatCount="indefinite" />
-      <!-- Chromatic dispersion underlay -->
-      <polygon points="0,-13 13,0 0,13 -13,0" fill="none" stroke="url(#dispersionGrad)" stroke-width="1.8" />
-      
-      <!-- Outer Specular Diamond -->
-      <polygon points="0,-12 12,0 0,12 -12,0" fill="#091222" stroke="#ffffff" stroke-width="1.2" filter="url(#glassRefractDiv)" />
-      <!-- Mid Prismatic Diamond -->
-      <polygon points="0,-8 8,0 0,8 -8,0" fill="#140a28" stroke="#00F2FE" stroke-width="1" />
-      <!-- Core Mercury Spark -->
-      <polygon points="0,-4 4,0 0,4 -4,0" fill="#ffffff" filter="url(#softGlowDiv)" />
+      <animateTransform attributeName="transform" type="scale" values="1; 1.15; 1" keyTimes="0; 0.5; 1" dur="3s" repeatCount="indefinite" />
+      <polygon points="0,-12 12,0 0,12 -12,0" fill="#0A0F1D" stroke="#00F2FE" stroke-width="1.5" />
+      <polygon points="0,-7 7,0 0,7 -7,0" fill="#131B2E" stroke="#7F00FF" stroke-width="1" />
+      <polygon points="0,-3 3,0 0,3 -3,0" fill="#00F2FE" />
     </g>
   </g>
 
-  <!-- Micro Optical Reticles -->
-  <circle cx="432" cy="16" r="1.2" fill="#00F2FE" opacity="0.8" />
-  <circle cx="468" cy="16" r="1.2" fill="#7F00FF" opacity="0.8" />
+  <!-- Flanking Reticle Dots -->
+  <circle cx="434" cy="16" r="1.2" fill="#00F2FE" opacity="0.7" />
+  <circle cx="466" cy="16" r="1.2" fill="#7F00FF" opacity="0.7" />
 </svg>

@@ -1,167 +1,117 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 200" width="440" height="200" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <!-- Base Canvas -->
-    <linearGradient id="settlrBg2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#040913" />
-      <stop offset="55%" stop-color="#081426" />
-      <stop offset="100%" stop-color="#03060c" />
+    <!-- Background Canvas -->
+    <linearGradient id="settlrBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14" />
+      <stop offset="50%" stop-color="#0A1120" />
+      <stop offset="100%" stop-color="#05080E" />
     </linearGradient>
 
-    <!-- 1px Specular Border -->
-    <linearGradient id="settlrGlassBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.45" />
-      <stop offset="30%" stop-color="#00F2FE" stop-opacity="0.75" />
-      <stop offset="70%" stop-color="#3B82F6" stop-opacity="0.4" />
-      <stop offset="100%" stop-color="#00F5A0" stop-opacity="0.5" />
+    <!-- 1px Hairline Border -->
+    <linearGradient id="settlrBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.7" />
+      <stop offset="50%" stop-color="#3B82F6" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#00F5A0" stop-opacity="0.4" />
     </linearGradient>
 
-    <!-- Border Comet Gradient -->
-    <linearGradient id="settlrComet" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0" />
-      <stop offset="60%" stop-color="#00F2FE" stop-opacity="0.85" />
-      <stop offset="90%" stop-color="#ffffff" stop-opacity="1" />
-      <stop offset="100%" stop-color="#00F5A0" stop-opacity="0" />
-    </linearGradient>
-
-    <!-- Glass Ring Gradients -->
-    <linearGradient id="vaultRing1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="40%" stop-color="#00F2FE" />
+    <!-- Vault Ring Gradients -->
+    <linearGradient id="ring1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" />
       <stop offset="100%" stop-color="#3B82F6" />
     </linearGradient>
 
-    <linearGradient id="vaultRing2" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="40%" stop-color="#00F5A0" />
+    <linearGradient id="ring2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00F5A0" />
       <stop offset="100%" stop-color="#00F2FE" />
     </linearGradient>
 
-    <pattern id="settlrGrid2" width="20" height="20" patternUnits="userSpaceOnUse">
-      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#12253d" stroke-width="0.5" stroke-opacity="0.5" />
-      <circle cx="0" cy="0" r="0.7" fill="#00F2FE" fill-opacity="0.3" />
+    <!-- Precision Dot Grid -->
+    <pattern id="settlrGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.75" fill="#142135" />
     </pattern>
-
-    <!-- Liquid Glass Specular Filter -->
-    <filter id="glassRefractStl" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur" />
-      <feSpecularLighting in="blur" surfaceScale="2.5" specularConstant="1.5" specularExponent="24" lighting-color="#ffffff" result="specular">
-        <feDistantLight azimuth="225" elevation="50" />
-      </feSpecularLighting>
-      <feComposite in="SourceGraphic" in2="specular" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" />
-    </filter>
-
-    <filter id="softGlowStl" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
   </defs>
 
   <style>
     .mono { font-family: 'SF Mono', 'JetBrains Mono', Consolas, monospace; }
     .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-
-    @keyframes stlCometRun {
-      0% { stroke-dashoffset: 1240; }
-      100% { stroke-dashoffset: 0; }
-    }
-    .card-comet-stl {
-      stroke-dasharray: 80 1160;
-      animation: stlCometRun 5.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-    }
   </style>
 
-  <!-- Background Canvas -->
-  <rect width="440" height="200" rx="12" fill="url(#settlrBg2)" />
-  <rect width="440" height="200" rx="12" fill="url(#settlrGrid2)" />
-  <rect width="440" height="200" rx="12" fill="none" stroke="url(#settlrGlassBorder)" stroke-width="1.2" />
-
-  <!-- React-Bits Border Comet -->
-  <rect width="440" height="200" rx="12" fill="none" stroke="url(#settlrComet)" stroke-width="2" class="card-comet-stl" />
+  <!-- Background Surface -->
+  <rect width="440" height="200" rx="12" fill="url(#settlrBg)" />
+  <rect width="440" height="200" rx="12" fill="url(#settlrGrid)" />
+  <rect width="440" height="200" rx="12" fill="none" stroke="url(#settlrBorder)" stroke-width="1.2" />
 
   <!-- Corner Brackets -->
-  <path d="M 12 24 L 12 12 L 24 12" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.8" />
+  <path d="M 12 24 L 12 12 L 24 12" fill="none" stroke="#00F2FE" stroke-width="1.5" />
   <path d="M 428 24 L 428 12 L 416 12" fill="none" stroke="#00F5A0" stroke-width="1.5" />
   <path d="M 12 176 L 12 188 L 24 188" fill="none" stroke="#3B82F6" stroke-width="1.5" />
   <path d="M 428 176 L 428 188 L 416 188" fill="none" stroke="#00F2FE" stroke-width="1.5" />
 
-  <!-- Ambient Light Spotlight -->
-  <circle cx="345" cy="76" r="70" fill="#00F2FE" opacity="0.1" filter="url(#softGlowStl)" />
-
   <!-- Left Header and Info -->
-  <g transform="translate(24, 26)">
-    <!-- Glass Category Pill -->
-    <rect width="144" height="22" rx="6" fill="#091b30" fill-opacity="0.85" stroke="url(#settlrGlassBorder)" stroke-width="0.9" filter="url(#glassRefractStl)" />
-    <path d="M 6 2 L 138 2" stroke="#ffffff" stroke-opacity="0.4" stroke-width="0.6" stroke-linecap="round" />
-    <text x="72" y="15" fill="#00F2FE" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1" class="mono">TRUST // DATA PROTOCOL</text>
+  <g transform="translate(24, 28)">
+    <!-- Category Pill -->
+    <rect width="144" height="20" rx="4" fill="#0C1B2E" stroke="#1D4ED8" stroke-width="1" />
+    <text x="72" y="14" fill="#00F2FE" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1" class="mono">TRUST // DATA PROTOCOL</text>
 
-    <!-- Title with Specular Lighting -->
-    <text x="0" y="52" fill="#ffffff" font-size="24" font-weight="900" letter-spacing="0.5" class="sans" filter="url(#glassRefractStl)">Settlr</text>
-    <text x="70" y="50" fill="#64748b" font-size="11" font-weight="600" class="mono">v1.0-PROD</text>
+    <!-- Title -->
+    <text x="0" y="48" fill="#FFFFFF" font-size="22" font-weight="800" letter-spacing="0.5" class="sans">Settlr</text>
+    <text x="68" y="47" fill="#64748B" font-size="11" font-weight="600" class="mono">v1.0-PROD</text>
 
     <!-- Description -->
-    <text x="0" y="73" fill="#94a3b8" font-size="11.5" font-weight="400" class="sans">Ownership-gated rental trust ledger and dual-sig</text>
+    <text x="0" y="68" fill="#94A3B8" font-size="11.5" font-weight="400" class="sans">Ownership-gated rental trust ledger and dual-sig</text>
 
-    <!-- Clean 2-Line Frosted Glass Telemetry Box (Zero Overlap) -->
-    <g transform="translate(0, 92)">
-      <rect width="210" height="48" rx="7" fill="#071424" fill-opacity="0.8" stroke="url(#settlrGlassBorder)" stroke-width="0.9" filter="url(#glassRefractStl)" />
-      <path d="M 6 2 L 204 2" stroke="#ffffff" stroke-opacity="0.3" stroke-width="0.6" stroke-linecap="round" />
-      
-      <!-- Line 1: Label -->
-      <text x="10" y="17" fill="#64748b" font-size="8.5" font-weight="600" letter-spacing="0.8" class="mono">CONSENSUS VERIFICATION</text>
-      
-      <!-- Line 2: Dual Consent Badges -->
-      <g transform="translate(10, 23)">
-        <rect width="66" height="17" rx="3" fill="#0c263d" stroke="#00F2FE" stroke-width="0.8" />
-        <text x="33" y="12" fill="#00F2FE" font-size="8" font-weight="700" text-anchor="middle" class="mono">OWNER: ✓</text>
+    <!-- Clean 2-Line Telemetry Box (Zero Overlap) -->
+    <g transform="translate(0, 88)">
+      <rect width="210" height="46" rx="6" fill="#0A111E" stroke="#1E2A3E" stroke-width="1" />
+      <text x="12" y="17" fill="#64748B" font-size="8.5" font-weight="600" letter-spacing="0.8" class="mono">CONSENSUS VERIFICATION</text>
+      <!-- Dual consent indicators -->
+      <g transform="translate(12, 23)">
+        <rect width="64" height="16" rx="3" fill="#0C2035" stroke="#00F2FE" stroke-width="0.8" />
+        <text x="32" y="11.5" fill="#00F2FE" font-size="8" font-weight="700" text-anchor="middle" class="mono">OWNER: ✓</text>
       </g>
-      <g transform="translate(82, 23)">
-        <rect width="70" height="17" rx="3" fill="#0c2e24" stroke="#00F5A0" stroke-width="0.8" />
-        <text x="35" y="12" fill="#00F5A0" font-size="8" font-weight="700" text-anchor="middle" class="mono">TENANT: ✓</text>
+      <g transform="translate(80, 23)">
+        <rect width="68" height="16" rx="3" fill="#0C241E" stroke="#00F5A0" stroke-width="0.8" />
+        <text x="34" y="11.5" fill="#00F5A0" font-size="8" font-weight="700" text-anchor="middle" class="mono">TENANT: ✓</text>
       </g>
-      <text x="158" y="34" fill="#64748b" font-size="8" font-weight="600" class="mono">DEL-01</text>
+      <text x="156" y="34.5" fill="#64748B" font-size="8.5" font-weight="600" class="mono">DEL-01</text>
     </g>
   </g>
 
-  <!-- Right Visual: Cryptographic Glass Vault (Strict Native (0,0,0) Pivot - Zero Orbit Bug) -->
-  <g transform="translate(345, 76)">
-    <!-- Outer Glass Ring: Native CCW Rotation -->
+  <!-- Right Visual: Cryptographic Vault and Precision Rings (Native SVG Rotation - Zero Orbit Bug) -->
+  <g transform="translate(345, 75)">
+    <!-- Outer Ring CCW -->
     <g>
       <animateTransform attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="14s" repeatCount="indefinite" />
-      <circle cx="0" cy="0" r="48" fill="none" stroke="url(#vaultRing1)" stroke-width="1.8" stroke-dasharray="28 18 10 18" />
+      <circle cx="0" cy="0" r="46" fill="none" stroke="url(#ring1)" stroke-width="1.8" stroke-dasharray="26 16 8 16" />
     </g>
 
-    <!-- Inner Glass Ring: Native CW Rotation -->
+    <!-- Inner Ring CW -->
     <g>
       <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="11s" repeatCount="indefinite" />
-      <circle cx="0" cy="0" r="36" fill="none" stroke="url(#vaultRing2)" stroke-width="1.6" stroke-dasharray="20 14" />
+      <circle cx="0" cy="0" r="34" fill="none" stroke="url(#ring2)" stroke-width="1.5" stroke-dasharray="18 12" />
     </g>
 
-    <!-- Cryptographic Ledger Node Points -->
-    <circle cx="-36" cy="0" r="3.5" fill="#00F2FE" filter="url(#softGlowStl)" />
-    <circle cx="36" cy="0" r="3.5" fill="#00F5A0" filter="url(#softGlowStl)" />
-    <circle cx="0" cy="-36" r="3" fill="#3B82F6" />
-    <circle cx="0" cy="36" r="3" fill="#ffffff" />
+    <!-- Node Points -->
+    <circle cx="-34" cy="0" r="3" fill="#00F2FE" />
+    <circle cx="34" cy="0" r="3" fill="#00F5A0" />
+    <circle cx="0" cy="-34" r="3" fill="#3B82F6" />
+    <circle cx="0" cy="34" r="3" fill="#00F2FE" />
 
-    <!-- 3D Liquid Glass Vault Core Shield: Native Local Scale around (0,0) -->
-    <g filter="url(#glassRefractStl)">
-      <animateTransform attributeName="transform" type="scale" values="1; 1.08; 1" keyTimes="0; 0.5; 1" dur="3.1s" repeatCount="indefinite" />
-      <!-- Hexagonal Glass Shield -->
-      <polygon points="0,-20 18,-9 18,9 0,20 -18,9 -18,-9" fill="#07162b" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1.6" />
-      <polygon points="0,-16 14,-7 14,7 0,16 -14,7 -14,-7" fill="#0a223f" stroke="#00F2FE" stroke-width="1.2" />
-      
-      <!-- Lock Shackle and Body -->
-      <path d="M -5 -3 L -5 -7 C -5 -10 5 -10 5 -7 L 5 -3 M -7 -3 L 7 -3 L 7 6 L -7 6 Z" fill="none" stroke="#00F5A0" stroke-width="1.4" />
+    <!-- Center Security Shield -->
+    <g>
+      <polygon points="0,-18 16,-8 16,8 0,18 -16,8 -16,-8" fill="#0A1628" stroke="#00F2FE" stroke-width="1.6" />
+      <path d="M -5 -3 L -5 -6 C -5 -9 5 -9 5 -6 L 5 -3 M -7 -3 L 7 -3 L 7 6 L -7 6 Z" fill="none" stroke="#00F5A0" stroke-width="1.4" />
       <circle cx="0" cy="1.5" r="1.2" fill="#00F5A0" />
     </g>
 
     <!-- Cluster Node Coordinates -->
-    <text x="0" y="60" fill="#64748b" font-size="8" font-weight="600" text-anchor="middle" class="mono">BLOCK #841029 // DEL-01</text>
+    <text x="0" y="58" fill="#64748B" font-size="8" font-weight="600" text-anchor="middle" class="mono">BLOCK #841029 // DEL-01</text>
   </g>
 
   <!-- Bottom Tag Bar -->
   <g transform="translate(24, 172)">
     <circle cx="4" cy="5" r="3" fill="#00F2FE" />
-    <text x="14" y="8" fill="#64748b" font-size="9" font-weight="600" class="mono">HASH: SHA-256 SOVEREIGN</text>
-    <text x="180" y="8" fill="#64748b" font-size="9" font-weight="600" class="mono">DUAL-CONSENT LEDGER</text>
+    <text x="14" y="8" fill="#64748B" font-size="9" font-weight="600" class="mono">HASH: SHA-256 SOVEREIGN</text>
+    <text x="180" y="8" fill="#64748B" font-size="9" font-weight="600" class="mono">DUAL-CONSENT LEDGER</text>
   </g>
 </svg>

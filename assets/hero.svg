@@ -1,264 +1,177 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="900" height="320" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <!-- Background Base Gradient -->
-    <linearGradient id="obsidianBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#040711" />
-      <stop offset="45%" stop-color="#070c1a" />
-      <stop offset="100%" stop-color="#03050a" />
+    <!-- Background Canvas Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080B12" />
+      <stop offset="50%" stop-color="#0A0E18" />
+      <stop offset="100%" stop-color="#06080E" />
     </linearGradient>
 
-    <!-- 1px Inset Specular Glass Border -->
-    <linearGradient id="glassBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.45" />
-      <stop offset="25%" stop-color="#00F2FE" stop-opacity="0.6" />
-      <stop offset="50%" stop-color="#7F00FF" stop-opacity="0.25" />
-      <stop offset="75%" stop-color="#FF007F" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#00F5A0" stop-opacity="0.5" />
+    <!-- Clean Typography and Accent Gradients (Zero Raster Filters) -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#4FACFE" />
     </linearGradient>
 
-    <!-- React-Bits Border Comet Gradient -->
-    <linearGradient id="cometGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0" />
-      <stop offset="60%" stop-color="#00F2FE" stop-opacity="0.8" />
-      <stop offset="90%" stop-color="#ffffff" stop-opacity="1" />
-      <stop offset="100%" stop-color="#7F00FF" stop-opacity="0" />
-    </linearGradient>
-
-    <!-- Iridescent Shimmer Typography Gradient -->
-    <linearGradient id="holoText" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="25%" stop-color="#00F2FE" />
-      <stop offset="50%" stop-color="#9d4edd" />
-      <stop offset="75%" stop-color="#FF007F" />
+    <linearGradient id="cyanMint" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="50%" stop-color="#4FACFE" />
       <stop offset="100%" stop-color="#00F5A0" />
     </linearGradient>
 
-    <!-- Aurora Wave Gradients -->
-    <linearGradient id="aurora1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.14" />
-      <stop offset="50%" stop-color="#7F00FF" stop-opacity="0.1" />
-      <stop offset="100%" stop-color="#FF007F" stop-opacity="0" />
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.5" />
+      <stop offset="50%" stop-color="#7F00FF" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#00F5A0" stop-opacity="0.4" />
     </linearGradient>
 
-    <linearGradient id="aurora2" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#00F5A0" stop-opacity="0.12" />
-      <stop offset="50%" stop-color="#00F2FE" stop-opacity="0.08" />
-      <stop offset="100%" stop-color="#7F00FF" stop-opacity="0" />
-    </linearGradient>
-
-    <!-- Glass Specular Core Gradients -->
-    <linearGradient id="glassFace" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15" />
-      <stop offset="40%" stop-color="#00F2FE" stop-opacity="0.08" />
-      <stop offset="100%" stop-color="#7F00FF" stop-opacity="0.04" />
-    </linearGradient>
-
-    <!-- Laser Scan Gradient -->
-    <linearGradient id="laserBeam" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="laserGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#00F2FE" stop-opacity="0" />
-      <stop offset="50%" stop-color="#00F2FE" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#00F2FE" stop-opacity="0.75" />
       <stop offset="100%" stop-color="#00F2FE" stop-opacity="0" />
     </linearGradient>
 
-    <!-- Grid Pattern with Micro Coordinate Nodes -->
-    <pattern id="techGrid" width="30" height="30" patternUnits="userSpaceOnUse">
-      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#16233b" stroke-width="0.6" stroke-opacity="0.4" />
-      <circle cx="0" cy="0" r="0.8" fill="#00F2FE" fill-opacity="0.35" />
+    <!-- Pure Vector Radial Spotlight (Naturally blends with zero grey box artifacts) -->
+    <radialGradient id="spotlight" cx="75%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.08" />
+      <stop offset="50%" stop-color="#7F00FF" stop-opacity="0.03" />
+      <stop offset="100%" stop-color="#080B12" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Precision Dot Grid -->
+    <pattern id="dotGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.8" fill="#1E293B" />
     </pattern>
-
-    <!-- Apple-Style Specular Glass Lighting Filter -->
-    <filter id="liquidGlassFilter" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" result="blur" />
-      <feSpecularLighting in="blur" surfaceScale="3" specularConstant="1.4" specularExponent="28" lighting-color="#ffffff" result="specular">
-        <feDistantLight azimuth="225" elevation="52" />
-      </feSpecularLighting>
-      <feComposite in="SourceGraphic" in2="specular" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="lit" />
-    </filter>
-
-    <filter id="softDiffusion" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="8" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
   </defs>
 
   <style>
     .mono { font-family: 'SF Mono', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; }
-    .display { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', 'Inter', sans-serif; }
-
-    @keyframes borderCometRun {
-      0% { stroke-dashoffset: 2400; }
-      100% { stroke-dashoffset: 0; }
-    }
-    @keyframes scanLaser {
-      0% { transform: translateY(0); opacity: 0; }
-      15% { opacity: 0.9; }
-      85% { opacity: 0.9; }
-      100% { transform: translateY(320px); opacity: 0; }
-    }
-    .border-comet {
-      stroke-dasharray: 140 2260;
-      animation: borderCometRun 7.2s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-    }
-    .laser-line {
-      animation: scanLaser 6.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-    }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', 'Inter', Roboto, sans-serif; }
   </style>
 
-  <!-- Base Obsidian Ground -->
-  <rect width="900" height="320" rx="16" fill="url(#obsidianBg)" />
-  <rect width="900" height="320" rx="16" fill="url(#techGrid)" />
+  <!-- Canvas Surface -->
+  <rect width="900" height="300" rx="14" fill="url(#bgGrad)" />
+  <rect width="900" height="300" rx="14" fill="url(#dotGrid)" />
+  <rect width="900" height="300" rx="14" fill="url(#spotlight)" />
+  <rect width="900" height="300" rx="14" fill="none" stroke="url(#borderGrad)" stroke-width="1.2" />
 
-  <!-- React-Bits Flowing Aurora Waves (Stable Opacity Animation) -->
-  <g opacity="0.85">
-    <path d="M -50 120 Q 220 20 480 140 T 950 80 L 950 320 L -50 320 Z" fill="url(#aurora1)" filter="url(#softDiffusion)">
-      <animate attributeName="opacity" values="0.7; 1; 0.7" dur="11.3s" repeatCount="indefinite" />
-    </path>
-    <path d="M -50 200 Q 280 290 560 170 T 950 240 L 950 320 L -50 320 Z" fill="url(#aurora2)" filter="url(#softDiffusion)">
-      <animate attributeName="opacity" values="0.5; 0.9; 0.5" dur="14.1s" repeatCount="indefinite" />
-    </path>
-  </g>
+  <!-- Corner Brackets -->
+  <path d="M 14 30 L 14 14 L 30 14" fill="none" stroke="#00F2FE" stroke-width="1.8" stroke-linecap="round" />
+  <path d="M 886 30 L 886 14 L 870 14" fill="none" stroke="#00F2FE" stroke-width="1.8" stroke-linecap="round" />
+  <path d="M 14 270 L 14 286 L 30 286" fill="none" stroke="#7F00FF" stroke-width="1.8" stroke-linecap="round" />
+  <path d="M 886 270 L 886 286 L 870 286" fill="none" stroke="#00F5A0" stroke-width="1.8" stroke-linecap="round" />
 
-  <!-- Optical Spotlights with Pure Opacity Pulses (Zero Offset Shifting) -->
-  <circle cx="710" cy="160" r="130" fill="#00F2FE" filter="url(#softDiffusion)">
-    <animate attributeName="opacity" values="0.08; 0.18; 0.08" dur="8.7s" repeatCount="indefinite" />
-  </circle>
-  <circle cx="680" cy="130" r="100" fill="#7F00FF" filter="url(#softDiffusion)">
-    <animate attributeName="opacity" values="0.06; 0.16; 0.06" dur="6.2s" repeatCount="indefinite" />
-  </circle>
-  <circle cx="160" cy="90" r="140" fill="#00F2FE" opacity="0.06" filter="url(#softDiffusion)" />
+  <!-- Laser Scanning Line (Pure Vector) -->
+  <line x1="20" y1="20" x2="880" y2="20" stroke="url(#laserGrad)" stroke-width="1.5">
+    <animate attributeName="y1" values="20; 280; 20" dur="6.5s" repeatCount="indefinite" />
+    <animate attributeName="y2" values="20; 280; 20" dur="6.5s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.2; 0.8; 0.2" dur="6.5s" repeatCount="indefinite" />
+  </line>
 
-  <!-- 1px Specular Inset Glass Border -->
-  <rect width="900" height="320" rx="16" fill="none" stroke="url(#glassBorder)" stroke-width="1.2" />
-
-  <!-- Perimeter Border Glow Comet (React-Bits BorderGlow) -->
-  <rect width="900" height="320" rx="16" fill="none" stroke="url(#cometGrad)" stroke-width="2.4" class="border-comet" />
-
-  <!-- Precision Corner Brackets -->
-  <path d="M 16 36 L 16 16 L 36 16" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.8" stroke-linecap="round" />
-  <path d="M 884 36 L 884 16 L 864 16" fill="none" stroke="#00F2FE" stroke-width="2" stroke-linecap="round" />
-  <path d="M 16 284 L 16 304 L 36 304" fill="none" stroke="#7F00FF" stroke-width="2" stroke-linecap="round" />
-  <path d="M 884 284 L 884 304 L 864 304" fill="none" stroke="#00F5A0" stroke-width="2" stroke-linecap="round" />
-
-  <!-- Laser Scanning Line -->
-  <g class="laser-line">
-    <line x1="16" y1="0" x2="884" y2="0" stroke="url(#laserBeam)" stroke-width="1.8" filter="url(#softDiffusion)" />
-  </g>
-
-  <!-- Left Content Group -->
-  <g transform="translate(54, 46)">
-    <!-- Liquid Glass Status Pill -->
+  <!-- Left Content Column -->
+  <g transform="translate(48, 40)">
+    <!-- Status Pill -->
     <g transform="translate(0, 0)">
-      <rect width="194" height="28" rx="14" fill="#071224" fill-opacity="0.8" stroke="url(#glassBorder)" stroke-width="1" filter="url(#liquidGlassFilter)" />
-      <!-- Specular Highlight Sheen -->
-      <path d="M 14 2 L 180 2" stroke="#ffffff" stroke-opacity="0.4" stroke-width="0.8" stroke-linecap="round" />
-      <!-- Rock-solid LED: Opacity animation only, zero scale/shift -->
-      <circle cx="17" cy="14" r="4.5" fill="#00F5A0">
+      <rect width="186" height="26" rx="13" fill="#0C1322" stroke="#1E2E48" stroke-width="1" />
+      <circle cx="15" cy="13" r="4" fill="#00F5A0">
         <animate attributeName="opacity" values="1; 0.35; 1" dur="2s" repeatCount="indefinite" />
       </circle>
-      <text x="32" y="18" fill="#00F5A0" font-size="10" font-weight="700" letter-spacing="1.2" class="mono">SYSTEMS OPERATIONAL</text>
+      <text x="28" y="17" fill="#00F5A0" font-size="10" font-weight="700" letter-spacing="1.2" class="mono">SYSTEMS OPERATIONAL</text>
     </g>
 
     <!-- Sub-tag Protocol -->
-    <text x="210" y="19" fill="#64748b" font-size="10.5" font-weight="600" letter-spacing="2" class="mono">// SOVEREIGN ARCHITECTURE</text>
+    <text x="202" y="18" fill="#64748B" font-size="10.5" font-weight="600" letter-spacing="1.8" class="mono">// SOVEREIGN ARCHITECTURE</text>
 
-    <!-- Single Crisp Monumental Title: DECOY (Zero ghost duplicate text layers) -->
-    <g transform="translate(0, 72)">
-      <text x="0" y="0" fill="url(#holoText)" font-size="52" font-weight="900" letter-spacing="3" class="display" filter="url(#liquidGlassFilter)">DECOY</text>
-
-      <!-- Glass Holographic Badge -->
-      <g transform="translate(196, -38)">
-        <rect width="72" height="22" rx="6" fill="#140a28" fill-opacity="0.8" stroke="url(#glassBorder)" stroke-width="1" />
-        <text x="36" y="15" fill="#c084fc" font-size="10" font-weight="700" text-anchor="middle" letter-spacing="1.5" class="mono">IN // 2026</text>
+    <!-- Main Title: DECOY (Crisp Single-Layer Vector) -->
+    <g transform="translate(0, 68)">
+      <text x="0" y="0" fill="url(#cyanGrad)" font-size="50" font-weight="900" letter-spacing="3" class="sans">DECOY</text>
+      <!-- Sleek Year Badge -->
+      <g transform="translate(186, -37)">
+        <rect width="68" height="20" rx="4" fill="#111827" stroke="#374151" stroke-width="1" />
+        <text x="34" y="14" fill="#9CA3AF" font-size="9.5" font-weight="700" text-anchor="middle" letter-spacing="1.5" class="mono">IN // 2026</text>
       </g>
     </g>
 
     <!-- Manifesto Headline -->
-    <text x="0" y="105" fill="#ffffff" font-size="15" font-weight="700" letter-spacing="1.2" class="display">ARCHITECTING NEXT-GEN SYSTEMS &amp; AGENTIC AI</text>
+    <text x="0" y="98" fill="#FFFFFF" font-size="14.5" font-weight="700" letter-spacing="1.2" class="sans">ARCHITECTING NEXT-GEN SYSTEMS &amp; AGENTIC AI</text>
 
     <!-- Subtitle Description -->
-    <text x="0" y="130" fill="#94a3b8" font-size="12.5" font-weight="400" letter-spacing="0.3" class="display">High-throughput concurrency, autonomous voice pipelines &amp; sovereign data ledgers.</text>
+    <text x="0" y="122" fill="#94A3B8" font-size="12" font-weight="400" letter-spacing="0.3" class="sans">High-throughput concurrency, autonomous voice pipelines &amp; sovereign data ledgers.</text>
 
-    <!-- 4 Frosted Glass Telemetry HUD Tiles -->
-    <g transform="translate(0, 162)">
-      <!-- Tile 1: Core Latency -->
+    <!-- 4 Minimalist Telemetry Metric Boxes (Zero Overlaps, Clean 1px Borders) -->
+    <g transform="translate(0, 150)">
+      <!-- Tile 1 -->
       <g transform="translate(0, 0)">
-        <rect width="112" height="46" rx="8" fill="#081022" fill-opacity="0.8" stroke="url(#glassBorder)" stroke-width="1" filter="url(#liquidGlassFilter)" />
-        <path d="M 8 2 L 104 2" stroke="#ffffff" stroke-opacity="0.35" stroke-width="0.7" stroke-linecap="round" />
-        <text x="12" y="17" fill="#64748b" font-size="9" font-weight="600" letter-spacing="1" class="mono">CORE LATENCY</text>
-        <text x="12" y="36" fill="#00F2FE" font-size="13.5" font-weight="700" class="mono">&lt; 0.18 ms</text>
+        <rect width="112" height="42" rx="6" fill="#0A0F1D" stroke="#1E293B" stroke-width="1" />
+        <text x="12" y="16" fill="#64748B" font-size="8.5" font-weight="600" letter-spacing="1" class="mono">CORE LATENCY</text>
+        <text x="12" y="33" fill="#00F2FE" font-size="13" font-weight="700" class="mono">&lt; 0.18 ms</text>
       </g>
 
-      <!-- Tile 2: Concurrency -->
+      <!-- Tile 2 -->
       <g transform="translate(122, 0)">
-        <rect width="112" height="46" rx="8" fill="#081022" fill-opacity="0.8" stroke="url(#glassBorder)" stroke-width="1" filter="url(#liquidGlassFilter)" />
-        <path d="M 8 2 L 104 2" stroke="#ffffff" stroke-opacity="0.35" stroke-width="0.7" stroke-linecap="round" />
-        <text x="12" y="17" fill="#64748b" font-size="9" font-weight="600" letter-spacing="1" class="mono">IO MODEL</text>
-        <text x="12" y="36" fill="#00F5A0" font-size="13.5" font-weight="700" class="mono">NON-BLOCK</text>
+        <rect width="112" height="42" rx="6" fill="#0A0F1D" stroke="#1E293B" stroke-width="1" />
+        <text x="12" y="16" fill="#64748B" font-size="8.5" font-weight="600" letter-spacing="1" class="mono">IO MODEL</text>
+        <text x="12" y="33" fill="#00F5A0" font-size="13" font-weight="700" class="mono">NON-BLOCK</text>
       </g>
 
-      <!-- Tile 3: AI Runtime -->
+      <!-- Tile 3 -->
       <g transform="translate(244, 0)">
-        <rect width="128" height="46" rx="8" fill="#081022" fill-opacity="0.8" stroke="url(#glassBorder)" stroke-width="1" filter="url(#liquidGlassFilter)" />
-        <path d="M 8 2 L 120 2" stroke="#ffffff" stroke-opacity="0.35" stroke-width="0.7" stroke-linecap="round" />
-        <text x="12" y="17" fill="#64748b" font-size="9" font-weight="600" letter-spacing="1" class="mono">AI RUNTIME</text>
-        <text x="12" y="36" fill="#c084fc" font-size="13.5" font-weight="700" class="mono">MULTI-AGENTIC</text>
+        <rect width="128" height="42" rx="6" fill="#0A0F1D" stroke="#1E293B" stroke-width="1" />
+        <text x="12" y="16" fill="#64748B" font-size="8.5" font-weight="600" letter-spacing="1" class="mono">AI RUNTIME</text>
+        <text x="12" y="33" fill="#A78BFA" font-size="13" font-weight="700" class="mono">MULTI-AGENTIC</text>
       </g>
 
-      <!-- Tile 4: Cluster Status -->
+      <!-- Tile 4 -->
       <g transform="translate(382, 0)">
-        <rect width="108" height="46" rx="8" fill="#081022" fill-opacity="0.8" stroke="url(#glassBorder)" stroke-width="1" filter="url(#liquidGlassFilter)" />
-        <path d="M 8 2 L 100 2" stroke="#ffffff" stroke-opacity="0.35" stroke-width="0.7" stroke-linecap="round" />
-        <text x="12" y="17" fill="#64748b" font-size="9" font-weight="600" letter-spacing="1" class="mono">NODES</text>
-        <text x="12" y="36" fill="#FFAE00" font-size="13.5" font-weight="700" class="mono">6 DEPLOYED</text>
+        <rect width="108" height="42" rx="6" fill="#0A0F1D" stroke="#1E293B" stroke-width="1" />
+        <text x="12" y="16" fill="#64748B" font-size="8.5" font-weight="600" letter-spacing="1" class="mono">NODES</text>
+        <text x="12" y="33" fill="#FBBF24" font-size="13" font-weight="700" class="mono">6 DEPLOYED</text>
       </g>
     </g>
   </g>
 
-  <!-- Right Visual: Pinned 3D Liquid Glass Decoy Monogram (Native (0,0) Rotation - Zero Orbit Bug) -->
-  <g transform="translate(710, 160)">
-    <!-- Concentric Radar Ticks -->
-    <circle cx="0" cy="0" r="115" fill="none" stroke="#16253d" stroke-width="1" stroke-dasharray="4 8" />
-    <circle cx="0" cy="0" r="85" fill="none" stroke="#1c3454" stroke-width="1" />
-    <circle cx="0" cy="0" r="55" fill="none" stroke="#25466f" stroke-width="1" stroke-dasharray="2 6" />
+  <!-- Right Visual: High-Precision Cybernetic Monogram (Centered at (720, 150)) -->
+  <g transform="translate(720, 150)">
+    <!-- Radar Ticks and Hairlines -->
+    <circle cx="0" cy="0" r="105" fill="none" stroke="#1E293B" stroke-width="1" stroke-dasharray="3 6" />
+    <circle cx="0" cy="0" r="78" fill="none" stroke="#1E2E48" stroke-width="1" />
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#253754" stroke-width="1" stroke-dasharray="2 4" />
+    <line x1="-115" y1="0" x2="115" y2="0" stroke="#1E293B" stroke-width="1" stroke-dasharray="4 6" />
+    <line x1="0" y1="-115" x2="0" y2="115" stroke="#1E293B" stroke-width="1" stroke-dasharray="4 6" />
 
-    <!-- Rotating Outer Glass Ring: Uses Native SVG (0,0,0) Pivot -->
+    <!-- Rotating Outer Vector Ring -->
     <g>
-      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="24s" repeatCount="indefinite" />
-      <circle cx="0" cy="0" r="98" fill="none" stroke="url(#glassBorder)" stroke-width="1.8" stroke-dasharray="40 80 20 60" />
-      <circle cx="98" cy="0" r="4.5" fill="#00F2FE" />
-      <circle cx="-98" cy="0" r="3.5" fill="#FF007F" />
-      <circle cx="0" cy="98" r="4" fill="#00F5A0" />
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="20s" repeatCount="indefinite" />
+      <circle cx="0" cy="0" r="90" fill="none" stroke="url(#borderGrad)" stroke-width="1.6" stroke-dasharray="35 70 15 50" />
+      <circle cx="90" cy="0" r="4" fill="#00F2FE" />
+      <circle cx="-90" cy="0" r="3" fill="#7F00FF" />
+      <circle cx="0" cy="90" r="3.5" fill="#00F5A0" />
     </g>
 
-    <!-- Counter-Rotating Inner Glass Segment Ring: Native (0,0,0) Pivot -->
+    <!-- Counter-Rotating Inner Vector Ring -->
     <g>
-      <animateTransform attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="16s" repeatCount="indefinite" />
-      <circle cx="0" cy="0" r="70" fill="none" stroke="#00F2FE" stroke-width="1.4" stroke-dasharray="30 40 15 45" stroke-opacity="0.7" />
-      <polygon points="70,0 74,-4 78,0 74,4" fill="#00F2FE" />
-      <polygon points="-70,0 -74,-4 -78,0 -74,4" fill="#7F00FF" />
+      <animateTransform attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="14s" repeatCount="indefinite" />
+      <circle cx="0" cy="0" r="66" fill="none" stroke="#00F2FE" stroke-width="1.2" stroke-dasharray="24 36 12 40" stroke-opacity="0.6" />
+      <polygon points="66,0 70,-4 74,0 70,4" fill="#00F2FE" />
+      <polygon points="-66,0 -70,-4 -74,0 -70,4" fill="#7F00FF" />
     </g>
 
-    <!-- 3D Liquid Glass Faceted Hexagon Core -->
-    <g filter="url(#liquidGlassFilter)">
-      <polygon points="0,-42 36,-21 36,21 0,42 -36,21 -36,-21" fill="url(#glassFace)" stroke="url(#glassBorder)" stroke-width="2" />
-      <line x1="0" y1="-42" x2="0" y2="42" stroke="#ffffff" stroke-opacity="0.3" stroke-width="1" />
-      <line x1="-36" y1="-21" x2="36" y2="21" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1" />
-      <line x1="-36" y1="21" x2="36" y2="-21" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1" />
-    </g>
+    <!-- Central Geometric Hexagon Core -->
+    <polygon points="0,-36 31,-18 31,18 0,36 -31,18 -31,-18" fill="#080D1A" stroke="url(#cyanGrad)" stroke-width="2" />
 
-    <!-- Inner Geometric 'D' Liquid Glass Monogram (Crisp Single Layer) -->
-    <path d="M -16 -20 L 5 -20 C 18 -20 25 -11 25 0 C 25 11 18 20 5 20 L -16 20 Z M -7 -11 L -7 11 L 4 11 C 11 11 16 7 16 0 C 16 -7 11 -11 4 -11 Z" 
-          fill="url(#holoText)" filter="url(#liquidGlassFilter)" />
+    <!-- Inner Geometric 'D' Emblem -->
+    <path d="M -14 -18 L 4 -18 C 16 -18 22 -10 22 0 C 22 10 16 18 4 18 L -14 18 Z M -6 -10 L -6 10 L 3 10 C 10 10 14 6 14 0 C 14 -6 10 -10 3 -10 Z" 
+          fill="url(#cyanMint)" />
 
-    <!-- Specular Micro Nodes Around Core -->
-    <circle cx="0" cy="-42" r="2.5" fill="#ffffff" />
-    <circle cx="36" cy="-21" r="2.5" fill="#00F2FE" />
-    <circle cx="36" cy="21" r="2.5" fill="#7F00FF" />
-    <circle cx="0" cy="42" r="2.5" fill="#00F5A0" />
-    <circle cx="-36" cy="21" r="2.5" fill="#FF007F" />
-    <circle cx="-36" cy="-21" r="2.5" fill="#ffffff" />
+    <!-- Perimeter Nodes -->
+    <circle cx="0" cy="-36" r="2.5" fill="#00F2FE" />
+    <circle cx="31" cy="-18" r="2.5" fill="#7F00FF" />
+    <circle cx="31" cy="18" r="2.5" fill="#00F5A0" />
+    <circle cx="0" cy="36" r="2.5" fill="#00F2FE" />
+    <circle cx="-31" cy="18" r="2.5" fill="#7F00FF" />
+    <circle cx="-31" cy="-18" r="2.5" fill="#00F5A0" />
 
-    <!-- Global Telemetry Coordinates -->
-    <text x="0" y="122" fill="#64748b" font-size="8.5" font-weight="600" text-anchor="middle" letter-spacing="1.5" class="mono">DELHI-NCR // 28.6139°N 77.2090°E</text>
+    <!-- Telemetry Coordinates -->
+    <text x="0" y="116" fill="#64748B" font-size="8.5" font-weight="600" text-anchor="middle" letter-spacing="1.5" class="mono">DELHI-NCR // 28.6139°N 77.2090°E</text>
   </g>
 </svg>
