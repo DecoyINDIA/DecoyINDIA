@@ -302,15 +302,20 @@ def card_frame(w: int, h: int, accent: str, speed: float = 11) -> tuple[str, str
 # --------------------------------------------------------------------------
 
 
-def konark_wheel(cx: float, cy: float, R: float, start: float) -> tuple[str, float]:
-    """Line drawing of a Konark Sun Temple wheel. Returns (svg, time drawing ends)."""
+def konark_wheel(cx: float, cy: float, R: float, start: float, speed: float = 1.0) -> tuple[str, float]:
+    """Line drawing of a Konark Sun Temple wheel. Returns (svg, time drawing ends).
+
+    `speed` compresses the whole drawing sequence (2.5 = two and a half times faster)."""
     parts: list[str] = []
     t = start
+
+    def at(x: float) -> float:
+        return start + (x - start) / speed
 
     def draw(d: str, cls: str, dur: float, delay: float) -> None:
         parts.append(
             f'<path d="{d}" pathLength="1" class="{cls} dr" '
-            f'style="animation-duration:{dur:.2f}s;animation-delay:{delay:.2f}s"/>'
+            f'style="animation-duration:{dur / speed:.2f}s;animation-delay:{at(delay):.2f}s"/>'
         )
 
     for i, (r, cls) in enumerate([(R, "w1"), (R * 0.93, "w2"), (R * 0.80, "w1"), (R * 0.76, "w2")]):
@@ -318,7 +323,7 @@ def konark_wheel(cx: float, cy: float, R: float, start: float) -> tuple[str, flo
     t += 0.9
     beads = "".join(
         f'<circle cx="{_num(polar(cx, cy, R * 0.965, k * 7.5)[0])}" cy="{_num(polar(cx, cy, R * 0.965, k * 7.5)[1])}" '
-        f'r="1.9" class="bead" style="animation-delay:{t + k * 0.03:.2f}s"/>'
+        f'r="1.9" class="bead" style="animation-delay:{at(t + k * 0.03):.2f}s"/>'
         for k in range(48)
     )
     parts.append(beads)
@@ -369,7 +374,7 @@ def konark_wheel(cx: float, cy: float, R: float, start: float) -> tuple[str, flo
             "w2", 0.7, t + 0.3 + k * 0.04,
         )
     t += 1.2
-    return "".join(parts), t
+    return "".join(parts), at(t)
 
 
 def hero() -> str:
@@ -380,7 +385,7 @@ def hero() -> str:
     # --- name, drawn then lit by a gold sheen
     name_glyphs = SERIF.glyphs("Subham Jena", 134, 72, 244)
     name = "".join(
-        f'<path d="{d}" pathLength="1" class="nm" style="animation-delay:{0.25 + i * 0.11:.2f}s"/>'
+        f'<path d="{d}" pathLength="1" class="nm" style="animation-delay:{0.05 + i * 0.035:.3f}s"/>'
         for i, (d, _) in enumerate(name_glyphs)
     )
     name_clip = "".join(f'<path d="{d}"/>' for d, _ in name_glyphs)
@@ -396,7 +401,7 @@ def hero() -> str:
         "big ideas into small, sharp tools.",
         "\u201cwhat if\u201d into \u201cit\u2019s live.\u201d",
     ]
-    period, first = 3.8, 6.2
+    period, first = 3.8, 0.75
     total = period * len(phrases)
     vis = 100 / len(phrases)
     ph_svg = []
@@ -405,7 +410,7 @@ def hero() -> str:
         w = SERIF_IT.width(text, 34)
         t0 = first + i * period
         ps = "".join(
-            f'<path d="{d}" style="animation-delay:{t0 + j * 0.022:.3f}s"/>' for j, (d, _) in enumerate(gl)
+            f'<path d="{d}" style="animation-delay:{t0 + j * 0.012:.3f}s"/>' for j, (d, _) in enumerate(gl)
         )
         ul = f'<path class="ul" pathLength="1" d="M{_num(ph_x)} 340H{_num(ph_x + w)}" style="animation-delay:{t0 + 0.15:.2f}s"/>'
         caret = (
@@ -418,7 +423,7 @@ def hero() -> str:
     studio = SANS.path("Founder, XolverLabs   ·   xolver.in", 15, 76, 416)
 
     # --- wheel, rays, text ring, comets, embers
-    wheel, wheel_end = konark_wheel(cx, cy, R, 0.6)
+    wheel, wheel_end = konark_wheel(cx, cy, R, 0.1, speed=2.5)
     rays = []
     nr = 90
     for k in range(nr):
@@ -465,18 +470,18 @@ def hero() -> str:
   .au3 {{ animation-duration: 41s; }}
   @keyframes drift {{ 0% {{ transform: translate(0,0) scale(1); }} 50% {{ transform: translate(-70px,40px) scale(1.15); }} 100% {{ transform: translate(50px,-30px) scale(.95); }} }}
   .nm {{ fill: {INK}; stroke: {INK}; stroke-width: 1.1; stroke-dasharray: 1; stroke-dashoffset: 0;
-        fill-opacity: 1; stroke-opacity: 0; animation: draw 3.2s cubic-bezier(.6,.05,.3,1) both; }}
+        fill-opacity: 1; stroke-opacity: 0; animation: draw 1.25s cubic-bezier(.5,.05,.3,1) both; }}
   @keyframes draw {{
     0% {{ stroke-dashoffset: 1; fill-opacity: 0; stroke-opacity: 1; }}
-    55% {{ stroke-dashoffset: 0; fill-opacity: 0; stroke-opacity: 1; }}
+    50% {{ stroke-dashoffset: 0; fill-opacity: 0; stroke-opacity: 1; }}
     100% {{ stroke-dashoffset: 0; fill-opacity: 1; stroke-opacity: 0; }}
   }}
-  .sheen {{ animation: sheen 7s cubic-bezier(.5,0,.3,1) 4.2s infinite both; }}
+  .sheen {{ animation: sheen 7s cubic-bezier(.5,0,.3,1) 1.6s infinite both; }}
   @keyframes sheen {{ 0% {{ transform: translateX(-320px) skewX(-18deg); }} 35%,100% {{ transform: translateX(760px) skewX(-18deg); }} }}
-  .lead {{ fill: {BODY}; animation: rise 1.2s ease-out 5s both; }}
-  .meta {{ fill: {DIM}; animation: rise 1.2s ease-out 5.6s both; }}
-  .rule {{ stroke: {LINE}; animation: grow 1.6s cubic-bezier(.6,.05,.3,1) 5.2s both; transform-origin: 76px 0; }}
-  .place {{ fill: {DIM}; animation: rise 1s ease-out .1s both; }}
+  .lead {{ fill: {BODY}; animation: rise .6s ease-out .6s both; }}
+  .meta {{ fill: {DIM}; animation: rise .6s ease-out 1s both; }}
+  .rule {{ stroke: {LINE}; animation: grow .9s cubic-bezier(.6,.05,.3,1) .8s both; transform-origin: 76px 0; }}
+  .place {{ fill: {DIM}; animation: rise .5s ease-out 0s both; }}
   .dot {{ fill: {TERRA}; animation: pulse 2.4s ease-in-out infinite; transform-origin: 81px 95px; }}
   .halo {{ fill: none; stroke: {TERRA}; animation: halo 2.4s ease-out infinite; transform-origin: 81px 95px; }}
   @keyframes rise {{ from {{ opacity: 0; transform: translateY(8px); }} to {{ opacity: 1; transform: none; }} }}
@@ -509,17 +514,17 @@ def hero() -> str:
   .bead {{ fill: {MARI}; animation: pop .5s ease-out both; }}
   @keyframes pop {{ from {{ opacity: 0; }} to {{ opacity: .9; }} }}
   .spin {{ transform-origin: {cx}px {cy}px; animation: spin 150s linear infinite; }}
-  .tr {{ fill: {DIM}; transform-origin: {cx}px {cy}px; animation: spin 90s linear infinite reverse, fadein 2s ease-out 2.6s both; }}
-  .sun {{ transform-origin: {cx}px {cy}px; animation: spin 24s linear infinite, fadein 2s ease-out {wheel_end:.1f}s both; }}
+  .tr {{ fill: {DIM}; transform-origin: {cx}px {cy}px; animation: spin 90s linear infinite reverse, fadein 1s ease-out .4s both; }}
+  .sun {{ transform-origin: {cx}px {cy}px; animation: spin 24s linear infinite, fadein 1s ease-out {wheel_end - 0.3:.1f}s both; }}
   @keyframes spin {{ to {{ transform: rotate(360deg); }} }}
   @keyframes fadein {{ from {{ opacity: 0; }} to {{ opacity: 1; }} }}
   .rays line {{ stroke: {MARI}; stroke-width: 1.2; stroke-linecap: round; opacity: .08;
         animation: ray 7s linear infinite; }}
-  .rays {{ animation: fadein 3s ease-out 3s both; }}
+  .rays {{ animation: fadein 1.2s ease-out .5s both; }}
   @keyframes ray {{ 0%,100% {{ opacity: .06; }} 8% {{ opacity: .75; }} 26% {{ opacity: .06; }} }}
   .cmt, .cmt2 {{ fill: none; stroke: {MARI}; stroke-width: 2; stroke-linecap: round; stroke-dasharray: .05 .95;
-        animation: orbit 9s linear infinite, fadein 2s ease-out {wheel_end:.1f}s both; }}
-  .cmt2 {{ stroke: {TERRA}; animation-duration: 6s, 2s; animation-direction: reverse, normal; }}
+        animation: orbit 9s linear infinite, fadein 1s ease-out {wheel_end - 0.3:.1f}s both; }}
+  .cmt2 {{ stroke: {TERRA}; animation-duration: 6s, 1s; animation-direction: reverse, normal; }}
   .cg {{ stroke-width: 8; opacity: .18; }}
   @keyframes orbit {{ from {{ stroke-dashoffset: 1; }} to {{ stroke-dashoffset: 0; }} }}
   .hub {{ transform-origin: {cx}px {cy}px; animation: hub 4s ease-in-out infinite; }}
