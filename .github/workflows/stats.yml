@@ -6,9 +6,13 @@ name: Refresh GitHub stats
 
 on:
   schedule:
-    - cron: "34 18 * * *" # daily, 18:34 UTC = 00:04 IST (off the :00/:30 peak)
+    # Every 6 hours: 00:04, 06:04, 12:04 and 18:04 IST (off the :00/:30 peak).
+    # GitHub sometimes delays or skips scheduled runs, so one run a day can
+    # leave the image a day behind. Commits only happen when the data changed.
+    - cron: "34 0,6,12,18 * * *"
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - scripts/stats.py
       - scripts/build.py
