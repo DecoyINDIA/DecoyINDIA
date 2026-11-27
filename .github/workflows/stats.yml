@@ -6,7 +6,7 @@ name: Refresh GitHub stats
 
 on:
   schedule:
-    - cron: "17 2 * * *" # daily, 07:47 IST
+    - cron: "34 18 * * *" # daily, 18:34 UTC = 00:04 IST (off the :00/:30 peak)
   workflow_dispatch:
   push:
     paths:
