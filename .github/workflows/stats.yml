@@ -48,4 +48,12 @@ jobs:
           git add assets/stats.svg
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
           git commit -m "chore: refresh GitHub stats"
-          git push
+          # main may have moved since checkout (a re-run checks out its
+          # original SHA; another run may have pushed). Replay on top of the
+          # tip, keeping this run's freshly generated svg on conflict.
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin "${GITHUB_REF_NAME}" \
+              && git push && exit 0
+            sleep $((i * 5))
+          done
+          echo "::error::push failed after 3 attempts"; exit 1
